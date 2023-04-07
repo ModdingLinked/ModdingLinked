@@ -110,19 +110,19 @@ body {
 }
 
 .column1 {
-  background-image: url("https://wallsogb.github.io/vivanewvegas.github.io/img/background.webp");
+  background-image: url("../img/vnv.webp");
 }
 
 .column2 {
-  background-image: url("https://wallsogb.github.io/TheBestofTimes.github.io/img/background.webp");
+  background-image: url("../img/tbot.webp");
 }
 
 .column3 {
-  background-image: url("https://wallsogb.github.io/themidnightride.github.io/img/background.webp");
+  background-image: url("../img/tmr.webp");
 }
 
 .column4 {
-  background-image: url("https://wallsogb.github.io/dragonbornsfate.github.io/img/background.webp");
+  background-image: url("../img/dbf.webp");
 }
 
 .header {
