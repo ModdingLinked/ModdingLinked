@@ -96,7 +96,7 @@ body {
   text-decoration: none;
 }
 
-.column h1 {
+.column h2 {
   font-size: 3em;
   margin: 10em 0 0.2em 0;
   padding: 0;
@@ -127,13 +127,14 @@ body {
 
 .header {
   display: flex;
-  flex-direction: column;
-  flex-flow: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgba(51, 51, 51, 0.747);
   -webkit-backdrop-filter: saturate(100%) blur(100px);
           backdrop-filter: saturate(100%) blur(100px);
   color: #fff;
-  padding-left: 1em;
+  padding: 0 1em;
   position: fixed;
   left: 0;
   width: 100%;
@@ -145,12 +146,20 @@ body {
   width: 32pt;
 }
 
-.header h2 {
+.header h1 {
   display: flex;
-  flex-direction: column;
-  flex-flow: column;
   font-size: 2em;
   letter-spacing: 0.4pt;
+}
+
+#discord {
+  color: white;
+  text-decoration: none;
+  scale: 2.75;
+  padding: 0.2em;
+  margin-right: 1em;
+  display: flex;
+  align-items: center;
 }
 
 .footer {
@@ -207,7 +216,7 @@ body {
   }
 }
 @media only screen and (max-width: 900px) {
-  .column h1 {
+  .column h2 {
     margin: 2.25em 0 0.2em 0;
     line-height: 1.2em;
   }
