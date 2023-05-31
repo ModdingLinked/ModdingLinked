@@ -62,7 +62,7 @@ body {
 }
 
 .column {
-  flex-basis: 20%;
+  flex-basis: 15%;
   flex-grow: 1;
   background-size: cover;
   background-position: center;
@@ -100,6 +100,7 @@ body {
   font-size: 2.4em;
   margin: 10em 0 0.2em 0;
   padding: 0;
+  line-height: 1em;
   text-shadow: 0.05em 0.075em 0.1em rgba(0, 0, 0, 0.7);
 }
 
@@ -122,10 +123,14 @@ body {
 }
 
 .column4 {
-  background-image: url("../img/goc.webp");
+  background-image: url("../img/toa.webp");
 }
 
 .column5 {
+  background-image: url("../img/goc.webp");
+}
+
+.column6 {
   background-image: url("../img/dbf.webp");
 }
 
