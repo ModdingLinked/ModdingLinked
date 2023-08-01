@@ -56,7 +56,7 @@ body {
   height: 100vh;
   justify-content: space-between;
   align-items: stretch;
-  overflow: scroll;
+  overflow-x: hidden;
   position: relative;
   box-sizing: border-box;
 }
