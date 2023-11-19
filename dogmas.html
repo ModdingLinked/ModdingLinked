@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preload" href="./css/style.css" as="style" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="img\logo.webp">
+    <link rel="canonical" href="https://moddinglinked.com">
+    <script src="https://kit.fontawesome.com/baff4f2fd4.js" crossorigin="anonymous"></script>
+    <title>Modding Dogmas - ModdingLinked</title>
+    <meta name="keywords" content="Viva New Vegas, The Best of Times, The Midnight Ride, Dragonborn's Fate, Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, The Elder Scrolls, FO4, SSE, SkyrimSE, Skyrim Special Edition, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Fallout 4, Skyrim, Tale of Two Wastelands, Dogmas">
+    <meta name="description" content="Some dangerous dogmas about modding that you should be aware of.">
+    <meta http-equiv='content-language' content='en-us'>
+    <meta name="twitter:card" value="summary">
+    <meta property="og:site_name" content="ModdingLinked">
+    <meta property="og:title" content="ModdingLinked">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://moddinglinked.com/">
+    <meta property="og:description" content="Some dangerous dogmas about modding that you should be aware of.">
+</head>
+
+<body>
+
+    <!-- Titlebar -->
+    <div class="titlecontainer">
+        <div id="sideButton" onclick="toggleNav()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="./index.html">ModdingLinked</a>
+        <div class="guideLinks">
+            <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout New Vegas</a>
+            <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
+            <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
+            <a href="https://dragonbornsfate.moddinglinked.com" target="_blank" rel="nofollow">Skyrim Special Edition</a>
+        </div>
+    </div>
+
+    <!-- Left Sidebar -->
+    <div id="sidenavLeft">
+        <div>
+            <ul>
+                <li>
+                    <a href="./dogmas.html" class="active">Modding Dogmas</a>
+                </li>
+                <li>
+                    <a href="./xedit.html">Basics of xEdit</a>
+                </li>
+                <li>
+                    <a href="./themethod.html">The Method</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Guide Links -->
+        <div class="guideLinks">
+            <hr>
+            <ul>
+                <li>
+                    <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout New Vegas</a>
+                </li>
+                <li>
+                    <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
+                </li>
+                <li>
+                    <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
+                </li>
+                <li>
+                    <a href="https://dragonbornsfate.moddinglinked.com" target="_blank" rel="nofollow">Skyrim Special Edition</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <ul>
+                <li>
+                    <a href="https://discord.gg/S99Ary5eba" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.patreon.com/WallSoGB" target="_blank">
+                        <i class="fab fa-patreon"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="paypal" onclick="toggleDonationMenu()">
+                        <i class="fab fa-paypal"></i>
+                    </a>
+                    <div id="paypalMenu" style="display: none;">
+                        <a href="https://www.paypal.com/paypalme/VishVadeva" target="_blank">
+                            VishVadeva
+                        </a>
+                        <a href="https://www.paypal.com/paypalme/wallsogb" target="_blank">
+                            Wall SoGB
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://github.com/WallSoGB/Viva-New-Vegas" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="section">
+            <h1>Modding Dogmas</h1>
+            <p>The goal with this page is to collect all the dangerous information shared over the years about modding Fallout and TES titles. The main sources are sadly often the most popular ones, such as YouTube videos that keep getting recommended or posts on sites like Nexus Mods or Reddit.</p>
+            <blockquote>Keep in mind that this is in no way a complete list, since modding methods and information changes often and obviously I am not aware of all of the info that belongs here.</blockquote>
+            <!-- uGridsToLoad -->
+            <p>
+                <strong>Changing uGridsToLoad</strong>
+                <br>
+            <ul>
+                <li>Greatly reduced performance due to the larger memory usage increase per cell and extra objects,</li>
+                <li>Larger loading overhead,</li>
+                <li>Possible script breakage,</li>
+                <li>Things like quests and random encounters could break.</li>
+            </ul>
+            </p>
+
+            <!-- Masterlists -->
+            <p>
+                <strong>Cleaning and Ordering Masterlists in xEdit</strong>
+                <br>
+                Masterlists can be used by authors as documentation for the correct load order and for the required mods, even if said mods do not need to be masters. Cleaning masters also breaks plugin loading in GECK because it cannot look for masters recursively.
+            </p>
+
+            <!-- Installing Plugins Mid-game -->
+            <p>
+                <strong>Installing Plugins Mid-game</strong>
+                <br>
+                Unless specified otherwise, this is not advised since your save files are essentially a plugin that is loaded last, baked information can override and break any changes new mods introduce, causing bugs and crashes. Mods such as textures and mesh replacements are fine.
+            </p>
+
+            <!-- Removing Plugins Mid-game -->
+            <p>
+                <strong>Removing Plugins Mid-game</strong>
+                <br>
+                This is not an intended scenario and will almost always result in all kinds of weird issues. There are cases where the changes or additions in a plugin are safe to disable, but that would require knowing everything the plugin does and how that affects the game. Better to avoid at all times unless you know what you are doing or if you are debugging something.
+            </p>
+
+            <!-- LL Injection -->
+            <p>
+                <strong>Levelled List Injection</strong>
+                <br>
+                Makes patching and balancing harder since you cannot see the whole LL together as you would normally.
+            </p>
+
+            <!-- Persistence = Bloat-->
+            <p>
+                <strong>Persistence = Bloat</strong>
+                <br>
+                Proven false by TTW which flags the totality of NPCs, creatures and activators as persistent and adds a very tiny amount of data in the save.
+            </p>
+
+            <!-- QAC as a Fix -->
+            <p>
+                <strong>QAC as a Fix</strong>
+                <br>
+                xEdit's Quick Automatic Cleaning function does not do any magic to plugins. It applies filters for ITM's (which are very rarely intentional, but it is bad practice to leave them as ITMs in case they are intended, a solution is for example changing EDID) and removes them, it also filters for deleted references and flips them into initially disabled with the enable parent opposite of player as a fallback in case that reference was already loaded.
+            </p>
+
+            <!-- TTW and Fallout 3 Mods -->
+            <p>
+                <strong>TTW and Fallout 3 Mods</strong>
+                <br>
+                99% of Fallout 3 mods will <b>NOT</b> work with Tale Of Two Wastelands, since the plugin format is different and most of the Fallout 3 mods are either badly made or do not take TTW and Fallout New Vegas changes into account.
+            </p>
+
+            <!-- Quest Stages -->
+            <p>
+                <strong>Setting Quest Stages</strong>
+                <br>
+                People often do this as a last resort to fix a problem they encounter. Obviously this breaks the natural progression of the quest so any trigger point (and everything it sets in motion) will be skipped, breaking the quest even more and leading to a broken save file. This is why you are supposed to have a working list when you want to start an actual playthrough, since these issues are often not fixable if not starting a new game and letting that quest work properly.
+            </p>
+
+            <!-- COC -->
+            <p>
+                <strong>The COC Command</strong>
+                <br>
+                Skips trigger points and a multitude of things related to any quest you have running or events contained in the cells you skip and teleport to. Especially dangerous if used from the game's main menu since it will create partial character info and once again, broken quests. This command is purely meant for debugging.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
