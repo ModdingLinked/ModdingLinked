@@ -20,16 +20,11 @@ function toggleNav() {
     }
 }
 
-function toggleDonationMenu(element) {
-    var items = document.getElementsByClassName("donoMenu");
-    for (var i = 0; i < items.length; i++) {
-        items[i].style.display = "none";
-    }
-
-    if (element.style.display == "none") {
-        element.style.display = "block";
+function toggleDonationMenu() {
+    if (document.getElementById("paypalMenu").style.display == "none") {
+        document.getElementById("paypalMenu").style.display = "block";
     }
     else {
-        element.style.display = "none";
+        document.getElementById("paypalMenu").style.display = "none";
     }
 }
