@@ -33,7 +33,7 @@ div {
 
 body {
   margin: 0;
-  padding: 0;
+  display: flex;
   font-weight: 400;
   line-height: 1.25em;
   font-family: arial, helvetica, sans-serif;
@@ -207,7 +207,7 @@ img {
 }
 
 .section h3 a {
-  color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 90%);
   font-size: inherit;
 }
 
@@ -401,13 +401,13 @@ img {
 /* Quotes */
 
 blockquote {
-  background-color: rgb(52, 52, 52);
-  font-size: 1.05em;
+  background-color: rgb(0, 0, 0, 0.19);
   border-left: 0.5em solid #c79a70;
   padding: 0.5em 0.75em;
   line-height: 1.4em;
   border-radius: 4pt;
   box-shadow: 0 0.3em 0.7em hsla(0, 0%, 0%, 0.15);
+  margin-left: 0em;
 }
 
 blockquote a {
@@ -435,7 +435,7 @@ h1.moddinglinked {
 }
 
 h2 {
-  color: hsl(0, 0%, 86%);
+  color: #ffffff;
   font-size: 1.8em;
   word-wrap: break-word;
 }
@@ -450,18 +450,18 @@ h2 {
 }
 
 #footer a,
-#paypal {
+#dono {
   padding: 0.3em 0em;
   font-size: 2em;
   cursor: pointer;
 }
 
 #footer a:hover,
-#paypal:hover {
+#dono:hover {
   scale: 90%;
 }
 
-#paypalMenu {
+#donoMenu {
   position: fixed;
   background-color: #202020;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
@@ -472,7 +472,7 @@ h2 {
   font-size: 0.8em;
 }
 
-#paypalMenu a:hover {
+#donoMenu a:hover {
   scale: 100%;
 }
 
