@@ -1,10 +1,19 @@
 window.addEventListener('resize', sizeChanged);
 
+function closeAllDonoMenus() {
+    var items = document.getElementsByClassName("donoMenu");
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].style.display == "block") {
+            items[i].style.display = "none";
+        }
+    }
+}
+
 function sizeChanged() {
     if (document.documentElement.clientWidth > 760) {
         document.getElementById("sideButton").style.marginLeft = "";
         document.getElementById("sidenavLeft").style.width = "";
-        document.getElementById("paypalMenu").style.display = "none";
+        closeAllDonoMenus();
     }
 }
 
@@ -16,15 +25,31 @@ function toggleNav() {
     else {
         document.getElementById("sidenavLeft").style.width = "";
         document.getElementById('sideButton').classList.remove('pressed');
-        document.getElementById("paypalMenu").style.display = "none";
+        closeAllDonoMenus();
     }
 }
 
-function toggleDonationMenu() {
-    if (document.getElementById("paypalMenu").style.display == "none") {
-        document.getElementById("paypalMenu").style.display = "block";
+function handleButtonClick(event, element) {
+    event.stopPropagation();
+
+    toggleDonationMenu(element);
+}
+
+function toggleDonationMenu(element) {
+    closeAllDonoMenus();
+    if (element.style.display == "none") {
+        element.style.display = "block";
+
+        // Close the popup after 20 seconds
+        setTimeout(function() {
+            element.style.display = "none";
+        }, 20000);
     }
     else {
-        document.getElementById("paypalMenu").style.display = "none";
+        element.style.display = "none";
     }
 }
+
+document.addEventListener('click', function(event) {
+    closeAllDonoMenus();
+});
