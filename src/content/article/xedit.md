@@ -29,8 +29,7 @@ xEdit is a tool for Bethesda titles that you can use to edit plugins (.esp/.esm/
 
 - **Override**: Taking an existing record in a plugin and then editing it in another plugin.  
   FalloutNV.esm originally created this script, then OldWorldBlues.esm **edited it with an override**.
-
-![Override example](../../assets/xedit/override-example.webp)
+  ![Override example](../../assets/xedit/override-example.webp)
 
 > You can **view the right-pane of xEdit as an Excel spreadsheet** with **as many columns as there are plugins editing that record**. The game will only care about the right-most column, which is the the script Old World Blues has.
 

@@ -33,7 +33,10 @@ export function HubMenu({ hubArticles }: { hubArticles: any[] }) {
         <div className="flex-1 space-y-2 overflow-y-auto">
           <Separator />
           <div>
-            <a href="/" className="text-xl font-semibold">
+            <a
+              href="/"
+              className="text-xl font-semibold hover:text-muted-foreground"
+            >
               Home
             </a>
           </div>
@@ -43,7 +46,11 @@ export function HubMenu({ hubArticles }: { hubArticles: any[] }) {
             </p>
             <div className="flex flex-col gap-1 pt-1">
               {CONSTANTS.GUIDE_COVERS.map((cover) => (
-                <a href={cover.href} target="_blank" className="font-medium">
+                <a
+                  href={cover.href}
+                  target="_blank"
+                  className="font-medium hover:text-muted-foreground"
+                >
                   {cover.title}
                 </a>
               ))}
@@ -55,7 +62,10 @@ export function HubMenu({ hubArticles }: { hubArticles: any[] }) {
             </p>
             <div className="flex flex-col gap-1 pt-1">
               {hubArticles.map((article) => (
-                <a href={`/${article.slug}`} className="font-medium">
+                <a
+                  href={`/${article.slug}`}
+                  className="font-medium hover:text-muted-foreground"
+                >
                   {article.data.title}
                 </a>
               ))}

@@ -36,7 +36,7 @@ const toc = generateToc(headings);
         <TocMenu className="fixed" client:load>
           <ul>
             <li>
-              <h2 class="text-lg">Table of Contents</h2>
+              <h2 class="text-lg font-semibold">Table of Contents</h2>
             </li>
             {toc.map((heading) => <TocItem {heading} />)}
           </ul>
@@ -46,7 +46,7 @@ const toc = generateToc(headings);
     </article>
     <ul class="sticky top-14 hidden h-fit pt-4 md:inline-block">
       <li>
-        <h2 class="text-lg">Table of Contents</h2>
+        <h2 class="text-lg font-semibold">Table of Contents</h2>
       </li>
       {toc.map((heading) => <TocItem {heading} />)}
     </ul>
