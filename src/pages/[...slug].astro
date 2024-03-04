@@ -21,11 +21,11 @@ const toc = generateToc(headings);
 ---
 
 <Main
-  title={`${CONSTANTS.TITLE} - Dogmas`}
-  description="Some dangerous dogmas about modding that you should be aware of."
-  keywords={["dogmas"]}
+  title={`${CONSTANTS.TITLE} - ${entry.data.title}`}
+  description={entry.data.description}
+  keywords={entry.data.keywords}
   ogType="article"
-  ogUrl="https://moddinglinked.com/dogmas"
+  ogUrl={`${CONSTANTS.BASE_URL}${entry.slug}`}
 >
   <HubHeader slot="header" />
   <div class="container flex justify-around gap-4">

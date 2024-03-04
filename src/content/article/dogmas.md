@@ -1,5 +1,8 @@
 ---
 title: Modding Dogmas
+description: A collection of dangerous modding information that is often shared over the years.
+keywords:
+  - Modding Dogmas
 ---
 
 # Modding Dogmas

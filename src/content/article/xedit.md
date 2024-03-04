@@ -1,5 +1,8 @@
 ---
 title: Basics of xEdit
+description: An introduction to xEdit and its use.
+keywords:
+  - xEdit
 ---
 
 # Basics of xEdit

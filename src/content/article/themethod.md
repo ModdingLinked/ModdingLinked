@@ -1,5 +1,8 @@
 ---
 title: The Method
+description: A full guide to The Method conflict resolution.
+keywords:
+  - The Method
 ---
 
 # The Method
