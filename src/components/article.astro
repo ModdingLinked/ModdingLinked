@@ -1,0 +1,46 @@
+---
+import TocItem from "@/components/toc-item.astro";
+import { TocMenu } from "@/components/toc-menu";
+import { generateToc } from "@/lib/utils";
+import { getCollection } from "astro:content";
+
+interface Props {
+  article: string;
+}
+
+const { article } = Astro.props;
+
+const collection = await getCollection("article");
+const entry = collection.find((entry) => entry.slug === article);
+
+if (!entry) {
+  throw new Error(`No article found: ${article}`);
+}
+
+const { Content, headings } = await entry.render();
+const toc = generateToc(headings);
+---
+
+<div class="container flex justify-around gap-4">
+  <article
+    class="prose relative max-w-screen-md py-4 dark:prose-invert *:scroll-mt-14"
+  >
+    <div class="absolute right-4 top-4 md:hidden">
+      <TocMenu className="fixed" client:load>
+        <ul>
+          <li>
+            <h2 class="text-lg">Table of Contents</h2>
+          </li>
+          {toc.map((heading) => <TocItem {heading} />)}
+        </ul>
+      </TocMenu>
+    </div>
+    <Content />
+  </article>
+  <ul class="sticky top-14 hidden h-fit pt-4 md:inline-block">
+    <li>
+      <h2 class="text-lg">Table of Contents</h2>
+    </li>
+    {toc.map((heading) => <TocItem {heading} />)}
+  </ul>
+</div>

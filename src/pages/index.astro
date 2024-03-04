@@ -1,0 +1,15 @@
+---
+import GuideCover from "@/components/guide-cover.astro";
+import HubHeader from "@/components/hub-header.astro";
+import CONSTANTS from "@/constants";
+import Main from "@/layouts/main.astro";
+---
+
+<Main
+  title={CONSTANTS.TITLE}
+  description="Collection of Vanilla+ modding guides for Fallout games and Skyrim Special Edition."
+  class="flex flex-1 flex-col lg:flex-row"
+>
+  <HubHeader slot="header" />
+  {CONSTANTS.GUIDE_COVERS.map((cover) => <GuideCover {...cover} />)}
+</Main>

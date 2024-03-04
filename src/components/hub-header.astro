@@ -1,0 +1,40 @@
+---
+import Header from "@/components/header.astro";
+import { HubMenu } from "@/components/hub-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
+import CONSTANTS from "@/constants";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const hubArticles = await getCollection("article");
+---
+
+<Header>
+  <div slot="left" class="flex items-center gap-2">
+    <HubMenu hubArticles={hubArticles} client:only />
+    <h1 class="select-none text-2xl font-bold">
+      {CONSTANTS.TITLE}
+    </h1>
+  </div>
+  <div slot="right" class="flex items-center gap-4">
+    <a href="https://discord.gg/S99Ary5eba" target="_blank" class="select-none">
+      <Image
+        src="/discord-white.svg"
+        alt="Discord"
+        width={32}
+        height={32}
+        loading="eager"
+        class="hidden dark:block"
+      />
+      <Image
+        src="/discord-black.svg"
+        alt="Discord"
+        width={32}
+        height={32}
+        loading="eager"
+        class="dark:hidden"
+      />
+    </a>
+    <ThemeToggle size="icon" variant="outline" client:load />
+  </div>
+</Header>

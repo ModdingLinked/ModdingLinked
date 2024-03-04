@@ -1,0 +1,54 @@
+---
+import HubHeader from "@/components/hub-header.astro";
+import TocItem from "@/components/toc-item.astro";
+import { TocMenu } from "@/components/toc-menu";
+import CONSTANTS from "@/constants";
+import Main from "@/layouts/main.astro";
+import { generateToc } from "@/lib/utils";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("article");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+const toc = generateToc(headings);
+---
+
+<Main
+  title={`${CONSTANTS.TITLE} - Dogmas`}
+  description="Some dangerous dogmas about modding that you should be aware of."
+  keywords={["dogmas"]}
+  ogType="article"
+  ogUrl="https://moddinglinked.com/dogmas"
+>
+  <HubHeader slot="header" />
+  <div class="container flex justify-around gap-4">
+    <article
+      class="prose relative max-w-screen-md py-4 dark:prose-invert *:scroll-mt-16 prose-code:before:content-none prose-code:after:content-none"
+    >
+      <div class="absolute right-4 top-4 md:hidden">
+        <TocMenu className="fixed" client:load>
+          <ul>
+            <li>
+              <h2 class="text-lg">Table of Contents</h2>
+            </li>
+            {toc.map((heading) => <TocItem {heading} />)}
+          </ul>
+        </TocMenu>
+      </div>
+      <Content />
+    </article>
+    <ul class="sticky top-14 hidden h-fit pt-4 md:inline-block">
+      <li>
+        <h2 class="text-lg">Table of Contents</h2>
+      </li>
+      {toc.map((heading) => <TocItem {heading} />)}
+    </ul>
+  </div>
+</Main>

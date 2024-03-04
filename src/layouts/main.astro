@@ -1,0 +1,76 @@
+---
+import { ThemeToggle } from "@/components/theme-toggle";
+import CONSTANTS from "@/constants.ts";
+import "@/globals.css";
+
+interface Props {
+  title: string;
+  description: string;
+  favicon?: string;
+  keywords?: string[];
+  ogType?: string;
+  ogUrl?: string;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  favicon = "/logo.webp",
+  keywords,
+  ogType = "website",
+  ogUrl = CONSTANTS.BASE_URL,
+  class: className,
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href={favicon} />
+    <title>{title}</title>
+    <meta
+      name="keywords"
+      content={"Viva New Vegas, The Best of Times, The Midnight Ride, Dragonborn's Fate, Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, The Elder Scrolls, FO4, SSE, SkyrimSE, Skyrim Special Edition, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Fallout 4, Skyrim, Tale of Two Wastelands" +
+        (keywords ? `, ${keywords.join(", ")}` : "")}
+    />
+    <meta name="description" content={description} />
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <slot name="header" />
+    <main class={className}>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
