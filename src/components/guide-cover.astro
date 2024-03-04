@@ -1,0 +1,37 @@
+---
+import type { GuideCover } from "@/types";
+import { Image } from "astro:assets";
+
+interface Props extends GuideCover {}
+
+const { title, subtitle, imgPath, alt, href } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/guide-covers/*.{jpeg,jpg,png,webp,gif}",
+);
+if (!images[imgPath])
+  throw new Error(
+    `"${imgPath}" does not exist in glob: "src/assets/guide-covers/*.{jpeg,jpg,png,webp,gif}"`,
+  );
+---
+
+<a
+  href={href}
+  target="_blank"
+  class="group relative flex min-h-96 flex-1 shrink-0 select-none items-center justify-center text-white"
+>
+  <div class="flex flex-col gap-4 text-center lg:pt-64">
+    <h1 class="text-3xl font-bold">{title}</h1>
+    <p class="text-xl">{subtitle}</p>
+  </div>
+  <Image
+    src={images[imgPath]()}
+    alt={alt}
+    loading="eager"
+    class="absolute -z-20 h-full object-cover"
+  />
+  <div
+    class="absolute -z-10 h-full w-full backdrop-blur-sm transition-all duration-500 ease-in-out group-hover:backdrop-blur-0"
+  >
+  </div>
+</a>
