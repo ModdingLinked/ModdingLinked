@@ -602,19 +602,15 @@ h2 {
 }
 
 .column1 {
-  background-image: url("../img/vnv.webp");
+  background-image: url("../img/Banners/VNV.webp");
 }
 
 .column2 {
-  background-image: url("../img/tbot.webp");
+  background-image: url("../img/Banners/TBoT.webp");
 }
 
 .column3 {
-  background-image: url("../img/tmr.webp");
-}
-
-.column4 {
-  background-image: url("../img/dbf.webp");
+  background-image: url("../img/Banners/TMR.webp");
 }
 
 .header {

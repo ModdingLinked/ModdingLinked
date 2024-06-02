@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preload" href="./css/style.css" as="style" />
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/x-icon" href="img\logo.webp">
+    <link rel="icon" type="image/x-icon" href="img\Logo.webp">
     <link rel="canonical" href="https://moddinglinked.com">
     <script src="https://kit.fontawesome.com/baff4f2fd4.js" crossorigin="anonymous"></script>
     <script src="javascript.js"></script>
@@ -120,7 +120,7 @@
     <div class="content">
         <div class="section">
             <h1>The Method</h1>
-            <p>In order to make sure that all conflicts between your plugins are intended and/or harmless, you need to check conflicts with xEdit after each mod gets enabled. At every run you can choose how to patch the plugins involved and then you will hide the remaining conflicts thanks to xEdit's ModGroups system. At the end you will have a fully patched load order and every conflict that doesn't need intervention will be hidden, leaving room for additions and ease of patching.</p>
+            <p>In order to make sure that all conflicts between your plugins are intended and/or harmless, you need to check conflicts with xEdit after each mod gets enabled. At every run you can choose how to patch the plugins involved and then you will hide the remaining conflicts thanks to xEdit's Modgroups system. At the end you will have a fully patched load order and every conflict that doesn't need intervention will be hidden, leaving room for additions and ease of patching.</p>
             <p>
                 <a>
                     <h2 id="requirements">Requirements</h2>
@@ -139,7 +139,7 @@
             </p>
             <p>
                 <a>
-                    <h2 id="baseMg">Base Plugins ModGroup</h2>
+                    <h2 id="baseMg">Base Plugins Modgroup</h2>
                 </a>
             <blockquote>The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.</blockquote>
             The Method starts with a load order that <strong>only contains the game's base plugins and the unofficial patch</strong>. In the case of New Vegas, that is <b>YUP</b>.
@@ -147,18 +147,18 @@
                 <li><strong>Add <code>-VQSC</code></strong> to the arguments field of xEdit in MO2. This is a quick way to filter your current load order for conflicts. It is faster than a normal filter for conflicts because it skips loading/building the reference caches.</li>
                 <li><strong>Run xEdit</strong> and wait for it to load the conflict filter.</li>
                 <li>Since all of the conflicts <strong>between DLCs</strong> and <strong>between YUP and DLCs</strong> are accounted for, nothing needs patching here.</li>
-                <img src="./img/base conflicts.webp" alt="Base conflicts">
-                <li><strong>Create a ModGroup</strong> for all these plugins by highlighting them (CTRL+A), right-clicking and then selecting <code>Create ModGroup...</code>.</li>
-                <img src="./img/base modgroup.webp" alt="Base ModGroup">
+                <img src="./img/The Method/Base Conflicts.webp" alt="Base conflicts">
+                <li><strong>Create a Modgroup</strong> for all these plugins by highlighting them (CTRL+A), right-clicking and then selecting <code>Create Modgroup...</code>.</li>
+                <img src="./img/The Method/Base Modgroup Creation.webp" alt="Base Modgroup">
             </ol>
-            <blockquote>This method of creating a ModGroup by selecting plugins on the left-pane should only be used for this specific case (base plugins + unofficial patch), unless you fully undestand how ModGroups work and the issue with this is.</blockquote>
+            <blockquote>This method of creating a Modgroup by selecting plugins on the left-pane should only be used for this specific case (base plugins + unofficial patch), unless you fully undestand how Modgroups work and the issue with this is.</blockquote>
             <ol start="5">
                 <li>When asked to include the current <b>CRC32s</b>, always click <strong>Yes</strong>.</li>
-                <li>In this next menu you can <strong>name the ModGroup</strong> and assign tags to each plugin involved (explained below). The fastest way to name it would be to select the mod you just enabled (in this case YUP) and then pressing CTRL+N.</li>
-                <img src="./img/base modgroup settings.webp" alt="Base ModGroup settings">
-                <li>xEdit will then ask you where to store this ModGroup, which means that whenever the chosen plugin is loaded, so will the ModGroup. So in this case, <strong>store it in YUP</strong>.</li>
+                <li>In this next menu you can <strong>name the Modgroup</strong> and assign tags to each plugin involved (explained below). The fastest way to name it would be to select the mod you just enabled (in this case YUP) and then pressing CTRL+N.</li>
+                <img src="./img/The Method/Base Modgroup Settings.webp" alt="Base Modgroup settings">
+                <li>xEdit will then ask you where to store this Modgroup, which means that whenever the chosen plugin is loaded, so will the Modgroup. So in this case, <strong>store it in YUP</strong>.</li>
                 <li><strong>Close xEdit</strong>.</li>
-                <li>The ModGroup just created will appear in the overwrite folder of MO2, simply take that file and <strong>drag it to the corresponding mod</strong>, which is again, YUP.</li>
+                <li>The Modgroup just created will appear in the overwrite folder of MO2, simply take that file and <strong>drag it to the corresponding mod</strong>, which is again, YUP.</li>
             </ol>
             </p>
             <p>
@@ -167,11 +167,11 @@
                 </a>
                 The most important ones are Target and Source, which are strictly related. The other tags won't be used very often and you can skip them if you wish to simplify learning.
             <ol>
-                <li><b>Optional</b>: Having this plugin disabled will not invalidate the ModGroup, so the remaining conflicts will still be hidden correctly.</li>
+                <li><b>Optional</b>: Having this plugin disabled will not invalidate the Modgroup, so the remaining conflicts will still be hidden correctly.</li>
                 <li><strong><b>Target</b></strong>: Any conflicting override between this plugin and other sources below will be hidden.</li>
                 <li><strong><b>Source</b></strong>: Any conflicting override between this plugin and other targets above will be hidden.</li>
-                <li><b>Forbidden</b>: The ModGroup becomes invalid if this plugin is loaded.</li>
-                <li><b>Ignore LO</b>: If this option is not selected, the plugin must adhere to the same load order as listed in this ModGroup. This column has two possible values:</li>
+                <li><b>Forbidden</b>: The Modgroup becomes invalid if this plugin is loaded.</li>
+                <li><b>Ignore LO</b>: If this option is not selected, the plugin must adhere to the same load order as listed in this Modgroup. This column has two possible values:</li>
                 <ul>
                     <li><b>Always</b>: The load order of the plugin is irrelevant.</li>
                     <li><b>In Block</b>: Plugins with this flag form a block when arranged consecutively. Any plugin above the block must load before any plugin within the block. Any plugin below the block must load after any plugin within the block. However, the plugins within the block can load in any order.</li>
@@ -180,30 +180,30 @@
             </p>
             <p>
                 <a>
-                    <h2 id="modgroupingMods">ModGrouping Mods</h2>
+                    <h2 id="modgroupingMods">Modgrouping Mods</h2>
                 </a>
-                Right after the base plugins ModGroup:
+                Right after the base plugins Modgroup:
             <ol>
                 <li><strong>Enable the next mod</strong> with a plugin,</li>
                 <li>Run <strong>VQSC</strong>,</li>
                 <li><strong>Patch where needed</strong>,</li>
                 <li><strong>Reload the conflicts filter</strong> by right-clicking the tree-view and selecting <code>Apply Filter to show Conflicts</code>,</li>
-                <li>If there are any, <strong>ModGroup the remaining conflicts</strong> (that are intentional/harmless) with the method explained below and <b>NOT</b> the one explained for the base ModGroup,</li>
-                <li>(<b>Optional</b>) <strong>Reload the conflicts filter</strong> like before if you want to make sure the ModGroup is hiding all conflicts as intended, the tree-view should result empty,</li>
+                <li>If there are any, <strong>Modgroup the remaining conflicts</strong> (that are intentional/harmless) with the method explained below and <b>NOT</b> the one explained for the base Modgroup,</li>
+                <li>(<b>Optional</b>) <strong>Reload the conflicts filter</strong> like before if you want to make sure the Modgroup is hiding all conflicts as intended, the tree-view should result empty,</li>
                 <li>Close xEdit and load the next mod, <strong>rinse and repeat</strong>.</li>
             </ol>
             <h3>Example</h3>
             <ol>
                 <li>I enabled the mod "Traps Tweaks - Traps Use Other Skills"</li>
                 <li>In xEdit with VQSC, many conflict with YUP showed up:</li>
-                <img src="./img/trap tweaks conflict.webp" alt="Trap Tweaks conflict with YUP">
-                <li>Since I already know the mod is meant to override YUP and the author took YUP's changes into account when editing those scripts, I can assume these conflicts do not need any intervention, so I can already ModGroup them.</li>
-                <img src="./img/modgrouping trap tweaks1.webp" alt="Modgrouping Trap Tweaks">
-                <li>As hinted before, the ModGrouping method now happens on the right-pane instead of the tree-view, which gives a more granular ModGroup and allows us to achieve the goal of a modular load order.</li>
-                <li>The tags are already correct thanks to this method of ModGrouping. <strong>A consistent naming scheme</strong> is important; mine is "Mod Name" (quickly copied by pressing CTRL+N on it) + the mod it is being ModGrouped against, which is YUP (quickly copied with CTRL+C and with its extension removed).</li>
-                <img src="./img/modgrouping trap tweaks2.webp" alt="Naming and tagging the ModGroup">
-                <li>Just to make sure that the ModGroup worked, I reapply the conflict filter and as expected, the tree-view becomes empty (because the only conflicts that were there are now hidden by the ModGroup just created).</li>
-                <img src="./img/empty tree-view.webp" alt="Empty tree-view thanks to the ModGroup">
+                <img src="./img/The Method/Trap Tweaks Conflict.webp" alt="Trap Tweaks conflict with YUP">
+                <li>Since I already know the mod is meant to override YUP and the author took YUP's changes into account when editing those scripts, I can assume these conflicts do not need any intervention, so I can already Modgroup them.</li>
+                <img src="./img/The Method/Modgrouping Trap Tweaks 1.webp" alt="Modgrouping Trap Tweaks">
+                <li>As hinted before, the Modgrouping method now happens on the right-pane instead of the tree-view, which gives a more granular Modgroup and allows us to achieve the goal of a modular load order.</li>
+                <li>The tags are already correct thanks to this method of Modgrouping. <strong>A consistent naming scheme</strong> is important; mine is "Mod Name" (quickly copied by pressing CTRL+N on it) + the mod it is being Modgrouped against, which is YUP (quickly copied with CTRL+C and with its extension removed).</li>
+                <img src="./img/The Method/Modgrouping Trap Tweaks 2.webp" alt="Naming and tagging the Modgroup">
+                <li>Just to make sure that the Modgroup worked, I reapply the conflict filter and as expected, the tree-view becomes empty (because the only conflicts that were there are now hidden by the Modgroup just created).</li>
+                <img src="./img/The Method/No Conflicts.webp" alt="No conflicts thanks to the Modgroup">
             </ol>
             </p>
         </div>
@@ -216,7 +216,7 @@
                 <a href="#requirements">Requirements</a>
             </li>
             <li>
-                <a href="#baseMg">Base Plugins ModGroup</a>
+                <a href="#baseMg">Base Plugins Modgroup</a>
             </li>
             <ul>
                 <li>
@@ -224,7 +224,7 @@
                 </li>
             </ul>
             <li>
-                <a href="#modgroupingMods">ModGrouping Mods</a>
+                <a href="#modgroupingMods">Modgrouping Mods</a>
             </li>
         </ul>
     </div>
