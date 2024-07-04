@@ -43,9 +43,8 @@
     - NOT Safe Mid-game (Unless...)
 - Log all entries except:
     - Formatting changes that do not invalidate the previous.
-    - Wabbajack reuploads due to small errors such as versioning.
     - Information rewrites that do not invalidate the previous.
-    - Files on the VNV Resources page, these will be logged through the Wabbajack entry in the changelog that says: "Updated the following mods".
-    - Updates to MO2 ML, same reason as above.
+    - Wabbajack reuploads due to small errors such as versioning.
+    - Load Orders on the VNV Resources page, assume they are updated with each guide version.
 - If an operation (added/updated/removed) is done multiple times, turn it into a list.
 - If necessary, add a justification for a certain operation by using a comma after the mod name and explaining the reason.
