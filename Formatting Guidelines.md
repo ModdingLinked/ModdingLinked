@@ -3,16 +3,6 @@
 - Screen images are taken by Wall for higher detail.
 - MO2 images are taken with the default theme.
 
-# Section Formatting
-- All sections have a comment above.
-- Section titles are <h2>.
-- Subtitles are <h3>.
-- Comments match the name in the sidenav. The tags also match.
-- All sections in a tutorial page (such as Setup or MO2) are separated with 1 <br>.
-- <hr> is only used for the top and bottom of pages.
-- Paragraphs in the same section are separated by 2 <br>.
-- If it helps readability, phrases can be separated by a single <br>.
-
 # Grammar
 - American English.
 - Punctuation everywhere.
@@ -29,7 +19,7 @@
 # Mods
 - File section with file name.
 - If there's any extra files from external pages, link the page then the file as sublist.
-- FOMOD instructions are simply an ordered list with the exact entries and buttons to click in each step. Refer to # Grammar.
+- FOMOD instructions are simply an ordered list with the exact entries and buttons to click in each step. Refer to the Grammar section.
 
 # Blockquotes
 - Used for additional notes to the relevant section. Place among instructions or at the end depending on the situation.
@@ -37,7 +27,6 @@
 
 # Changelog
 - DD/MM/YY.
-- All changelogs are separated by an <hr>.
 - An update can be:
     - Safe Mid-Game
     - NOT Safe Mid-game (Unless...)
