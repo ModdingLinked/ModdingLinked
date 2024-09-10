@@ -15,6 +15,9 @@
 - <strong> is reserved for words that are very important to the current section or set of instructions, or are able to quick summarize them at a glance.
 - Bold text is for any mention of particular terms such as Root, or for prompts/buttons on screen that the user might see while following instructions.
 - Underline is for words that do not meet the criteria above but are often missed by users, you can see this as a subtle highlight but lower in hierarchy than the other 2.
+- Green cards are for information that wouldn't lead to issues even if ignored.
+- Yellow cards are for information that the user needs to be aware of.
+- Red cards are for information that, if ignored, would lead to bugs and/or crashes.
 
 # Mods
 - File section with file name.
