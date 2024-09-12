@@ -17,6 +17,7 @@
 - Underline is for words that do not meet the criteria above but are often missed by users, you can see this as a subtle highlight but lower in hierarchy than the other 2.
 
 # Note Cards
+- Basic cards are for paths.
 - Green cards are for information that wouldn't lead to issues even if ignored.
 - Yellow cards are for information that the user needs to be aware of.
 - Red cards are for information that, if ignored, would lead to bugs, crashes, and big wastes of time.
