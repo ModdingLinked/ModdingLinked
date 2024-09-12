@@ -19,7 +19,7 @@
 - Yellow cards are for information that the user needs to be aware of.
 - Red cards are for information that, if ignored, would lead to bugs, crashes, and big wastes of time.
 - Coco Nerd is for red cards, "Everything in this guide is written down for a reason!", and "If you run into any issues at any point in the guide".
-- Only center the "Everything in this guide is written down for a reason!" and "If you run into any issues at any point in the guide" cards.
+- Only center the "Everything in this guide is written down for a reason!", "If you run into any issues at any point in the guide", and "Enable all resources" cards.
 - No Coco Nerd for "If you already uninstalled the games" because they would take too much space.
 
 # Mods
