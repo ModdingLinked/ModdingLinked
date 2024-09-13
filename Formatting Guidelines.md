@@ -5,10 +5,10 @@
 
 # Grammar
 - American English.
-- Punctuation everywhere except in mod installation steps.
+- Punctuation everywhere except in the file name lines (Main Files etc...) and FOMOD steps.
 - Lists of instructions end in full stop.
 - Lists of single items end in comma then full stop at the last entry.
-- Lists ending in spans should not get punctuation.
+- List entries ending in spans should not get punctuation.
 - Avoid referring to ourselves with singular forms (e.g. "I think the best theme is..."), refer to us as "we" but try to generalize info.
 
 # Highlighting
