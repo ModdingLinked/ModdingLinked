@@ -41,3 +41,6 @@
     - Load Orders on the VNV Resources page, assume they are updated with each guide version.
 - If an operation (added/updated/removed) is done multiple times, turn it into a list.
 - If necessary, add a justification for a certain operation by using a comma after the mod name and explaining the reason.
+- If moving a mod:
+    - Title as the old section,
+    - Moved x to the new section (bold)
