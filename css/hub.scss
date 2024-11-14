@@ -1,0 +1,116 @@
+.hubPicker {
+    display: flex;
+    flex-wrap: wrap;
+    height: 60vh;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow-x: hidden;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+    outline: 1px solid rgba(0, 0, 0, 10%);
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 5.12%);
+}
+
+
+.hubColumn {
+    flex-basis: 15%;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hubColumn .blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hubColumn .blur:hover {
+    backdrop-filter: blur(0px);
+}
+
+.hubColumn a {
+    color: white;
+    text-decoration: none;
+}
+
+.hubColumn h2 {
+    font-size: 3.4em;
+    margin: 10em 0 0.2em 0;
+    padding: 0;
+    line-height: 1em;
+    text-shadow: 0.05em 0.075em 0.1em rgba(0, 0, 0, 0.7);
+}
+
+.hubColumn p {
+    font-size: 1.7em;
+    margin: 0em 0 0.2em 0;
+    text-shadow: 0em 0.1em 5pt rgb(0, 0, 0);
+}
+
+.blur {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    backdrop-filter: saturate(100%) blur(0.5px);
+}
+
+.hubContainer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hubContent {
+    margin-top: 1em;
+    margin-left: 7.5em;
+    margin-right: 7.5em;
+    padding: 0 2em;
+}
+
+
+// ModdingLinked
+
+#vnv {
+    background-image: url("../img/Banners/VNV.webp");
+}
+
+#tbot {
+    background-image: url('../img/Banners/TBoT.webp');
+}
+
+#tmr {
+    background-image: url('../img/Banners/TMR.webp');
+}
+
+@media (max-width: 768px) {
+    .hubColumn {
+        flex-basis: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hubColumn {
+        flex-basis: 75%;
+    }
+}

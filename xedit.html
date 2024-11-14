@@ -5,267 +5,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preload" href="./css/style.css" as="style" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/x-icon" href="img\Logo.webp">
-    <link rel="canonical" href="https://moddinglinked.com">
-    <script src="https://kit.fontawesome.com/baff4f2fd4.js" crossorigin="anonymous"></script>
-    <script src="javascript.js"></script>
-    <title>Basics of xEdit - ModdingLinked</title>
-    <meta name="keywords" content="Viva New Vegas, The Best of Times, The Midnight Ride, Dragonborn's Fate, Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, FO4, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Fallout 4, Tale of Two Wastelands, xEdit">
-    <meta name="description" content="An introduction to xEdit and its use.">
+    <link rel="icon" href="img/Coco/Logo.webp">
+
+    <title>Basics of xEdit | ModdingLinked</title>
+
+    <meta name="keywords" content="Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, Fallout 4, FO4, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Tale of Two Wastelands, TTW, Wabbajack, WJ, Installer">
+    <meta name="description" content="Collection of Vanilla+ modding guides for the Fallout series of games.">
     <meta http-equiv='content-language' content='en-us'>
-    <meta name="twitter:card" value="summary">
-    <meta property="og:title" content="ModdingLinked">
+    <meta name="twitter:card" value="summary_large_image">
+    <meta property="og:site_name" content="ModdingLinked">
+    <meta property="og:title" content="Basics of xEdit | ModdingLinked">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://moddinglinked.com/">
-    <meta property="og:description" content="An introduction to xEdit and its use.">
+    <meta property="og:url" content="https://moddinglinked.com">
+    <meta property="og:image" content="https:/moddinglinked.com/img/Others/Card.webp">
+    <meta property="og:description" content="Collection of Vanilla+ modding guides for the Fallout series of games.">
+
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#282725">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta http-equiv='clear-site-data' content='cache'>
+
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/navigationArrows.css">
+    <link rel="stylesheet" href="css/progressBar.css">
+    <link rel="stylesheet" href="css/guideColors.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/images.css">
 </head>
 
-<body>
-
-    <!-- Titlebar -->
-    <div class="titlecontainer">
-        <div id="sideButton" onclick="toggleNav()">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <a href="./index.html">ModdingLinked</a>
-        <div class="guideLinks">
-            <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout New Vegas</a>
-            <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
-            <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
-        </div>
+<body class="theme">
+    <div class="progress-container">
+        <div class="progress-bar"></div>
     </div>
 
-    <!-- Left Sidebar -->
-    <div id="sidenavLeft">
-        <div>
-            <ul>
-                <li>
-                    <a href="./dogmas.html">Modding Dogmas</a>
-                </li>
-                <li>
-                    <a href="./xedit.html" class="active">Basics of xEdit</a>
-                </li>
-                <li>
-                    <a href="./themethod.html">The Method</a>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="header">
+            <div class="headerMenu" onclick="toggleNav()">
+                <img src="./img/UI/Navigation.svg" id="navButton">
+            </div>
+            <div class="headerTitle">
+                <img src="./img/Coco/Logo.webp" alt="Logo" id="logo">
+                <a href="./index.html" id="headerTitle">ModdingLinked</a>
+            </div>
+            <div class="guideLinks" id="headerLinks">
+                <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout: New Vegas</a>
+                <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
+                <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
+            </div>
         </div>
-
-        <!-- Guide Links -->
-        <div class="guideLinks">
-            <hr>
-            <ul>
-                <li>
-                    <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout New Vegas</a>
-                </li>
-                <li>
-                    <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
-                </li>
-                <li>
-                    <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Footer -->
-        <div id="footer">
-            <ul>
-                <li>
-                    <a href="https://discord.gg/S99Ary5eba" target="_blank">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </li>
-                <li>
-                    <a onclick="handleButtonClick(event, paypalMenu)">
-                        <i class="fa fa-paypal"></i>
-                    </a>
-                    <div id="paypalMenu" class="donoMenu" style="display: none;">
-                        <a href="https://www.paypal.com/paypalme/VishVadeva" target="_blank">
-                            VishVadeva
-                        </a>
-                        <a href="https://www.paypal.com/paypalme/wallsogb" target="_blank">
-                            Wall SoGB
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a onclick="handleButtonClick(event, kofiMenu)">
-                        <i class="fa fa-coffee"></i>
-                    </a>
-                    <div id="kofiMenu" class="donoMenu" style="display: none;">
-                        <a href="https://ko-fi.com/vishvadeva" target="_blank">
-                            VishVadeva
-                        </a>
-                        <a href="https://ko-fi.com/wall_sogb" target="_blank">
-                            Wall SoGB
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <div class="section">
-            <h1>Basics of xEdit</h1>
-            <p>xEdit is a tool for Bethesda titles that you can use to edit plugins (<b>.esp/.esm/.esl</b> files) and have a visual representation of how the edits overlap with the base game or other mods. This allows you to compare changes and easily do things such as patching, understanding what a mod does, editing mods or the vanilla game, and more.</p>
-            <p>
-                <a>
-                    <h2 id="setup">Setup</h2>
+        <div class="sidebar left-sidebar">
+            <p class="pageLinks">
+                <a href="./dogmas.html" title="Modding Dogmas">
+                    Modding Dogmas
                 </a>
-            <ol>
-                <li><strong>Download the latest xEdit release</strong> from the <a href="https://discord.gg/5t8RnNQ">xEdit Discord server</a>, in the <b>xedit-builds</b> channel.</li>
-                <li><strong>Extract the archive</strong> and place the files inside a folder of your choosing (do not use a UAC protected folder or the game folder).</li>
-                <li><strong>Add xEdit to the list of programs in Mod Organizer 2</strong> by pressing <b>CTRL + E</b> and then clicking <code>Add from file...</code>, then point it to the xEdit executable you extracted previously (not the x64 executable). (As with most modding tools, xEdit has to run through MO2 in order to see your mods.)</li>
-            </ol>
-            <blockquote>Avoid using the x64 executable as it may lead to rounding errors. It becomes necessary only when dealing with an extremely large volume of data (which is highly unlikely on older titles such as FNV) or during very long sessions.</blockquote>
-            <ol start="4">
-                <li>Based on the game you are modding, <strong>pass the corresponding argument</strong>. This is what tells xEdit what game it's meant to look for:
+                <a href="./xedit.html" title="Basics of xEdit">
+                    Basics of xEdit
+                </a>
+                <a href="./themethod.html" title="The Method">
+                    The Method
+                </a>
+            </p>
+            <p class="sidebar-padder"></p>
+            <hr>
+            <p class="sidebar-bottom">
+                <a href="https://discord.gg/S99Ary5eba" title="Discord">
+                    Discord
+                </a>
+                <a href="https://paypal.me/Ungeziefi" title="Donate">
+                    Donate
+                </a>
+                <a href="https://github.com/ModdingLinked/ModdingLinked" title="GitHub">
+                    GitHub
+                </a>
+            </p>
+        </div>
+
+        <div class="content">
+
+            <span id="Basics" class="section">
+                <h2 onclick="location.href='#Basics'">Basics of xEdit</h2>
+
+                <div class="card" id="Introduction">
+                    <p>
+                    <h3>Introduction</h3>
+                    xEdit is a tool for Bethesda titles that you can use to edit plugins (.esp/.esm/.esl files) and have a visual representation of how the edits overlap with the base game or other mods.
+                    <br>
+                    This allows you to compare changes and easily do things such as patching, understanding what a mod does, editing mods or the vanilla game, and more.
+                    </p>
+                </div>
+
+                <div class="card" id="Setup">
+                    <p>
+                    <h3 id="Setup">Setup</h3>
+                    <ol>
+                        <li><strong>Download the latest xEdit release</strong> from the <a href="https://discord.gg/5t8RnNQ">xEdit Discord server</a>, in the <b>xedit-builds</b> channel.</li>
+                        <li><strong>Extract the archive</strong> and place the files inside a folder of your choosing (do not use a UAC protected folder or the game folder).</li>
+                        <li><strong>Add xEdit to the list of programs in Mod Organizer 2</strong> by pressing <b>CTRL + E</b> and then clicking <span class="card-basic">Add from file...</span>, then point it to the xEdit executable you extracted previously (not the x64 executable). (As with most modding tools, xEdit has to run through MO2 in order to see your mods.)</li>
+                    </ol>
+                    <div class="card-yellow">
+                        <p>
+                            Avoid using the x64 executable as it may lead to rounding errors.
+                            <br>
+                            <br>
+                            It becomes necessary only when dealing with an extremely large volume of data (which is highly unlikely on older titles such as FNV) or during very long sessions.
+                        </p>
+                    </div>
+                    <ol start="4">
+                        <li>Based on the game you are modding, <strong>pass the corresponding argument</strong>. This is what tells xEdit what game it's meant to look for:
+                            <ul>
+                                <li>Oblivion: <span class="card-basic">-TES4</span></li>
+                                <li>Skyrim Legendary Edition: <span class="card-basic">-TES5</span></li>
+                                <li>Skyrim Special Edition: <span class="card-basic">-SSE</span> (AE or not is irrelevant)</li>
+                                <li>Fallout 3: <span class="card-basic">-FO3</span></li>
+                                <li>Fallout New Vegas: <span class="card-basic">-FNV</span></li>
+                                <li>Fallout 4: <span class="card-basic">-FO4</span> (This is what xEdit defaults to)</li>
+                            </ul>
+                        </li>
+                        <li>Run the program (always from MO2, for the reason stated before).</li>
+                    </ol>
+                    </p>
+                </div>
+
+                <div class="card" id="Terminology">
+                    <p>
+                    <h3 id="Terminology">Terminology</h3>
                     <ul>
-                        <li>Oblivion: <code>-TES4</code></li>
-                        <li>Skyrim Legendary Edition: <code>-TES5</code></li>
-                        <li>Skyrim Special Edition: <code>-SSE</code> (AE or not is irrelevant)</li>
-                        <li>Fallout 3: <code>-FO3</code></li>
-                        <li>Fallout New Vegas: <code>-FNV</code></li>
-                        <li>Fallout 4: <code>-FO4</code> (This is what xEdit defaults to)</li>
+                        <li>
+                            <b>Override</b>: Taking an existing record in a plugin and then editing it in another plugin.
+                            <br>
+                            <br>
+                            <b>FalloutNV.esm</b> originally created this script, then <b>OldWorldBlues.esm</b> <strong>edited it with an override</strong>.
+                            <br>
+                            <div class="image-container width-80">
+                                <img class="content-img" src="./img/xEdit/Example Override 1.webp" alt="Override example">
+                                <div class="resize-overlay expand"></div>
+                            </div>
+                        </li>
                     </ul>
-                </li>
-                <li>Run the program (always from MO2, for the reason stated before).</li>
-            </ol>
-            </p>
+                    <div class="card-green">
+                        <p>
+                            You can <strong>view the right-pane of xEdit as an Excel spreadsheet</strong> with <strong>as many columns as there are plugins editing that record</strong>. The game will only care about the right-most column, which is the the script Old World Blues has.
+                        </p>
+                    </div>
+                    <ul>
+                        <li>
+                            <b>Conflict</b>: This happens once you have multiple mods trying to edit a record.
+                            <br>
+                            xEdit will represent these conflicts based on their type and with different colors both for the background of that record and for the text (there's a legend on the top right corner of xEdit).
+                            <br>
+                            <br>
+                            <strong>YUP is fixing the Sight Usage</strong> value of the BB Gun, <strong>but the More Critical Damage mod is trying to increase Critical Damage</strong>.
+                            <br>
+                            The problem here is that the More Critical Damage mod was not made with YUP in mind, so it did not include that Sight Usage fix.
+                            <br>
+                            For this reason, <strong>we need to create a patch</strong> to forward the Sight Usage so that it is edited at the same time as the Critical Damage.
+                            <br>
+                            <div class="image-container width-80">
+                                <img class="content-img" src="./img/xEdit/Example Forwarding 1.webp" alt="Forwarding example">
+                                <div class="resize-overlay expand"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-red">
+                        <p>
+                            IMPORTANT: The colors of a record do <b>NOT</b> indicate whether you need to act or not, it's simply a classification of the type of conflict.
+                        </p>
+                        <p>
+                            Green <b>does not</b> mean good and red <b>does not</b> mean bad.
+                        </p>
+                    </div>
+                    <ul>
+                        <li>
+                            <b>Forwarding</b>: Taking a change from a plugin and copying it over to another plugin, most often used for patching conflicts.
+                            <br>
+                            <br>
+                            Once the patch is created for the conflict above, we went from a conflict that needed intervention to <strong>both changes taking effect</strong>.
+                            <div class="image-container width-80">
+                                <img class="content-img" src="./img/xEdit/Example Forwarding 2.webp" alt="Forwarding example 2">
+                                <div class="resize-overlay expand"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-green">
+                        <p>
+                            For the best modularity in your load order and to be able to keep track of all of your changes after the installation of a mod, <strong>it is a good idea to create patches as new plugins</strong> (just like the YUP Patch in the picture above), instead of editing the main plugin.
+                            <br>
+                            This also allows you to skip some work when the mod gets updated, since your patch would remain.
+                        </p>
+                    </div>
+                    </p>
+                </div>
+            </span>
 
-            <hr>
+            <span id="PluginStructure" class="section">
+                <h2 onclick="location.href='#PluginStructure'">Plugin Structure</h2>
 
-            <p>
-                <a>
-                    <h2 id="terminology">Terminology</h2>
-                </a>
-            <ul>
-                <li><b>Override</b>: Taking an existing record in a plugin and then editing it in another plugin.
+                <div class="card" id="WhatArePlugins" title="What are Plugins?">
+                    <p>
+                    <h3 id="WhatArePlugins">What are Plugins?</h3>
+                    You can think of plugins as <strong>a list of objects in unique containers</strong> divided based on what type of content is in them (for example one of the "containers" is called <b>WEAP</b>, inside which you fill find the game's weapons).
+                    <br>
+                    <strong>Each of these objects is a record</strong>. A record contains a bunch of information inside it about its functionality and characteristics.
+                    </p>
+                </div>
+
+                <div class="card-green center">
+                    <p>
+                        The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.
+                    </p>
+                </div>
+                
+                <div class="card" id="TheFormID" title="The FormID">
+                    <p>
+                    <h3 id="TheFormID">The FormID</h3>
+                    Each of these objects has it's own <strong>unique ID called FormID</strong>, written in HEX. A FormID is split in 2 parts, the <b>index</b> and the <b>ID</b> itself. The index (indicated by the first 2 digits for non-ESL plugins, the first 5 for ESL plugins) is an indicator of where the plugin that created that record is located in your load order.
                     <br>
                     <br>
-                    <b>FalloutNV.esm</b> originally created this script, then <b>OldWorldBlues.esm</b> <strong>edited it with an override</strong>.
-                    <img src="./img/xEdit/Example Override 1.webp" alt="Override example">
-                </li>
-            </ul>
-            <blockquote>You can <strong>view the right-pane of xEdit as an Excel spreadsheet</strong> with <strong>as many columns as there are plugins editing that record</strong>. The game will only care about the right-most column, which is the the script Old World Blues has.</blockquote>
-            <ul>
-                <li>
-                    <b>Conflict</b>: This happens once you have multiple mods trying to edit a record. xEdit will represent these conflicts based on their type and with different colors both for the background of that record and for the text (there's a legend on the top right corner of xEdit).
+                    In this picture, the record I expanded has the FormID <span class="card-basic">0316A4B</span>, that means that <strong>OldWorldBlues.esm created this record</strong> and it is placed at <b>index 3</b>, the the record's ID is <b>16A4B</b>.
+                    <br>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./img/xEdit/Index Example 1.webp" alt="Index example">
+                        <div class="resize-overlay expand"></div>
+                    </div>
                     <br>
                     <br>
-                    <strong>YUP is fixing the Sight Usage</strong> value of the BB Gun, <strong>but the More Critical Damage mod is trying to increase Critical Damage</strong>. The problem here is that the More Critical Damage mod was not made with YUP in mind, so it did not include that Sight Usage fix. For this reason, <strong>we need to create a patch</strong> to forward the Sight Usage so that it is edited at the same time as the Critical Damage.
-                    <img src="./img/xEdit/Example Forwarding 1.webp" alt="Forwarding example">
-                </li>
-            </ul>
-            <blockquote>IMPORTANT: The colors of a record do <b>NOT</b> indicate whether you need to act or not, it's simply a classification of the type of conflict. Green does not mean good and red does not mean bad.</blockquote>
-            <ul>
-                <li>
-                    <b>Forwarding</b>: Taking a change from a plugin and copying it over to another plugin, most often used for patching conflicts.
+                    If I then randomly select another record in the same plugin, there's a different index. This is because <strong>this record was not created by Old World Blues</strong>, but the DLC is actually editing a record that was first created by <b>FalloutNV.esm</b>, which sits at index 00 since it is the game's base plugin.
                     <br>
+                    <strong>This is an override</strong> and it is indicated by there being a color (a unique record with no other plugin involved would be blank, like in the first picture).
                     <br>
-                    Once the patch is created for the conflict above, we went from a conflict that needed intervention to <strong>both changes taking effect</strong>.
-                    <img src="./img/xEdit/Example Forwarding 2.webp" alt="Forwarding example 2">
-                </li>
-            </ul>
-            <blockquote>For the best modularity in your load order and to be able to keep track of all of your changes after the installation of a mod, <strong>it is a good idea to create patches as new plugins</strong> (just like the YUP Patch in the picture above), instead of editing the main plugin. This also allows you to skip some work when the mod gets updated, since your patch would remain.</blockquote>
-            </p>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./img/xEdit/Index Example 2.webp" alt="Index example 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    </p>
+                </div>
 
-            <hr>
+                <!-- FINISH IT! ADD MORE INFO! MASTERS VS ESPS! WHAT IS ONAM! -->
+            </span>
 
-            <p>
-                <a>
-                    <h2 id="pluginStructure">Plugin Structure</h2>
-                </a>
-                You can think of plugins as <strong>a list of objects in unique containers</strong> divided based on what type of content is in them (for example one of the "containers" is called <b>WEAP</b>, inside which you fill find the game's weapons). <strong>Each of these objects is a record</strong>. A record contains a bunch of information inside it about its functionality and characteristics.
-            </p>
-            <blockquote>The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.</blockquote>
-            <p>
-            <h3>The FormID</h3>
-            Each of these objects has it's own <strong>unique ID called FormID</strong>, written in HEX. A FormID is split in 2 parts, the <b>index</b> and the <b>ID</b> itself. The index (indicated by the first 2 digits for non-ESL plugins, the first 5 for ESL plugins) is an indicator of where the plugin that created that record is located in your load order.
-            <br>
-            <br>
-            In this picture, the record I expanded has the FormID <code>0316A4B</code>, that means that <strong>OldWorldBlues.esm created this record</strong> and it is placed at <b>index 3</b>, the the record's ID is <b>16A4B</b>.
-            <br>
-            <br>
-            <img src="./img/xEdit/Index Example 1.webp" alt="Index example">
-            <br>
-            <br>
-            If I then randomly select another record in the same plugin, there's a different index. This is because <strong>this record was not created by Old World Blues</strong>, but the DLC is actually editing a record that was first created by <b>FalloutNV.esm</b>, which sits at index 00 since it is the game's base plugin. <strong>This is an override</strong> and it is indicated by there being a color (a unique record with no other plugin involved would be blank, like in the first picture).
-            <br>
-            <br>
-            <img src="./img/xEdit/Index Example 2.webp" alt="Index example 2">
-            </p>
 
-            <hr>
+        </div>
 
-            <p>
-                <a>
-                    <h2 id="practicalExample">A Practical Example</h2>
-                </a>
-                Let's say I want to edit something in my game, such as the <strong>damage of the Varmint Rifle</strong>. Let's also assume that <strong>I don't know the FormID</strong> of that weapon:
-            <ol>
-                <li>Load all of your plugins (to not miss any mod edit to the same weapon).</li>
-                <img src="./img/xEdit/Example Loading Plugins.webp" alt="Loading all the plugins">
-                <li>Once everything has loaded the tips will go away and start looking for that gun by right-clicking any plugin on the <b>tree-view</b> (that's the list on the left) and selecting <code>Apply Filter</code>. This will open a menu with all sorts of criteria to filter by. First of all, uncheck all the boxes it has selected by default, then <strong>set up a custom filter</strong> that will find the weapon.</li>
-                <img src="./img/xEdit/Example Filter.webp" alt="Clearing and then using the filter">
-                <li><strong>Apply the filter</strong> by clicking <code>Filter</code> in the bottom-right corner.</li>
-                <li>In this case, the filter found multiple weapons. <strong>Expand the last plugin</strong> (so that this new override copies the latest instance of that weapon, since YUP edits it and those change should be preserved).</li>
-                <li>Right-click the Varmint Rifle, then select <code>Copy as override into...</code>. This will let you <strong>create a new plugin</strong> with a name of your choice where the damage change will happen.</li>
-                <li>To make a new plugin, select <code>&lt;new file&gt;.esp</code> in the prompt, then name it. Once created, it will appear at the bottom of the <b>tree-view</b> and <strong>a new override will appear on the right-pane</strong>.</li>
-                <li><strong>Filter for "damage"</strong> on the top left of the right-pane and edit the value to satisfaction.</li>
-                <img src="./img/xEdit/Example Override 2.webp" alt="Overriding a record and editing it">
-                <li>Once the mod is created, <strong>close xEdit</strong> and <strong>enable the plugin</strong> in MO2.</li>
-                <li>(<b>Optionally</b>) <strong>move it out of the overwrite folder</strong> into a new mod by right-clicking the overwrite or double-clicking it and dragging the plugin into a newly created empty mod.</li>
-            </ol>
-            </p>
-
-            <hr>
-
-            <p>
-                <a>
-                    <h2 id="tips">Some Tips</h2>
-                </a>
-            <ol>
-                <li>The <a href="https://discord.gg/5t8RnNQ">xEdit Discord server</a> also serves as a <strong>great place to search for information</strong>, such as what specific record fields do. You can do so by using the filter on the top right of the Discord app or by pressing CTRL+F.</li>
-                <li>When looking at records on the right-pane, you can <strong>exclude any unedited field</strong> by right-clicking anywhere and enabling <code>Hide no conflict and empty rows</code>. This is especially helpful when looking for conflicts and when patching, since it hides all the fields that aren't of interest, grouping up all the ones that you need.</li>
-                <img src="./img/xEdit/Hide Rows.webp" alt="Hide no conflict and empty rows toggle">
-                <li>Once you have enough confidence with the tool and want to <strong>get rid of the annoying timed warning</strong> when trying to make an edit, add <code>-IKnowWhatImDoing</code> to the arguments field of xEdit in MO2.</li>
-                <li>If you think you made an <strong>error after saving multiple times</strong>, do not be alarmed. xEdit will not actually save into the original plugin until the tool is closed. Temporary saves will be sent to overwrite folder of MO2 and they will have a timestamp appended to their extension. Simply backup the exact version you want to roll back to, and close xEdit.</li>
-                <li><strong>Scan for errors in a session with only that specific mod + its masters loaded</strong>. This prevents false positives caused by additional mods editing linked records later in the load order.</li>
-            </ol>
+        <div class="sidebar right-sidebar">
+            <p id="sidebarContent">
             </p>
         </div>
     </div>
 
-    <!-- Right Sidebar -->
-    <div id="sidenavRight">
-        <ul>
-            <li>
-                <a href="#setup">Setup</a>
-            </li>
-            <li>
-                <a href="#terminology">Terminology</a>
-            </li>
-            <li>
-                <a href="#pluginStructure">Plugin Structure</a>
-            </li>
-            <li>
-                <a href="#practicalExample">A Practical Example</a>
-            </li>
-            <li>
-                <a href="#tips">Some Tips</a>
-            </li>
-        </ul>
+    <footer>ModdingLinked 2024</footer>
+
+    <div id="image-overlay" class="overlay" hidden>
+        <div class="image-container">
+            <img id="enlarged-image" class="enlarged-image" src="" alt="Enlarged Image">
+            <div class="resize-overlay shrink"></div>
+        </div>
     </div>
+
 </body>
 
 </html>
