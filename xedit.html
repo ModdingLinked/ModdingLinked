@@ -10,7 +10,7 @@
     <title>Basics of xEdit | ModdingLinked</title>
 
     <meta name="keywords" content="Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, Fallout 4, FO4, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Tale of Two Wastelands, TTW, Wabbajack, WJ, Installer">
-    <meta name="description" content="Collection of Vanilla+ modding guides for the Fallout series of games.">
+    <meta name="description" content="An introduction to xEdit and its use.">
     <meta http-equiv='content-language' content='en-us'>
     <meta name="twitter:card" value="summary_large_image">
     <meta property="og:site_name" content="ModdingLinked">
@@ -18,7 +18,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://moddinglinked.com">
     <meta property="og:image" content="https:/moddinglinked.com/img/Others/Card.webp">
-    <meta property="og:description" content="Collection of Vanilla+ modding guides for the Fallout series of games.">
+    <meta property="og:description" content="An introduction to xEdit and its use.">
 
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#282725">
     <meta http-equiv='cache-control' content='no-cache'>
@@ -106,6 +106,7 @@
                         <li><strong>Extract the archive</strong> and place the files inside a folder of your choosing (do not use a UAC protected folder or the game folder).</li>
                         <li><strong>Add xEdit to the list of programs in Mod Organizer 2</strong> by pressing <b>CTRL + E</b> and then clicking <span class="card-basic">Add from file...</span>, then point it to the xEdit executable you extracted previously (not the x64 executable). (As with most modding tools, xEdit has to run through MO2 in order to see your mods.)</li>
                     </ol>
+
                     <div class="card-yellow">
                         <p>
                             Avoid using the x64 executable as it may lead to rounding errors.
@@ -114,6 +115,7 @@
                             It becomes necessary only when dealing with an extremely large volume of data (which is highly unlikely on older titles such as FNV) or during very long sessions.
                         </p>
                     </div>
+
                     <ol start="4">
                         <li>Based on the game you are modding, <strong>pass the corresponding argument</strong>. This is what tells xEdit what game it's meant to look for:
                             <ul>
@@ -146,11 +148,13 @@
                             </div>
                         </li>
                     </ul>
+
                     <div class="card-green">
                         <p>
                             You can <strong>view the right-pane of xEdit as an Excel spreadsheet</strong> with <strong>as many columns as there are plugins editing that record</strong>. The game will only care about the right-most column, which is the the script Old World Blues has.
                         </p>
                     </div>
+
                     <ul>
                         <li>
                             <b>Conflict</b>: This happens once you have multiple mods trying to edit a record.
@@ -170,6 +174,7 @@
                             </div>
                         </li>
                     </ul>
+
                     <div class="card-red">
                         <p>
                             IMPORTANT: The colors of a record do <b>NOT</b> indicate whether you need to act or not, it's simply a classification of the type of conflict.
@@ -178,6 +183,7 @@
                             Green <b>does not</b> mean good and red <b>does not</b> mean bad.
                         </p>
                     </div>
+
                     <ul>
                         <li>
                             <b>Forwarding</b>: Taking a change from a plugin and copying it over to another plugin, most often used for patching conflicts.
@@ -190,6 +196,7 @@
                             </div>
                         </li>
                     </ul>
+
                     <div class="card-green">
                         <p>
                             For the best modularity in your load order and to be able to keep track of all of your changes after the installation of a mod, <strong>it is a good idea to create patches as new plugins</strong> (just like the YUP Patch in the picture above), instead of editing the main plugin.
@@ -197,6 +204,7 @@
                             This also allows you to skip some work when the mod gets updated, since your patch would remain.
                         </p>
                     </div>
+
                     </p>
                 </div>
             </span>
@@ -218,7 +226,7 @@
                         The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.
                     </p>
                 </div>
-                
+
                 <div class="card" id="TheFormID" title="The FormID">
                     <p>
                     <h3 id="TheFormID">The FormID</h3>
@@ -245,8 +253,8 @@
                 </div>
 
                 <!-- FINISH IT! ADD MORE INFO! MASTERS VS ESPS! WHAT IS ONAM! -->
-            </span>
 
+            </span>
 
         </div>
 
