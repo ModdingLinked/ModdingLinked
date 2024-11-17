@@ -52,7 +52,7 @@
   transform: translateY(2px);
   width: 3px;
   height: 16px;
-  background-color: #ff0000;
+  background-color: rgba(255, 0, 0, 0.6156862745);
   border-radius: 8px;
 }
 
