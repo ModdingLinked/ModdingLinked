@@ -113,13 +113,13 @@
                                 <li>6700XT QICK 319, stock settings and driver-only install.</li>
                                 <li>P41 Plus SSD with Solidigm Synergy installed for improved I/O performance.</li>
                                 <li>2x16GB @ 3600Mbps.</li>
-                                <li>Windows 11 24H2.</li>
+                                <li>Windows 11 Pro.</li>
                             </ul>
                         </li>
-                        <li><a href="https://www.capframex.com/" target="_blank">CapFrameX</a>.</li>
+                        <li>Most benchmarks are done using <a href="https://www.capframex.com/" target="_blank">CapFrameX</a>, captures will be provided through download.</li>
                         <li>All entries in all tests are an aggregation of 3 identical 30s clean runs, this prevents any outliers.</li>
-                        <li>Results are provided through percentages relative to vanilla.</li>
-                        <li>All files will be provided, including screenshots if relevant.</li>
+                        <li>Results are provided through percentages relative to the base modlist (mods listed below).</li>
+                        <li>Due to the frequent updates, the driver and Windows version used will be specified by each benchmark.</li>
                     </ul>
                     <br>
                     Any test that differs from this setup will have a section dedicated to a similar list.
@@ -144,7 +144,7 @@
 
                             <div class="card-green">
                                 <p>
-                                    In the case of Fallout 4, the Papyrus VM performance is not an issue thanks to a barebones modlist and all the necessary fixes, including Buffout 4 NG which allows more operations per frame and High FPS Physics Fix which makes the timing dynamic and prone to less breakage at high framerates.
+                                    In the case of Fallout 4, the Papyrus VM performance is not an issue thanks to Buffout 4 NG which allows more operations per frame and High FPS Physics Fix which makes the timing dynamic and prone to less breakage at high framerates.
                                 </p>
                             </div>
 
@@ -175,8 +175,7 @@
                     </p>
                 </div>
 
-                <!-- Wall please edit the JS to make it add all these bench entries to the sidebar -->
-                <!-- Maybe put images in a 3 column grid? -->
+                <!-- Flex grid for images, then add support for image sliding (doesn't have to be in the grid)-->
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench1expander)" id="fo4bench1" title="PRP vs Roombounds">
                     <p>
@@ -211,14 +210,17 @@
                     </div>
                     <p>
                         The drop in performance from PRP is due to exclusions from Precombination necessary to fix visual bugs. The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.
-                        <br>
-                        <br>
+                        <hr>
                         Relevant links and mod versions:
                     <ul>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack</a> (74.16)</li>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/88987" target="_blank">Optimized Room Bounds and Portals</a> (002)</li>
                     </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
                     <br>
+                    Driver 24.10.1
+                    <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
                 </div>
@@ -230,10 +232,8 @@
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench2expander">
-                    <p>
-                        All results can have a variance up to 1s run to run. The speeds ups are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
 
-                        <!-- Style the table to fit ML -->
+                    <!-- Style the table to fit ML -->
 
                     <table border="1">
                         <tr>
@@ -269,20 +269,206 @@
                             <td>6.83s</td>
                         </tr>
                     </table>
+                    <p>
+                        All results can have a variance up to 1s run to run.
+                        <br>
+                        The speeds ups are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    Tested using the High FPS Physics Fix loading timer, no files available.</a>
+                    </p>
+                </div>
 
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench3expander)" id="fo4bench3">
+                    <p>
+                    <h3>Vanilla vs BethINI Pie Presets (23/4/24)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench3expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench4expander)" id="fo4bench4">
+                    <p>
+                    <h3>ENB & Various Presets (x/x/x)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench4expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench5expander)" id="fo4bench5">
+                    <p>
+                    <h3>Volumetrics & Godrays Performance Fix Redux (x/x/x)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench5expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench6expander)" id="fo4bench6">
+                    <p>
+                    <h3>Far Object LOD Improvement Project (x/x/x)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench6expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench7expander)" id="fo4bench7">
+                    <p>
+                    <h3>NAC X vs Lightweight Lighting (Weathers) (x/x/x)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench7expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench8expander)" id="fo4bench8">
+                    <p>
+                    <h3>ELFX vs Lightweight Lighting (Interiors) (x/x/x)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench8expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench9expander)" id="fo4bench9">
+                    <p>
+                    <h3>Pip-Boy Flashlight Shadows (x/x/x)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench9expander">
+                    <p>
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows 11 Pro Build 26100
+                    <br>
+                    Driver 24.10.1
+                    <hr>
+                    <a href="" target="_blank">Files</a>
                     </p>
                 </div>
 
                 <!-- Template
                 <div class="expander-top clickable" onclick="expandCard(this, fo4benchXexpander)" id="fo4benchX">
                     <p>
-                    <h3>mod (DD/MM/YY)</h3>
+                    <h3>X (x/x/x)</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4benchXexpander">
                     <p>
-
+                        Notes
+                        <hr>
+                        Relevant links and mod versions:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows version
+                    <br>
+                    Driver version
+                    <hr>
+                    <a href="" target="_blank">Files</a>
                     </p>
                 </div>
             -->
