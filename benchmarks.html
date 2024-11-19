@@ -225,92 +225,54 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench2expander)" id="fo4bench2" title="Long Loading Times Fix">
                     <p>
-                    <h3>Long Loading Times Fix (2/9/24)</h3>
+                    <h3>HFPF vs Long Loading Times Fix (2/9/24)</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench2expander">
                     <p>
-                        All results can have a variance up to 1s run to run.
+                        All results can have a variance up to 1s run to run. The speeds ups are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
 
                         <!-- Style the table to fit ML -->
 
                     <table border="1">
                         <tr>
-                            <th>Setup</th>
-                            <th>Scene</th>
-                            <th>Time</th>
+                            <th>Scenario</th>
+                            <th>60 Lock Loading and No Speed Ups from HFPF</th>
+                            <th>350 Lock Loading and No Speed Ups from HFPF</th>
+                            <th>No Lock Loading and No Speed Ups from HFPF</th>
+                            <th>350 Lock Loading + Speed Ups from HFPF</th>
+                            <th>350 Lock Loading + Speed Ups from HFPF + Long Loading Times Fix</th>
                         </tr>
                         <tr>
-                            <td rowspan="3"><b>60 lock loading and no speed ups from HFPF</b></td>
                             <td>Main menu -> Outside DC</td>
                             <td>15.57s</td>
-                        </tr>
-                        <tr>
-                            <td>Outside DC -> DC</td>
-                            <td>20.90s</td>
-                        </tr>
-                        <tr>
-                            <td>DC - Outside DC</td>
-                            <td>23.16s</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3"><b>350 lock loading and no speed ups from HFPF</b></td>
-                            <td>Main menu -> Outside DC</td>
                             <td>9.91s</td>
-                        </tr>
-                        <tr>
-                            <td>Outside DC -> DC</td>
-                            <td>6.92s</td>
-                        </tr>
-                        <tr>
-                            <td>DC - Outside DC</td>
-                            <td>9.16s</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3"><b>No lock loading and no speed ups from HFPF</b></td>
-                            <td>Main menu -> Outside DC</td>
                             <td>9.30s</td>
-                        </tr>
-                        <tr>
-                            <td>Outside DC -> DC</td>
-                            <td>17.20s</td>
-                        </tr>
-                        <tr>
-                            <td>DC - Outside DC</td>
-                            <td>29.91s</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3"><b>350 lock loading + speed ups from HFPF</b></td>
-                            <td>Main menu -> Outside DC</td>
                             <td>9.21s</td>
-                        </tr>
-                        <tr>
-                            <td>Outside DC -> DC</td>
-                            <td>3.25s</td>
-                        </tr>
-                        <tr>
-                            <td>DC - Outside DC</td>
-                            <td>5.79s</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3"><b>350 lock loading + speed ups from HFPF + Long Loading Times Fix</b></td>
-                            <td>Main menu -> Outside DC</td>
                             <td>9.10s</td>
                         </tr>
                         <tr>
                             <td>Outside DC -> DC</td>
+                            <td>20.90s</td>
+                            <td>6.92s</td>
+                            <td>17.20s</td>
+                            <td>3.25s</td>
                             <td>4.25s</td>
                         </tr>
                         <tr>
                             <td>DC - Outside DC</td>
+                            <td>23.16s</td>
+                            <td>9.16s</td>
+                            <td>29.91s</td>
+                            <td>5.79s</td>
                             <td>6.83s</td>
                         </tr>
                     </table>
 
                     </p>
                 </div>
-                
+
                 <!-- Template
                 <div class="expander-top clickable" onclick="expandCard(this, fo4benchXexpander)" id="fo4benchX">
                     <p>
