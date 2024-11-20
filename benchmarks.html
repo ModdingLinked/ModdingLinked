@@ -117,8 +117,7 @@
                             </ul>
                         </li>
                         <li>Most benchmarks are done using <a href="https://www.capframex.com/" target="_blank">CapFrameX</a>, captures will be provided through download.</li>
-                        <li>All entries in all tests are an aggregation of 3 identical 30s clean runs, this prevents any outliers.</li>
-                        <li>Results are provided through percentages relative to the base modlist (mods listed below).</li>
+                        <li>The mods used as a base are listed below.</li>
                         <li>Due to the frequent updates, the driver and Windows version used will be specified by each benchmark.</li>
                     </ul>
                     <br>
@@ -128,8 +127,11 @@
 
                 <div class="card" id="ThingsToKnow">
                     <p>
-                    <h3>Things To Know</h3>
+                    <h3>Notes & Methodology</h3>
                     <ul>
+                        <li>Results are provided through percentages relative to the base modlist.</li>
+                        <li>Don't give much consideration to 1% or 2% differences and a second or less of loading time, there is always margin of error.</li>
+                        <li>All entries in all tests are an aggregation of 3 identical 30s clean runs, this prevents any outliers.</li>
                         <li>Testing the effect of a mod on CPU-side performance requires being completely limited by the CPU while profiling, this can be done with a low enough resolution and a fast enough GPU.
                             <br>
                             In 99% of cases, you can tell you're CPU bound when the GPU core usage is not maxed out (99/100%).
@@ -179,11 +181,12 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench1expander)" id="fo4bench1" title="PRP vs Roombounds">
                     <p>
-                    <h3>PRP vs Roombounds - CPU Bound (16/11/24)</h3>
+                    <h3>PRP vs Roombounds - CPU Bound</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench1expander">
+
                     <div class="image-container width-80">
                         <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/AndrewStation01.png" alt="AndrewStation01">
                         <div class="resize-overlay expand"></div>
@@ -208,18 +211,19 @@
                         <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/Vault114.png" alt="Vault114">
                         <div class="resize-overlay expand"></div>
                     </div>
+
                     <p>
-                        The drop in performance from PRP is due to exclusions from Precombination necessary to fix visual bugs. The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.
+                        <b>Date of testing</b>: 16/11/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>: The drop in performance from PRP is due to some objects being excluded from Precombination, which is necessary to fix visual bugs. The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack</a> (74.16)</li>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/88987" target="_blank">Optimized Room Bounds and Portals</a> (002)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack Stable Branch - PRP</a> (74.16)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/88987" target="_blank">Optimized Room Bounds and Portals - No PreVis and PreCombines for Interior Cells</a> (002)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -227,7 +231,7 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench2expander)" id="fo4bench2" title="Long Loading Times Fix">
                     <p>
-                    <h3>HFPF vs Long Loading Times Fix (2/9/24)</h3>
+                    <h3>High FPS Physics Fix vs Long Loading Times Fix</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
@@ -238,14 +242,24 @@
                     <table border="1">
                         <tr>
                             <th>Scenario</th>
-                            <th>60 Lock Loading and No Speed Ups from HFPF</th>
-                            <th>350 Lock Loading and No Speed Ups from HFPF</th>
-                            <th>No Lock Loading and No Speed Ups from HFPF</th>
-                            <th>350 Lock Loading + Speed Ups from HFPF</th>
-                            <th>350 Lock Loading + Speed Ups from HFPF + Long Loading Times Fix</th>
+                            <th>60 FPS Loading</th>
+                            <th>350 FPS Loading</th>
+                            <th>No Loading Lock</th>
+                            <th>
+                                350 FPS Loading
+                                <span style="display: block;">+</span>
+                                HFPF Speed Ups
+                            </th>
+                            <th>
+                                350 FPS Loading
+                                <span style="display: block;">+</span>
+                                HFPF Speed Ups
+                                <span style="display: block;">+</span>
+                                Long Loading Times Fix
+                            </th>
                         </tr>
                         <tr>
-                            <td>Main menu -> Outside DC</td>
+                            <td>COC DiamondCityExterior</td>
                             <td>15.57s</td>
                             <td>9.91s</td>
                             <td>9.30s</td>
@@ -253,7 +267,7 @@
                             <td>9.10s</td>
                         </tr>
                         <tr>
-                            <td>Outside DC -> DC</td>
+                            <td>Entering DC</td>
                             <td>20.90s</td>
                             <td>6.92s</td>
                             <td>17.20s</td>
@@ -261,7 +275,7 @@
                             <td>4.25s</td>
                         </tr>
                         <tr>
-                            <td>DC - Outside DC</td>
+                            <td>Exiting DC</td>
                             <td>23.16s</td>
                             <td>9.16s</td>
                             <td>29.91s</td>
@@ -270,18 +284,17 @@
                         </tr>
                     </table>
                     <p>
-                        All results can have a variance up to 1s run to run.
-                        <br>
-                        The speeds ups are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
+                        <b>Date of testing</b>: 2/9/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>: The speeds ups mentioned are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/44798" target="_blank">High FPS Physics Fix</a> (0.8.6)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/73469" target="_blank">Long Loading Times Fix</a> (1.1.1)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     Tested using the High FPS Physics Fix loading timer, no files available.</a>
                     </p>
@@ -289,22 +302,22 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench3expander)" id="fo4bench3">
                     <p>
-                    <h3>Vanilla vs BethINI Pie Presets (23/4/24)</h3>
+                    <h3>Vanilla vs BethINI Pie Presets</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench3expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: 23/4/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/site/mods/631" target="_blank">Bethini Pie (Performance INI Editor)</a> (4.11)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -312,22 +325,25 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench4expander)" id="fo4bench4">
                     <p>
-                    <h3>ENB & Various Presets (x/x/x)</h3>
+                    <h3>ENB & Various Presets</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench4expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="http://enbdev.com/download_mod_fallout4.html" target="_blank">ENB</a> (0.501)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/58028" target="_blank">Spectrum - ENB for Lightweight Lighting</a> (1.2)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/16706" target="_blank">DECENT ENB - Natural and Performance Friendly</a> (1.5.1)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/57321" target="_blank">REACTOR - A FALLOUT4 ENB</a> (1.4.4)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -335,22 +351,22 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench5expander)" id="fo4bench5">
                     <p>
-                    <h3>Volumetrics & Godrays Performance Fix Redux (x/x/x)</h3>
+                    <h3>Volumetrics & Godrays Performance Fix Redux</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench5expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/80942" target="_blank">Godrays Performance Fix Redux</a> (2.1.1)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -358,22 +374,22 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench6expander)" id="fo4bench6">
                     <p>
-                    <h3>Far Object LOD Improvement Project (x/x/x)</h3>
+                    <h3>Far Object LOD Improvement Project</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench6expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/61884" target="_blank">Far Object LOD Improvement Project</a> (6.0.1)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -381,22 +397,23 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench7expander)" id="fo4bench7">
                     <p>
-                    <h3>NAC X vs Lightweight Lighting (Weathers) (x/x/x)</h3>
+                    <h3>NAC X vs Lightweight Lighting (Weathers)</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench7expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/57680" target="_blank">Lightweight Lighting - A weather and interior lighting overhaul</a> (4.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/46722" target="_blank">NAC X - NATURAL AND ATMOSPHERIC COMMONWEALTH 10 - Legacy Edition</a> (1.0.0)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -404,22 +421,24 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench8expander)" id="fo4bench8">
                     <p>
-                    <h3>ELFX vs Lightweight Lighting (Interiors) (x/x/x)</h3>
+                    <h3>ELFX vs Lightweight Lighting (Interiors)</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench8expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/57680" target="_blank">Lightweight Lighting - A weather and interior lighting overhaul</a> (4.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/13596" target="_blank">Enhanced Lights and FX</a> (1.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/64990" target="_blank">ELFX - PreVis PreCombine Patch</a> (2.1.4)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -427,22 +446,71 @@
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench9expander)" id="fo4bench9">
                     <p>
-                    <h3>Pip-Boy Flashlight Shadows (x/x/x)</h3>
+                    <h3>Pip-Boy Flashlight (Shadows)</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench9expander">
                     <p>
-                        Notes
+                        <b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/10840" target="_blank">Pip-Boy Flashlight (Pipboy - Power Armor - Lamp Overhaul)</a> (5.0.2)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    Windows 11 Pro Build 26100
-                    <br>
-                    Driver 24.10.1
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench10expander)" id="fo4bench10">
+                    <p>
+                    <h3>Various Flora Mods</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench10expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/69800" target="_blank">Make Like a Tree</a> (5.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/30673" target="_blank">Boston Natural Surroundings</a> (3.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/54027" target="_blank">Another Pine Forest Mod</a> (0.3)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/45330" target="_blank">A Forest</a> (0.8)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Files</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench11expander)" id="fo4bench11">
+                    <p>
+                    <h3>Faraway Area Reform</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench11expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/20713" target="_blank">FAR - Faraway Area Reform</a> (1.2)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
                     <hr>
                     <a href="" target="_blank">Files</a>
                     </p>
@@ -451,15 +519,17 @@
                 <!-- Template
                 <div class="expander-top clickable" onclick="expandCard(this, fo4benchXexpander)" id="fo4benchX">
                     <p>
-                    <h3>X (x/x/x)</h3>
+                    <h3>X</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4benchXexpander">
                     <p>
-                        Notes
+<b>Date of testing</b>: x/x/24
                         <hr>
-                        Relevant links and mod versions:
+                        <b>Notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
                     <ul>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
                     </ul>
