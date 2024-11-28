@@ -107,7 +107,7 @@
                     <p>
                     <h3>Hardware & Software Used</h3>
                     <ul>
-                        <li>All tests are conducted on the following system:
+                        <li>All tests are conducted on the following system at 1440p:
                             <ul>
                                 <li>5800X3D with -30 Curve Optimizer voltage offset to prevent any thermal throttling.</li>
                                 <li>6700XT QICK 319, stock settings and driver-only install.</li>
@@ -129,10 +129,9 @@
                     <p>
                     <h3>Methodology & Info</h3>
                     <ul>
-                        <li>Results are provided through percentages relative to the base modlist.</li>
                         <li>Don't give much consideration to 1% or 2% differences and a second or less of loading time, there is always margin of error.</li>
-                        <li>All entries in all tests are an aggregation of 3 identical 30s clean runs, this prevents any outliers.</li>
-                        <li>Testing the effect of a mod on CPU-side performance requires being completely limited by the CPU while profiling, this can be done with a low enough resolution and a fast enough GPU.
+                        <li>Any outlier result is corrected by aggregating more runs and leaving out weird ones.</li>
+                        <li>Testing the effect of a mod on CPU-side performance requires being completely limited by the CPU while profiling, this can be done with a low enough resolution and/or a fast enough GPU.
                             <br>
                             In 99% of cases, you can tell you're CPU bound when the GPU core usage is not maxed out (99/100%).
                             <br>
@@ -164,6 +163,7 @@
                     <p>
                     <h3>Modlist Used (OG EXE + NG Content)</h3>
                     <ul>
+                        <li>BethINI Pie Ultra</li>
                         <li>F4SE</li>
                         <li>Plugin Preloader</li>
                         <li>Address Library</li>
@@ -177,47 +177,52 @@
                     </p>
                 </div>
 
-                <!-- Flex grid for images, then add support for image sliding (doesn't have to be in the grid)-->
+                <!-- Flex grid for images (with scroll preferably) -->
 
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench1expander)" id="fo4bench1" title="PRP vs Roombounds">
                     <p>
-                    <h3>PRP vs Roombounds - CPU Bound</h3>
+                    <h3>PRP vs Roombounds</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench1expander">
 
                     <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/AndrewStation01.png" alt="AndrewStation01">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
                         <div class="resize-overlay expand"></div>
                     </div>
                     <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/BostonPublicLibrary02.png" alt="BostonPublicLibrary02">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/BostonPublicLibrary02.png" alt="BostonPublicLibrary02">
                         <div class="resize-overlay expand"></div>
                     </div>
                     <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/CollegeSquare01.png" alt="CollegeSquare01">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/CollegeSquare01.png" alt="CollegeSquare01">
                         <div class="resize-overlay expand"></div>
                     </div>
                     <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/DLC01FortHagenSatelliteArray01.png" alt="DLC01FortHagenSatelliteArray01">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/DLC01FortHagenSatelliteArray01.png" alt="DLC01FortHagenSatelliteArray01">
                         <div class="resize-overlay expand"></div>
                     </div>
                     <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/ParsonsState01.png" alt="ParsonsState01">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/ParsonsState01.png" alt="ParsonsState01">
                         <div class="resize-overlay expand"></div>
                     </div>
                     <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds - CPU Bound/Vault114.png" alt="Vault114">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/Vault114.png" alt="Vault114">
                         <div class="resize-overlay expand"></div>
                     </div>
 
                     <p>
                         <b>Date of testing</b>: 16/11/24
                         <hr>
-                        <b>Conclusion and notes</b>: The drop in performance from PRP is due to some objects being excluded from Precombination, which is necessary to fix visual bugs. The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.
-                        <hr>
-                        <b>Mod links and versions</b>:
+                        <b>Conclusion and notes</b>:
+                    <ul>
+                        <li>All runs were CPU bound.</li>
+                        <li>The drop in performance from PRP is due to some objects being excluded from Precombination, which is necessary to fix visual bugs.</li>
+                        <li>The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.</li>
+                    </ul>
+                    <hr>
+                    <b>Mod links and versions</b>:
                     <ul>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack Stable Branch - PRP</a> (74.16)</li>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/88987" target="_blank">Optimized Room Bounds and Portals - No PreVis and PreCombines for Interior Cells</a> (002)</li>
@@ -225,11 +230,11 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
-                <div class="expander-top clickable" onclick="expandCard(this, fo4bench2expander)" id="fo4bench2" title="Long Loading Times Fix">
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench2expander)" id="fo4bench2" title="HFPF vs Loading Times Fix">
                     <p>
                     <h3>High FPS Physics Fix vs Long Loading Times Fix</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
@@ -300,52 +305,117 @@
                     </p>
                 </div>
 
-                <div class="expander-top clickable" onclick="expandCard(this, fo4bench3expander)" id="fo4bench3">
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench3expander)" id="fo4bench3" title="Vanilla vs BethINI Pie">
                     <p>
                     <h3>Vanilla vs BethINI Pie Presets</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench3expander">
+
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/Vanilla - GPU Bound.png" alt="Vanilla - GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/Vanilla - CPU Bound.png" alt="Vanilla - CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/Vanilla - CPU Bound 2.png" alt="Vanilla - CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/BethINI Pie - GPU Bound.png" alt="BethINI Pie - GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/BethINI Pie - CPU Bound.png" alt="BethINI Pie - CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/BethINI Pie - CPU Bound 2.png" alt="BethINI Pie - CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/Vanilla vs BethINI Pie Presets - GPU Bound.png" alt="Vanilla vs BethINI Pie Presets - GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/Vanilla vs BethINI Pie Presets - CPU Bound.png" alt="Vanilla vs BethINI Pie Presets - CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs BethINI Pie Presets/Vanilla vs BethINI Pie Presets - CPU Bound 2.png" alt="Vanilla vs BethINI Pie Presets - CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+
                     <p>
-                        <b>Date of testing</b>: x/x/24
+                        <b>Date of testing</b>: 28/11/24
                         <hr>
                         <b>Conclusion and notes</b>:
-                        <hr>
-                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li>The BethINI Pie Poor preset, as expected, completely ruins visuals, so there's no point considering it for actual use.</li>
+                        <li>The difference between BethINI Pie High and Ultra is mainly in CPU performance (shadows, specifically). Ultra is recommended only if you have plenty of headroom and want the best visuals.</li>
+                    </ul>
+                    <hr>
+                    <b>Mod links and versions</b>:
                     <ul>
                         <li><a href="https://www.nexusmods.com/site/mods/631" target="_blank">Bethini Pie (Performance INI Editor)</a> (4.11)</li>
                         <li>Windows 11 Pro Build 26100</li>
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures and Images</a>
                     </p>
                 </div>
 
-                <div class="expander-top clickable" onclick="expandCard(this, fo4bench4expander)" id="fo4bench4">
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench4expander)" id="fo4bench4" title="ENB Presets">
                     <p>
-                    <h3>ENB & Various Presets</h3>
+                    <h3>ENB Presets</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench4expander">
+
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\ENB Presets/GPU Bound.png" alt="GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\ENB Presets/CPU Bound.png" alt="CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\ENB Presets/CPU Bound 2.png" alt="CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+
                     <p>
-                        <b>Date of testing</b>: x/x/24
+                        <b>Date of testing</b>: 28/11/24
                         <hr>
                         <b>Conclusion and notes</b>:
-                        <hr>
-                        <b>Mod links and versions</b>:
                     <ul>
-                        <li><a href="http://enbdev.com/download_mod_fallout4.html" target="_blank">ENB</a> (0.501)</li>
+                        <li>0.501 is reported to have bugs so 0.496 is used instead.</li>
+                        <li>The weather mods recommended by each ENB preset aren't used in order to avoid extra factors, visual comparison isn't the point here as it is highly subjective.</li>
+                        <li>DECENT ENB needed the DoF fix pinned in the post section.</li>
+                        <li>DECENT ENB for some reason has awful lows in the CPU bound test (confirmed with more runs).</li>
+                    </ul>
+                    <hr>
+                    <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="http://enbdev.com/download_mod_fallout4.html" target="_blank">ENB</a> (0.496)</li>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/58028" target="_blank">Spectrum - ENB for Lightweight Lighting</a> (1.2)</li>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/16706" target="_blank">DECENT ENB - Natural and Performance Friendly</a> (1.5.1)</li>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/57321" target="_blank">REACTOR - A FALLOUT4 ENB</a> (1.4.4)</li>
+                        <ul>
+                            <li><a href="https://www.nexusmods.com/fallout4/mods/56566" target="_blank">ENB Helper for Fallout 4</a> (1.0.2)</li>
+                        </ul>
                         <li>Windows 11 Pro Build 26100</li>
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -368,7 +438,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -391,7 +461,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -415,7 +485,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -440,7 +510,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -463,7 +533,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -489,7 +559,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -512,7 +582,7 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
 
@@ -538,7 +608,7 @@
                     <br>
                     Driver version
                     <hr>
-                    <a href="" target="_blank">Files</a>
+                    <a href="" target="_blank">Captures</a>
                     </p>
                 </div>
             -->
