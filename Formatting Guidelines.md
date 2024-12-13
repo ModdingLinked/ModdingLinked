@@ -1,6 +1,5 @@
 # Images
 - All images are .webp and in the matching folder.
-- Screen images are taken by Wall for higher detail.
 - MO2 images are taken with the default theme.
 
 # Grammar
@@ -48,3 +47,4 @@
 - If moving a mod:
     - Title as the old section,
     - Moved x to the new section (bold).
+- WJ mod update lists use the full mod name. Other log entries may shorten it.
