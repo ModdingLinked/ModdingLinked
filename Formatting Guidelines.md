@@ -42,6 +42,7 @@
     - Information rewrites that do not invalidate the previous.
     - Wabbajack reuploads due to small errors such as versioning.
     - Load Orders on the VNV Resources page, assume they are updated with each guide version.
+    - Changes to the avoid pages. Use "Updated information." under the Whole Guide section if there's enough changes across the guide.
 - If an operation (added/updated/removed) is done multiple times, turn it into a list.
 - If necessary, add a justification for a certain operation by using a comma after the mod name and explaining the reason.
 - If moving a mod:
