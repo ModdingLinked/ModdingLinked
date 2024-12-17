@@ -34,7 +34,7 @@
 
 # Changelog
 - DD/MM/YY.
-- An update can be:
+- An update can be (only specify if there changes that could affect this):
     - Safe Mid-Game
     - NOT Safe Mid-game (Unless...)
 - Log all entries except:
