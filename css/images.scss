@@ -82,15 +82,19 @@
 
 .logo-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 2em;
+    align-items: center;
+    max-width: 100%;
 }
 
 .logo-container img {
-    display: flex;
+    display: block;
     height: 256px !important;
     padding: 1em;
     user-select: none !important;
     pointer-events: none !important;
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 900px) {
@@ -109,5 +113,6 @@
     .logo-container {
         flex-direction: column;
         align-items: center;
+        gap: 1em;
     }
 }

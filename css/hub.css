@@ -83,13 +83,6 @@
   align-items: center;
 }
 
-.hubContent {
-  margin-top: 1em;
-  margin-left: 7.5em;
-  margin-right: 7.5em;
-  padding: 0 2em;
-}
-
 #vnv {
   background-image: url("../img/Banners/VNV.webp");
 }
