@@ -30,6 +30,27 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    a.blur {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+        transition: backdrop-filter 0.5s ease-in-out;
+
+        &:hover {
+            backdrop-filter: blur(0px);
+        }
+    }
 }
 
 .hubColumn .blur {
@@ -94,14 +115,54 @@
     background-image: url('../img/Banners/TMR.webp');
 }
 
-@media (max-width: 768px) {
+@media (max-height: 1024px) {
+    .hubPicker {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        min-height: auto;
+    }
+
     .hubColumn {
         flex-basis: 75%;
+        min-height: 33vh;
+    }
+
+    .hubColumn h2 {
+        margin: 1em 0 0.2em 0;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .logo-container img {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .hubPicker {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        min-height: auto;
+    }
+
     .hubColumn {
         flex-basis: 75%;
+        min-height: 33vh;
+    }
+
+    .hubColumn h2 {
+        margin: 1em 0 0.2em 0;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .logo-container img {
+        display: none;
     }
 }
