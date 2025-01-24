@@ -1,6 +1,5 @@
 # Images
 - All images are .webp and in the matching folder.
-- Screen images are taken by Wall for higher detail.
 - MO2 images are taken with the default theme.
 
 # Grammar
@@ -13,7 +12,11 @@
 
 # Highlighting
 - Strong is reserved for words that are very important to the current section or set of instructions, or are able to quick summarize them at a glance.
-- Bold text is for any mention of particular terms such as Root, or for prompts/buttons on screen that the user might see while following instructions.
+- Bold text is for any mention of particular terms such as Root, or for prompts/buttons on screen that the user might see while following instructions. The exceptions to this are:
+  - You can NOT skip any paragraphs/instructions and expect your game to function as it should.
+  - ARM64 systems are NOT supported due to Mod Organizer 2's lack of support.
+  - In Installation Location select an empty folder that is NOT the following:
+  - Moved x to the new section.
 - Underline is for words that do not meet the criteria above but are often missed by users, you can see this as a subtle highlight but lower in hierarchy than the other 2.
 
 # Note Cards
@@ -31,7 +34,7 @@
 
 # Changelog
 - DD/MM/YY.
-- An update can be:
+- An update can be (only specify if there changes that could affect this):
     - Safe Mid-Game
     - NOT Safe Mid-game (Unless...)
 - Log all entries except:
@@ -39,8 +42,10 @@
     - Information rewrites that do not invalidate the previous.
     - Wabbajack reuploads due to small errors such as versioning.
     - Load Orders on the VNV Resources page, assume they are updated with each guide version.
+    - Changes to the avoid pages. Use "Updated information." under the Whole Guide section if there's enough changes across the guide.
 - If an operation (added/updated/removed) is done multiple times, turn it into a list.
 - If necessary, add a justification for a certain operation by using a comma after the mod name and explaining the reason.
 - If moving a mod:
     - Title as the old section,
-    - Moved x to the new section (bold)
+    - Moved x to the new section (bold).
+- WJ mod update lists use the full mod name. Other log entries may shorten it.

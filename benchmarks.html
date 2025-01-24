@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/Coco/Logo.webp">
+
+    <title>Benchmarks | ModdingLinked</title>
+
+    <meta name="keywords" content="Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, Fallout 4, FO4, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Tale of Two Wastelands, TTW, Wabbajack, WJ, Installer">
+    <meta name="description" content="Collection of performance profiling results for various mods.">
+    <meta http-equiv='content-language' content='en-us'>
+    <meta name="twitter:card" value="summary_large_image">
+    <meta property="og:site_name" content="ModdingLinked">
+    <meta property="og:title" content="Basics of xEdit | ModdingLinked">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://moddinglinked.com">
+    <meta property="og:image" content="https:/moddinglinked.com/img/Others/Card.webp">
+    <meta property="og:description" content="Collection of performance profiling results for various mods.">
+
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#282725">
+    <meta name="darkreader-lock">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta http-equiv='clear-site-data' content='cache'>
+
+    <script src="imageViewer.js"></script>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/navigationArrows.css">
+    <link rel="stylesheet" href="css/progressBar.css">
+    <link rel="stylesheet" href="css/guideColors.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/images.css">
+</head>
+
+<body class="theme">
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="headerMenu" onclick="toggleNav()">
+                <img src="./img/UI/Navigation.svg" id="navButton">
+            </div>
+            <div class="headerTitle">
+                <img src="./img/Coco/Logo.webp" alt="Logo" id="logo">
+                <a href="./index.html" id="headerTitle">ModdingLinked</a>
+            </div>
+            <div class="guideLinks" id="headerLinks">
+                <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout: New Vegas</a>
+                <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
+                <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
+            </div>
+        </div>
+        <div class="sidebar left-sidebar">
+            <p class="pageLinks">
+                <a href="./dogmas.html" title="Modding Dogmas">
+                    Modding Dogmas
+                </a>
+                <a href="./xedit.html" title="Basics of xEdit">
+                    Basics of xEdit
+                </a>
+                <a href="./themethod.html" title="The Method">
+                    The Method
+                </a>
+                <a href="./benchmarks.html" title="Benchmarks">
+                    Benchmarks
+                </a>
+                <!-- <a href="./mo2.html" title="MO2 User Guide">
+                    MO2 User Guide
+                </a> -->
+            </p>
+            <p class="sidebar-padder"></p>
+            <hr>
+            <p class="sidebar-bottom">
+                <a href="https://discord.gg/S99Ary5eba" title="Discord">
+                    Discord
+                </a>
+                <a href="https://paypal.me/Ungeziefi" title="Donate">
+                    Donate
+                </a>
+                <a href="https://github.com/ModdingLinked/ModdingLinked" title="GitHub">
+                    GitHub
+                </a>
+            </p>
+        </div>
+
+        <div class="content">
+
+            <span id="Information" class="section">
+                <h2 onclick="location.href='#Introduction'">Introduction</h2>
+
+                <div class="card" id="Why">
+                    <p>
+                    <h3>Why?</h3>
+                    If you ever scrolled through popular mods for most Bethesda titles, you might have noticed the sheer amount that either claims a performance improvement, or improves visuals while ignoring the performance implications (or sometimes lying about it for downloads).
+                    </p>
+                </div>
+
+                <div class="card" id="HWSWUsed" title="Hardware & Software Used">
+                    <p>
+                    <h3>Hardware & Software Used</h3>
+                    <ul>
+                        <li>All tests are conducted on the following system at 1440p:
+                            <ul>
+                                <li>5800X3D with -30 Curve Optimizer voltage offset to prevent any thermal throttling.</li>
+                                <li>6700XT QICK 319, stock settings, and driver-only install.</li>
+                                <li>P41 Plus SSD with Solidigm Synergy installed for improved I/O performance.</li>
+                                <li>2x16GB @ 3600Mbps.</li>
+                                <li>Windows 11 Pro.</li>
+                            </ul>
+                        </li>
+                        <li>Most benchmarks are done using <a href="https://www.capframex.com/" target="_blank">CapFrameX</a>, captures will be provided through download.</li>
+                        <li>The mods used as a base are listed below.</li>
+                        <li>Due to the frequent updates, the driver and Windows version used will be specified by each benchmark.</li>
+                    </ul>
+                    <br>
+                    Any test that differs from this setup will have a section dedicated to a similar list.
+                    </p>
+                </div>
+
+                <div class="card" id="Methodology&ThingsToKnow" title="Methodology & Info">
+                    <p>
+                    <h3>Methodology & Info</h3>
+                    <ul>
+                        <li>Don't give much consideration to 1% or 2% differences and a second or less of loading time, there is always margin of error.</li>
+                        <li>Any outlier result is corrected by aggregating more runs and leaving out weird ones.</li>
+                        <li>Testing the effect of a mod on CPU-side performance requires being completely limited by the CPU while profiling, this can be done with a low enough resolution and/or a fast enough GPU.
+                            <br>
+                            In 99% of cases, you can tell you're CPU bound when the GPU core usage is not maxed out (99/100%).
+                            <br>
+                            Refer to <a href="https://youtu.be/O3FIXQwMOA4" target="_blank">this video</a> for more information.
+                        </li>
+                        <li>Even if some of the performance results seem so high in FPS, remember that performance gains/losses largely scale the same across different hardware, obviously assuming the testing enviroment is comparable and nothing weird is going on.
+                            <br>
+                            Always refer to performance differences in percentage and not absolute values.
+                        </li>
+                        <li>When testing performance you want to remove any factor unrelated to what the mod being tested affects. For this reason, AI is disabled during testing.
+
+                            <div class="card-green">
+                                <p>
+                                    In the case of Fallout 4, the Papyrus VM performance is not an issue thanks to Buffout 4 NG which allows more operations per frame and High FPS Physics Fix which makes the timing dynamic and prone to less breakage at high framerates.
+                                </p>
+                            </div>
+
+                        </li>
+                        <li>AI and scripting are too variable and would require a different (also far more complex) testing methodology, so no tests of that kind are considered.</li>
+                    </ul>
+                    </p>
+                </div>
+            </span>
+
+            <span id="Benchmarks" class="section">
+                <h2 onclick="location.href='#FO4Benchmarks'">FO4 Benchmarks</h2>
+
+                <div class="card" id="ModlistUsed">
+                    <p>
+                    <h3>Modlist Used (OG EXE + NG Content)</h3>
+                    <ul>
+                        <li>Bethini Pie Ultra</li>
+                        <li>F4SE</li>
+                        <li>Plugin Preloader</li>
+                        <li>Address Library</li>
+                        <li>Backported Archive2 Support System</li>
+                        <li>Better Console</li>
+                        <li>High FPS Physics Fix</li>
+                        <li>Unofficial Fallout 4 Patch</li>
+                        <li>Community Fixes Merged</li>
+                        <li>Buffout 4 NG</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <!-- Flex grid for images (with scroll preferably) -->
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench1expander)" id="fo4bench1" title="PRP vs Roombounds">
+                    <p>
+                    <h3>PRP vs Roombounds</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench1expander">
+
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/BostonPublicLibrary02.png" alt="BostonPublicLibrary02">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/CollegeSquare01.png" alt="CollegeSquare01">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/DLC01FortHagenSatelliteArray01.png" alt="DLC01FortHagenSatelliteArray01">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/ParsonsState01.png" alt="ParsonsState01">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/Vault114.png" alt="Vault114">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+
+                    <p>
+                        <b>Date of testing</b>: 16/11/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                    <ul>
+                        <li>All runs were CPU bound.</li>
+                        <li>The drop in performance from PRP is due to some objects being excluded from Precombination, which is necessary to fix visual bugs.</li>
+                        <li>The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.</li>
+                    </ul>
+                    <hr>
+                    <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack Stable Branch - PRP</a> (74.16)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/88987" target="_blank">Optimized Room Bounds and Portals - No PreVis and PreCombines for Interior Cells</a> (002)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench2expander)" id="fo4bench2" title="HFPF vs Loading Times Fix">
+                    <p>
+                    <h3>High FPS Physics Fix vs Long Loading Times Fix</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench2expander">
+
+                    <!-- Style the table to fit ML -->
+
+                    <table border="1">
+                        <tr>
+                            <th>Scenario</th>
+                            <th>60 FPS Loading</th>
+                            <th>350 FPS Loading</th>
+                            <th>No Loading Lock</th>
+                            <th>
+                                350 FPS Loading
+                                <span style="display: block;">+</span>
+                                HFPF Speed Ups
+                            </th>
+                            <th>
+                                350 FPS Loading
+                                <span style="display: block;">+</span>
+                                HFPF Speed Ups
+                                <span style="display: block;">+</span>
+                                Long Loading Times Fix
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>COC DiamondCityExterior</td>
+                            <td>15.57s</td>
+                            <td>9.91s</td>
+                            <td>9.30s</td>
+                            <td>9.21s</td>
+                            <td>9.10s</td>
+                        </tr>
+                        <tr>
+                            <td>Entering DC</td>
+                            <td>20.90s</td>
+                            <td>6.92s</td>
+                            <td>17.20s</td>
+                            <td>3.25s</td>
+                            <td>4.25s</td>
+                        </tr>
+                        <tr>
+                            <td>Exiting DC</td>
+                            <td>23.16s</td>
+                            <td>9.16s</td>
+                            <td>29.91s</td>
+                            <td>5.79s</td>
+                            <td>6.83s</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <b>Date of testing</b>: 2/9/24
+                        <hr>
+                        <b>Conclusion and notes</b>: The speeds ups mentioned are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/44798" target="_blank">High FPS Physics Fix</a> (0.8.6)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/73469" target="_blank">Long Loading Times Fix</a> (1.1.1)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    Tested using the High FPS Physics Fix loading timer, no files available.</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench3expander)" id="fo4bench3" title="Vanilla vs Bethini Pie">
+                    <p>
+                    <h3>Vanilla vs Bethini Pie Presets</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench3expander">
+
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Vanilla - GPU Bound.png" alt="Vanilla - GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Vanilla - CPU Bound.png" alt="Vanilla - CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Vanilla - CPU Bound 2.png" alt="Vanilla - CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Bethini Pie - GPU Bound.png" alt="Bethini Pie - GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Bethini Pie - CPU Bound.png" alt="Bethini Pie - CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Bethini Pie - CPU Bound 2.png" alt="Bethini Pie - CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Vanilla vs Bethini Pie Presets - GPU Bound.png" alt="Vanilla vs Bethini Pie Presets - GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Vanilla vs Bethini Pie Presets - CPU Bound.png" alt="Vanilla vs Bethini Pie Presets - CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\Vanilla vs Bethini Pie Presets/Vanilla vs Bethini Pie Presets - CPU Bound 2.png" alt="Vanilla vs Bethini Pie Presets - CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+
+                    <p>
+                        <b>Date of testing</b>: 28/11/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                    <ul>
+                        <li>The Bethini Pie Poor preset, as expected, completely ruins visuals, so there's no point considering it for actual use.</li>
+                        <li>The difference between Bethini Pie High and Ultra is mainly in CPU performance (shadows, specifically). Ultra is recommended only if you have plenty of headroom and want the best visuals.</li>
+                    </ul>
+                    <hr>
+                    <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/site/mods/631" target="_blank">Bethini Pie (Performance INI Editor)</a> (4.11)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures and Images</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench4expander)" id="fo4bench4" title="ENB Presets">
+                    <p>
+                    <h3>ENB Presets</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench4expander">
+
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\ENB Presets/GPU Bound.png" alt="GPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\ENB Presets/CPU Bound.png" alt="CPU Bound">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./benchmarks\ENB Presets/CPU Bound 2.png" alt="CPU Bound 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+
+                    <p>
+                        <b>Date of testing</b>: 28/11/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                    <ul>
+                        <li>0.501 is reported to have bugs so 0.496 is used instead.</li>
+                        <li>The weather mods recommended by each ENB preset aren't used in order to avoid extra factors, visual comparison isn't the point here as it is highly subjective.</li>
+                        <li>DECENT ENB needed the DoF fix pinned in the post section.</li>
+                        <li>DECENT ENB for some reason has awful lows in the CPU bound test (confirmed with more runs).</li>
+                    </ul>
+                    <hr>
+                    <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="http://enbdev.com/download_mod_fallout4.html" target="_blank">ENB</a> (0.496)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/58028" target="_blank">Spectrum - ENB for Lightweight Lighting</a> (1.2)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/16706" target="_blank">DECENT ENB - Natural and Performance Friendly</a> (1.5.1)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/57321" target="_blank">REACTOR - A FALLOUT4 ENB</a> (1.4.4)</li>
+                        <ul>
+                            <li><a href="https://www.nexusmods.com/fallout4/mods/56566" target="_blank">ENB Helper for Fallout 4</a> (1.0.2)</li>
+                        </ul>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <!-- To-Do
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench5expander)" id="fo4bench5">
+                    <p>
+                    <h3>Volumetrics & Godrays Performance Fix Redux</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench5expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/80942" target="_blank">Godrays Performance Fix Redux</a> (2.1.1)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench6expander)" id="fo4bench6">
+                    <p>
+                    <h3>Far Object LOD Improvement Project</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench6expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/61884" target="_blank">Far Object LOD Improvement Project</a> (6.0.1)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench7expander)" id="fo4bench7">
+                    <p>
+                    <h3>NAC X vs Lightweight Lighting (Weathers)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench7expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/57680" target="_blank">Lightweight Lighting - A weather and interior lighting overhaul</a> (4.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/46722" target="_blank">NAC X - NATURAL AND ATMOSPHERIC COMMONWEALTH 10 - Legacy Edition</a> (1.0.0)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench8expander)" id="fo4bench8">
+                    <p>
+                    <h3>ELFX vs Lightweight Lighting (Interiors)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench8expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/57680" target="_blank">Lightweight Lighting - A weather and interior lighting overhaul</a> (4.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/13596" target="_blank">Enhanced Lights and FX</a> (1.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/64990" target="_blank">ELFX - PreVis PreCombine Patch</a> (2.1.4)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench9expander)" id="fo4bench9">
+                    <p>
+                    <h3>Pip-Boy Flashlight (Shadows)</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench9expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/10840" target="_blank">Pip-Boy Flashlight (Pipboy - Power Armor - Lamp Overhaul)</a> (5.0.2)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench10expander)" id="fo4bench10">
+                    <p>
+                    <h3>Various Flora Mods</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench10expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/69800" target="_blank">Make Like a Tree</a> (5.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/30673" target="_blank">Boston Natural Surroundings</a> (3.0)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/54027" target="_blank">Another Pine Forest Mod</a> (0.3)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/45330" target="_blank">A Forest</a> (0.8)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, fo4bench11expander)" id="fo4bench11">
+                    <p>
+                    <h3>Faraway Area Reform</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4bench11expander">
+                    <p>
+                        <b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/20713" target="_blank">FAR - Faraway Area Reform</a> (1.2)</li>
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+            -->
+
+                <!-- Template
+                <div class="expander-top clickable" onclick="expandCard(this, fo4benchXexpander)" id="fo4benchX">
+                    <p>
+                    <h3>X</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom" id="fo4benchXexpander">
+                    <p>
+<b>Date of testing</b>: x/x/24
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/x" target="_blank">x</a> (x)</li>
+                    </ul>
+                    <hr>
+                    Windows version
+                    <br>
+                    Driver version
+                    <hr>
+                    <a href="" target="_blank">Captures</a>
+                    </p>
+                </div>
+            -->
+
+            </span>
+
+        </div>
+
+        <div class="sidebar right-sidebar">
+            <p id="sidebarContent">
+            </p>
+        </div>
+    </div>
+
+    <footer>ModdingLinked 2025</footer>
+
+    <div id="image-overlay" class="overlay" hidden>
+        <div class="image-container">
+            <img id="enlarged-image" class="enlarged-image" src="" alt="Enlarged Image">
+            <div class="resize-overlay shrink"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

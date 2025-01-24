@@ -5,225 +5,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preload" href="./css/style.css" as="style" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/x-icon" href="img\Logo.webp">
-    <link rel="canonical" href="https://moddinglinked.com">
-    <script src="https://kit.fontawesome.com/baff4f2fd4.js" crossorigin="anonymous"></script>
-    <script src="javascript.js"></script>
-    <title>The Method - ModdingLinked</title>
-    <meta name="keywords" content="Viva New Vegas, The Best of Times, The Midnight Ride, Dragonborn's Fate, Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, FO4, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Fallout 4, Tale of Two Wastelands, The Method">
-    <meta name="description" content="A full guide to The Method conflict resolution.">
+    <link rel="icon" href="img/Coco/Logo.webp">
+
+    <title>The Method | ModdingLinked</title>
+
+    <meta name="keywords" content="Fallout New Vegas, FNV, Fallout NV, Fallout, New Vegas, Fallout 4, FO4, Guide, Mod, Mods, Modding Guide, Bethesda, Stable, Performance, Fix, Help, DXVK, Fast, Easy, Tutorial, Mod Organizer, Nexus, Tale of Two Wastelands, TTW, Wabbajack, WJ, Installer">
+    <meta name="description" content="A guide to solving conflicts using The Method.">
     <meta http-equiv='content-language' content='en-us'>
-    <meta name="twitter:card" value="summary">
-    <meta property="og:title" content="ModdingLinked">
+    <meta name="twitter:card" value="summary_large_image">
+    <meta property="og:site_name" content="ModdingLinked">
+    <meta property="og:title" content="The Method | ModdingLinked">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://moddinglinked.com/">
-    <meta property="og:description" content="A full guide to The Method conflict resolution.">
+    <meta property="og:url" content="https://moddinglinked.com">
+    <meta property="og:image" content="https:/moddinglinked.com/img/Others/Card.webp">
+    <meta property="og:description" content="A guide to solving conflicts using The Method.">
+
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#282725">
+    <meta name="darkreader-lock">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta http-equiv='clear-site-data' content='cache'>
+
+    <script src="imageViewer.js"></script>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/navigationArrows.css">
+    <link rel="stylesheet" href="css/progressBar.css">
+    <link rel="stylesheet" href="css/guideColors.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/images.css">
 </head>
 
-<body>
-
-    <!-- Titlebar -->
-    <div class="titlecontainer">
-        <div id="sideButton" onclick="toggleNav()">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <a href="./index.html">ModdingLinked</a>
-        <div class="guideLinks">
-            <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout New Vegas</a>
-            <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
-            <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
-        </div>
+<body class="theme">
+    <div class="progress-container">
+        <div class="progress-bar"></div>
     </div>
 
-    <!-- Left Sidebar -->
-    <div id="sidenavLeft">
-        <div>
-            <ul>
-                <li>
-                    <a href="./dogmas.html">Modding Dogmas</a>
-                </li>
-                <li>
-                    <a href="./xedit.html">Basics of xEdit</a>
-                </li>
-                <li>
-                    <a href="./themethod.html" class="active">The Method</a>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="header">
+            <div class="headerMenu" onclick="toggleNav()">
+                <img src="./img/UI/Navigation.svg" id="navButton">
+            </div>
+            <div class="headerTitle">
+                <img src="./img/Coco/Logo.webp" alt="Logo" id="logo">
+                <a href="./index.html" id="headerTitle">ModdingLinked</a>
+            </div>
+            <div class="guideLinks" id="headerLinks">
+                <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout: New Vegas</a>
+                <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
+                <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
+            </div>
         </div>
-
-        <!-- Guide Links -->
-        <div class="guideLinks">
+        <div class="sidebar left-sidebar">
+            <p class="pageLinks">
+                <a href="./dogmas.html" title="Modding Dogmas">
+                    Modding Dogmas
+                </a>
+                <a href="./xedit.html" title="Basics of xEdit">
+                    Basics of xEdit
+                </a>
+                <a href="./themethod.html" title="The Method">
+                    The Method
+                </a>
+                <a href="./benchmarks.html" title="Benchmarks">
+                    Benchmarks
+                </a>
+                <!-- <a href="./mo2.html" title="MO2 User Guide">
+                    MO2 User Guide
+                </a> -->
+            </p>
+            <p class="sidebar-padder"></p>
             <hr>
-            <ul>
-                <li>
-                    <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout New Vegas</a>
-                </li>
-                <li>
-                    <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
-                </li>
-                <li>
-                    <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
-                </li>
-            </ul>
+            <p class="sidebar-bottom">
+                <a href="https://discord.gg/S99Ary5eba" title="Discord">
+                    Discord
+                </a>
+                <a href="https://paypal.me/Ungeziefi" title="Donate">
+                    Donate
+                </a>
+                <a href="https://github.com/ModdingLinked/ModdingLinked" title="GitHub">
+                    GitHub
+                </a>
+            </p>
         </div>
 
-        <!-- Footer -->
-        <div id="footer">
-            <ul>
-                <li>
-                    <a href="https://discord.gg/S99Ary5eba" target="_blank">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </li>
-                <li>
-                    <a onclick="handleButtonClick(event, paypalMenu)">
-                        <i class="fa fa-paypal"></i>
-                    </a>
-                    <div id="paypalMenu" class="donoMenu" style="display: none;">
-                        <a href="https://www.paypal.com/paypalme/VishVadeva" target="_blank">
-                            VishVadeva
-                        </a>
-                        <a href="https://www.paypal.com/paypalme/wallsogb" target="_blank">
-                            Wall SoGB
-                        </a>
+        <div class="content">
+
+            <span id="TheMethod" class="section">
+                <h2 onclick="location.href='#TheMethod'">The Method</h2>
+
+                <div class="card" id="Why">
+                    <p>
+                    <h3>Why?</h3>
+                    In order to make sure that all conflicts between your plugins are intended and/or harmless, you need to check conflicts with xEdit after each mod gets enabled. At every run you can choose how to patch the plugins involved and then you will hide the remaining conflicts thanks to xEdit's Modgroups system.
+                    <br>
+                    <br>
+                    At the end you will have a fully patched load order and every conflict that doesn't need intervention will be hidden, leaving room for additions and ease of patching.
+                    </p>
+                </div>
+
+                <div class="card" id="Requirements">
+                    <p>
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/site/mods/874" target="_blank">Mod Organizer 2</a>: Basic knowledge of the tool is required. You can check what your current version is by looking at its window name on the top left. Vortex is simply too slow and the way it handles load order just makes The Method a pain.
+
+                            <div class="card-red">
+                                <p>
+                                    Using MO2 2.4.4 and earlier will cause load order scrambling and other annoying issues.
+                                </p>
+                            </div>
+
+                        </li>
+                        <li><a href="./xedit.html" target="_blank">Basics of xEdit</a>.</li>
+                        <li>Plenty of <strong>time</strong>.</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div class="card" id="BasePluginsModgroup">
+
+                    <div class="card-yellow">
+                        <p>
+                            The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.</blockquote>
+                            The Method starts with a load order with <strong>only the base plugins and unofficial patch</strong>.
+                        </p>
                     </div>
-                </li>
-                <li>
-                    <a onclick="handleButtonClick(event, kofiMenu)">
-                        <i class="fa fa-coffee"></i>
-                    </a>
-                    <div id="kofiMenu" class="donoMenu" style="display: none;">
-                        <a href="https://ko-fi.com/vishvadeva" target="_blank">
-                            VishVadeva
-                        </a>
-                        <a href="https://ko-fi.com/wall_sogb" target="_blank">
-                            Wall SoGB
-                        </a>
+
+                    <p>
+                    <h3>Base Plugins Modgroup</h3>
+                    <ol>
+                        <li>Add <strong><span class="card">-VQSC</span></strong> to the arguments field of xEdit in MO2. This is a quick way to filter your current load order for conflicts. It is faster than a normal filter for conflicts because it skips loading/building the reference caches.</li>
+                        <li><strong>Run xEdit</strong> and wait for it to load the conflict filter.</li>
+                        <li>Since all of the conflicts between DLCs and between YUP and DLCs are accounted for, nothing needs patching here.</li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/Base Conflicts.webp" alt="Base conflicts">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                        <li><strong>Create a Modgroup</strong> for all these plugins by highlighting them (CTRL+A), right-clicking and then selecting <span class="card">Create Modgroup...</span></li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/Base Modgroup Creation.webp" alt="Base Modgroup">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                    </ol>
+
+                    <div class="card-red">
+                        <p>
+                            This method of creating a Modgroup by selecting plugins on the left-pane should only be used for this specific case (base plugins + unofficial patch), atleast until you fully understand tags work (next section).
+                        </p>
                     </div>
-                </li>
-                <li>
-                    <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- Content -->
-    <div class="content">
-        <div class="section">
-            <h1>The Method</h1>
-            <p>In order to make sure that all conflicts between your plugins are intended and/or harmless, you need to check conflicts with xEdit after each mod gets enabled. At every run you can choose how to patch the plugins involved and then you will hide the remaining conflicts thanks to xEdit's Modgroups system. At the end you will have a fully patched load order and every conflict that doesn't need intervention will be hidden, leaving room for additions and ease of patching.</p>
-            <p>
-                <a>
-                    <h2 id="requirements">Requirements</h2>
-                </a>
-            <ul>
-                <li><a href="https://github.com/ModOrganizer2/modorganizer/releases/download/v2.5.1rc2/Mod.Organizer-2.5.1rc2.7z" target="_blank">Mod Organizer 2</a>: Basic knowledge of the tool is required. You can check what your current version is by looking at its window name on the top left. Vortex is simply too slow and the way it handles load order just makes The Method a pain.
-                    <blockquote>
-                        <b>IMPORTANT:</b>
-                        <br>
-                        Using MO2 2.4.4 and earlier will cause load order scrambling and other annoying issues.
-                    </blockquote>
-                </li>
-                <li><a href="./xedit.html" target="_blank">Basics of xEdit</a>.</li>
-                <li>Plenty of <strong>time</strong>.</li>
-            </ul>
-            </p>
-            <p>
-                <a>
-                    <h2 id="baseMg">Base Plugins Modgroup</h2>
-                </a>
-            <blockquote>The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.</blockquote>
-            The Method starts with a load order that <strong>only contains the game's base plugins and the unofficial patch</strong>. In the case of New Vegas, that is <b>YUP</b>.
-            <ol>
-                <li><strong>Add <code>-VQSC</code></strong> to the arguments field of xEdit in MO2. This is a quick way to filter your current load order for conflicts. It is faster than a normal filter for conflicts because it skips loading/building the reference caches.</li>
-                <li><strong>Run xEdit</strong> and wait for it to load the conflict filter.</li>
-                <li>Since all of the conflicts <strong>between DLCs</strong> and <strong>between YUP and DLCs</strong> are accounted for, nothing needs patching here.</li>
-                <img src="./img/The Method/Base Conflicts.webp" alt="Base conflicts">
-                <li><strong>Create a Modgroup</strong> for all these plugins by highlighting them (CTRL+A), right-clicking and then selecting <code>Create Modgroup...</code>.</li>
-                <img src="./img/The Method/Base Modgroup Creation.webp" alt="Base Modgroup">
-            </ol>
-            <blockquote>This method of creating a Modgroup by selecting plugins on the left-pane should only be used for this specific case (base plugins + unofficial patch), unless you fully undestand how Modgroups work and the issue with this is.</blockquote>
-            <ol start="5">
-                <li>When asked to include the current <b>CRC32s</b>, always click <strong>Yes</strong>.</li>
-                <li>In this next menu you can <strong>name the Modgroup</strong> and assign tags to each plugin involved (explained below). The fastest way to name it would be to select the mod you just enabled (in this case YUP) and then pressing CTRL+N.</li>
-                <img src="./img/The Method/Base Modgroup Settings.webp" alt="Base Modgroup settings">
-                <li>xEdit will then ask you where to store this Modgroup, which means that whenever the chosen plugin is loaded, so will the Modgroup. So in this case, <strong>store it in YUP</strong>.</li>
-                <li><strong>Close xEdit</strong>.</li>
-                <li>The Modgroup just created will appear in the overwrite folder of MO2, simply take that file and <strong>drag it to the corresponding mod</strong>, which is again, YUP.</li>
-            </ol>
-            </p>
-            <p>
-                <a>
-                    <h2 id="tags">Tags</h2>
-                </a>
-                The most important ones are Target and Source, which are strictly related. The other tags won't be used very often and you can skip them if you wish to simplify learning.
-            <ol>
-                <li><b>Optional</b>: Having this plugin disabled will not invalidate the Modgroup, so the remaining conflicts will still be hidden correctly.</li>
-                <li><strong><b>Target</b></strong>: Any conflicting override between this plugin and other sources below will be hidden.</li>
-                <li><strong><b>Source</b></strong>: Any conflicting override between this plugin and other targets above will be hidden.</li>
-                <li><b>Forbidden</b>: The Modgroup becomes invalid if this plugin is loaded.</li>
-                <li><b>Ignore LO</b>: If this option is not selected, the plugin must adhere to the same load order as listed in this Modgroup. This column has two possible values:</li>
-                <ul>
-                    <li><b>Always</b>: The load order of the plugin is irrelevant.</li>
-                    <li><b>In Block</b>: Plugins with this flag form a block when arranged consecutively. Any plugin above the block must load before any plugin within the block. Any plugin below the block must load after any plugin within the block. However, the plugins within the block can load in any order.</li>
-                </ul>
-            </ol>
-            </p>
-            <p>
-                <a>
-                    <h2 id="modgroupingMods">Modgrouping Mods</h2>
-                </a>
-                Right after the base plugins Modgroup:
-            <ol>
-                <li><strong>Enable the next mod</strong> with a plugin,</li>
-                <li>Run <strong>VQSC</strong>,</li>
-                <li><strong>Patch where needed</strong>,</li>
-                <li><strong>Reload the conflicts filter</strong> by right-clicking the tree-view and selecting <code>Apply Filter to show Conflicts</code>,</li>
-                <li>If there are any, <strong>Modgroup the remaining conflicts</strong> (that are intentional/harmless) with the method explained below and <b>NOT</b> the one explained for the base Modgroup,</li>
-                <li>(<b>Optional</b>) <strong>Reload the conflicts filter</strong> like before if you want to make sure the Modgroup is hiding all conflicts as intended, the tree-view should result empty,</li>
-                <li>Close xEdit and load the next mod, <strong>rinse and repeat</strong>.</li>
-            </ol>
-            <h3>Example</h3>
-            <ol>
-                <li>I enabled the mod "Traps Tweaks - Traps Use Other Skills"</li>
-                <li>In xEdit with VQSC, many conflict with YUP showed up:</li>
-                <img src="./img/The Method/Trap Tweaks Conflict.webp" alt="Trap Tweaks conflict with YUP">
-                <li>Since I already know the mod is meant to override YUP and the author took YUP's changes into account when editing those scripts, I can assume these conflicts do not need any intervention, so I can already Modgroup them.</li>
-                <img src="./img/The Method/Modgrouping Trap Tweaks 1.webp" alt="Modgrouping Trap Tweaks">
-                <li>As hinted before, the Modgrouping method now happens on the right-pane instead of the tree-view, which gives a more granular Modgroup and allows us to achieve the goal of a modular load order.</li>
-                <li>The tags are already correct thanks to this method of Modgrouping. <strong>A consistent naming scheme</strong> is important; mine is "Mod Name" (quickly copied by pressing CTRL+N on it) + the mod it is being Modgrouped against, which is YUP (quickly copied with CTRL+C and with its extension removed).</li>
-                <img src="./img/The Method/Modgrouping Trap Tweaks 2.webp" alt="Naming and tagging the Modgroup">
-                <li>Just to make sure that the Modgroup worked, I reapply the conflict filter and as expected, the tree-view becomes empty (because the only conflicts that were there are now hidden by the Modgroup just created).</li>
-                <img src="./img/The Method/No Conflicts.webp" alt="No conflicts thanks to the Modgroup">
-            </ol>
+                    <ol start="5">
+                        <li>When asked to <strong>include CRC32s</strong>, always click <b>Yes</b>.</li>
+                        <li>In this next menu you can <strong>name the Modgroup</strong> and assign tags to each plugin involved (explained below). The fastest way to name it would be to select the mod you just enabled (in this case YUP) and then pressing CTRL+N.</li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/Base Modgroup Settings.webp" alt="Base Modgroup settings">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                        <li>xEdit will then ask you where to store this Modgroup, which means that whenever the chosen plugin is loaded, so will the Modgroup. So in this case, <strong>store it in YUP</strong>.</li>
+                        <li><strong>Close xEdit</strong>.</li>
+                        <li>The Modgroup just created will appear in the overwrite folder of MO2, simply take that file and <strong>drag it to the corresponding mod</strong>, which is again, YUP.</li>
+                    </ol>
+                    </p>
+                </div>
+
+                <div class="card" id="Tags">
+                    <p>
+                    <h3>Tags</h3>
+                    Tags are attributes tied to each plugin that is part of a Modgroup. The most important ones are <b>Target</b> and <b>Source</b>, which are strictly related. The other tags won't be used very often and you can skip them if you wish to simplify learning:
+                    <ol>
+                        <li><b>Optional</b>: Having this plugin disabled will not invalidate the Modgroup, so the remaining conflicts will still be hidden correctly.</li>
+                        <li><strong><b>Target</b></strong>: Any conflicting override between this plugin and other sources below will be hidden.</li>
+                        <li><strong><b>Source</b></strong>: Any conflicting override between this plugin and other targets above will be hidden.</li>
+                        <li><b>Forbidden</b>: The Modgroup becomes invalid if this plugin is loaded.</li>
+                        <li><b>Ignore LO</b>: If this option is not selected, the plugin must adhere to the same load order as listed in this Modgroup. This column has two possible values:</li>
+                        <ul>
+                            <li><b>Always</b>: The load order of the plugin is irrelevant.</li>
+                            <li><b>In Block</b>: Plugins with this flag form a block when arranged consecutively. Any plugin above the block must load before any plugin within the block. Any plugin below the block must load after any plugin within the block. However, the plugins within the block can load in any order.</li>
+                        </ul>
+                    </ol>
+                    </p>
+                </div>
+
+                <div class="card" id="ModgroupingOtherMods">
+                    <p>
+                    <h3>Modgrouping Other Mods</h3>
+                    Right after the base plugins Modgroup:
+                    <ol>
+                        <li><strong>Enable the next mod</strong> with a plugin.</li>
+                        <li>Run <strong>VQSC</strong>.</li>
+                        <li><strong>Patch if needed</strong>, this is why prior <a href="./xedit.html" target="_blank">knowledge of xEdit</a> is required to start using The Method.</li>
+                        <li><strong>Reload the conflicts filter</strong> by right-clicking the tree-view and selecting <code>Apply Filter to show Conflicts</code>,</li>
+                        <li>If there are any, <strong>Modgroup the remaining conflicts</strong> (that are intentional/harmless) with the method explained below,</li>
+                        <li>(<b>Optional</b>) <strong>Reload the conflicts filter</strong> like before if you want to make sure the Modgroup is hiding all conflicts as intended, the tree-view should result empty,</li>
+                        <li>Close xEdit and load the next mod, <strong>rinse and repeat</strong>.</li>
+                    </ol>
+                    <h3>Example</h3>
+                    <ol>
+                        <li>I enabled the mod "Traps Tweaks - Traps Use Other Skills"</li>
+                        <li>In xEdit with VQSC, many conflict with YUP showed up:</li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/Trap Tweaks Conflict.webp" alt="Trap Tweaks conflict with YUP">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                        <li>Since I already know the mod is meant to override YUP and the author took YUP's changes into account when editing those scripts, I can assume these conflicts do not need any intervention, so I can already Modgroup them.</li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/Modgrouping Trap Tweaks 1.webp" alt="Modgrouping Trap Tweaks">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                        <li>As hinted before, the Modgrouping method now happens on the right-pane instead of the tree-view, which gives a more granular Modgroup and allows us to achieve the goal of a modular load order.</li>
+                        <li>The tags are already correct thanks to this method of Modgrouping. <strong>A consistent naming scheme</strong> is important; mine is "Mod Name" (quickly copied by pressing CTRL+N on it) + the mod it is being Modgrouped against, which is YUP (quickly copied with CTRL+C and with its extension removed).</li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/Modgrouping Trap Tweaks 2.webp" alt="Naming and tagging the Modgroup">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                        <li>Just to make sure that the Modgroup worked, I reapply the conflict filter and as expected, the tree-view becomes empty (because the only conflicts that were there are now hidden by the Modgroup just created).</li>
+                        <div class="image-container width-80">
+                            <img class="content-img" src="./img/The Method/No Conflicts.webp" alt="No conflicts thanks to the Modgroup">
+                            <div class="resize-overlay expand"></div>
+                        </div>
+                    </ol>
+                    </p>
+                </div>
+
+            </span>
+
+        </div>
+
+        <div class="sidebar right-sidebar">
+            <p id="sidebarContent">
             </p>
         </div>
     </div>
 
-    <!-- Right Sidebar -->
-    <div id="sidenavRight">
-        <ul>
-            <li>
-                <a href="#requirements">Requirements</a>
-            </li>
-            <li>
-                <a href="#baseMg">Base Plugins Modgroup</a>
-            </li>
-            <ul>
-                <li>
-                    <a href="#tags">Tags</a>
-                </li>
-            </ul>
-            <li>
-                <a href="#modgroupingMods">Modgrouping Mods</a>
-            </li>
-        </ul>
+    <footer>ModdingLinked 2025</footer>
+
+    <div id="image-overlay" class="overlay" hidden>
+        <div class="image-container">
+            <img id="enlarged-image" class="enlarged-image" src="" alt="Enlarged Image">
+            <div class="resize-overlay shrink"></div>
+        </div>
     </div>
+
 </body>
 
 </html>
