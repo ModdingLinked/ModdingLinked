@@ -1,5 +1,6 @@
 # Images
 - All images are .webp and in the matching folder.
+- Conversion is done with [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html).
 - MO2 images are taken with the default theme.
 
 # Grammar
