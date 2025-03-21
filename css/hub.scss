@@ -51,39 +51,40 @@
             backdrop-filter: blur(0px);
         }
     }
-}
 
-.hubColumn .blur {
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+    .blur {
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-.hubColumn .blur:hover {
-    backdrop-filter: blur(0px);
-}
+    .blur:hover {
+        backdrop-filter: blur(0px);
+    }
 
-.hubColumn a {
-    color: white;
-    text-decoration: none;
-}
+    a {
+        color: white;
+        text-decoration: none;
+    }
 
-.hubColumn h2 {
-    font-size: 3.4em;
-    margin: 10em 0 0.2em 0;
-    padding: 0;
-    line-height: 1em;
-    text-shadow: 0.05em 0.075em 0.1em rgba(0, 0, 0, 0.7);
-}
+    h2 {
+        font-size: 3.4em;
+        margin: 20vh 0 0.2em 0;
+        padding: 0;
+        line-height: 1em;
+        text-shadow: 0.05em 0.075em 0.1em rgba(0, 0, 0, 0.7);
+    }
 
-.hubColumn p {
-    font-size: 1.7em;
-    margin: 0em 0 0.2em 0;
-    text-shadow: 0em 0.1em 5pt rgb(0, 0, 0);
+
+    p {
+        font-size: 1.7em;
+        margin: 0em 0 0.2em 0;
+        text-shadow: 0em 0.1em 5pt rgb(0, 0, 0);
+    }
 }
 
 .blur {
@@ -99,6 +100,13 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    margin-top: 5em;
+}
+
+.hubResources {
+    background-color: #2b2b2b;
+    z-index: 10;
+    display: flex;
 }
 
 // ModdingLinked
@@ -115,54 +123,54 @@
     background-image: url('../img/Banners/TMR.webp');
 }
 
-@media (max-height: 1024px) {
-    .hubPicker {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-        min-height: auto;
+@media (min-height: 1000px) {
+    .hubResources {
+        margin-top: -10vh;
     }
+}
 
+@media (max-width: 1440px) {
     .hubColumn {
-        flex-basis: 75%;
-        min-height: 33vh;
-    }
+        h2 {
+            font-size: 2.7em;
+        }
 
-    .hubColumn h2 {
-        margin: 1em 0 0.2em 0;
-    }
 
-    .logo-container {
-        display: none;
-    }
-
-    .logo-container img {
-        display: none;
+        p {
+            font-size: 1.2em;
+        }
     }
 }
 
 @media (max-width: 768px) {
+
     .hubPicker {
         flex-direction: column;
-        height: auto;
+        height: 50%;
         width: 100%;
         min-height: auto;
     }
 
     .hubColumn {
-        flex-basis: 75%;
-        min-height: 33vh;
+        flex-basis: 30%;
+        min-height: 25vh;
+
+        h2 {
+            font-size: 2em;
+            margin: 1em 0 0.2em 0;
+        }
+
+
+        p {
+            font-size: 1.3em;
+        }
     }
 
-    .hubColumn h2 {
-        margin: 1em 0 0.2em 0;
-    }
+    .hubResources {
+        //margin-top: -5vh;
 
-    .logo-container {
-        display: none;
-    }
-
-    .logo-container img {
-        display: none;
+        img {
+            display: none;
+        }
     }
 }
