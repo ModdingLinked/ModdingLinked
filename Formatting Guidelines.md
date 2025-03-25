@@ -15,7 +15,6 @@
 - Strong is reserved for words that are very important to the current section or set of instructions, or are able to quick summarize them at a glance.
 - Bold text is for any mention of particular terms such as Root, or for prompts/buttons on screen that the user might see while following instructions. The exceptions to this are:
   - You can NOT skip any paragraphs/instructions and expect your game to function as it should.
-  - ARM64 systems are NOT supported due to Mod Organizer 2's lack of support.
   - In Installation Location select an empty folder that is NOT the following:
   - Moved x to the new section.
 - Underline is for words that do not meet the criteria above but are often missed by users, you can see this as a subtle highlight but lower in hierarchy than the other 2.
