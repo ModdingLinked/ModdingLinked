@@ -106,6 +106,9 @@
   background-color: #2b2b2b;
   z-index: 10;
   display: flex;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #vnv {
@@ -122,7 +125,7 @@
 
 @media (min-height: 1000px) {
   .hubResources {
-    margin-top: -10vh;
+    margin-top: 2em;
   }
 }
 @media (max-width: 1440px) {
@@ -139,6 +142,7 @@
     height: 50%;
     width: 100%;
     min-height: auto;
+    margin-bottom: 1.5em;
   }
   .hubColumn {
     flex-basis: 30%;
