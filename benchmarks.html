@@ -40,8 +40,10 @@
     <meta http-equiv='pragma' content='no-cache'>
     <meta http-equiv='clear-site-data' content='cache'>
 
-    <script src="imageViewer.js"></script>
-    <script src="javascript.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/imageViewer.js"></script>
+    <script src="js/responsiveTitle.js"></script>
+    <script src="js/imageGallery.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/header.css">
@@ -51,6 +53,7 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/images.css">
     <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/imageGallery.css">
 </head>
 
 <body class="theme">
@@ -69,8 +72,8 @@
             </div>
             <div class="guideLinks" id="headerLinks">
                 <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout: New Vegas</a>
-                <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
                 <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
+                <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
             </div>
         </div>
         <div class="sidebar left-sidebar">
@@ -122,7 +125,7 @@
                     <p>
                     <h3>Hardware & Software Used</h3>
                     <ul>
-                        <li>All tests are conducted on the following system at 1440p:
+                        <li>All tests are conducted on the following system at 1440p (lower resolution for CPU bound tests):
                             <ul>
                                 <li>5800X3D with -30 Curve Optimizer voltage offset to prevent any thermal throttling.</li>
                                 <li>6700XT QICK 319, stock settings, and driver-only install.</li>
@@ -192,8 +195,6 @@
                     </p>
                 </div>
 
-                <!-- Flex grid for images (with scroll preferably) -->
-
                 <div class="expander-top clickable" onclick="expandCard(this, fo4bench1expander)" id="fo4bench1" title="PRP vs Roombounds">
                     <p>
                     <h3>PRP vs Roombounds</h3>
@@ -201,30 +202,21 @@
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench1expander">
+                    <div class="image-gallery width-80">
+                        <div class="gallery-container">
+                            <img class="gallery-current-image" src="./benchmarks/PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
+                            <div class="gallery-nav gallery-prev">❮</div>
+                            <div class="gallery-nav gallery-next">❯</div>
+                            <div class="gallery-counter"></div>
+                        </div>
+                        <div class="gallery-caption"></div>
 
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/BostonPublicLibrary02.png" alt="BostonPublicLibrary02">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/CollegeSquare01.png" alt="CollegeSquare01">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/DLC01FortHagenSatelliteArray01.png" alt="DLC01FortHagenSatelliteArray01">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/ParsonsState01.png" alt="ParsonsState01">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\PRP vs Roombounds/Vault114.png" alt="Vault114">
-                        <div class="resize-overlay expand"></div>
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/BostonPublicLibrary02.png" alt="BostonPublicLibrary02">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/CollegeSquare01.png" alt="CollegeSquare01">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/DLC01FortHagenSatelliteArray01.png" alt="DLC01FortHagenSatelliteArray01">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/ParsonsState01.png" alt="ParsonsState01">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/Vault114.png" alt="Vault114">
                     </div>
 
                     <p>
@@ -256,7 +248,6 @@
                     </p>
                 </div>
                 <div class="expander-bottom" id="fo4bench2expander">
-
                     <table>
                         <tr>
                             <th>Scenario</th>
@@ -326,17 +317,18 @@
                 </div>
                 <div class="expander-bottom" id="fo4bench3expander">
 
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\ENB Presets/GPU Bound.png" alt="GPU Bound">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\ENB Presets/CPU Bound.png" alt="CPU Bound">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./benchmarks\ENB Presets/CPU Bound 2.png" alt="CPU Bound 2">
-                        <div class="resize-overlay expand"></div>
+                    <div class="image-gallery width-80">
+                        <div class="gallery-container">
+                            <img class="gallery-current-image" src="./benchmarks/ENB Presets/GPU Bound.png" alt="GPU Bound">
+                            <div class="gallery-nav gallery-prev">❮</div>
+                            <div class="gallery-nav gallery-next">❯</div>
+                            <div class="gallery-counter"></div>
+                        </div>
+                        <div class="gallery-caption">GPU Bound</div>
+
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/ENB Presets/GPU Bound.png" alt="GPU Bound">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/ENB Presets/CPU Bound.png" alt="CPU Bound">
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/ENB Presets/CPU Bound 2.png" alt="CPU Bound 2">
                     </div>
 
                     <p>
@@ -377,6 +369,65 @@
                 Faraway Area Reform -->
 
             </span>
+
+            <!-- <span id="Benchmarks" class="section">
+                <h2 onclick="location.href='#SSEBenchmarks'">SSE Benchmarks</h2>
+
+                <div class="card" id="ModlistUsed">
+                    <p>
+                    <h3>Modlist Used (Latest version without AE DLC)</h3>
+                    <ul>
+                        <li>Bethini Pie High</li>
+                        <li>SKSE</li>
+                        <li>Address Library</li>
+                        <li>Engine Fixes</li>
+                        <li>Bug Fixes SSE</li>
+                        <li>Scrambled Bugs</li>
+                        <li>Display Tweaks</li>
+                        <li>Unofficial Skyrim Special Edition Patch</li>
+                        <li>ConsoleUtilSSE NG</li>
+                        <li>Autorun (tai/tcai/tgm)</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div class="expander-top clickable" onclick="expandCard(this, ssebench1expander)" id="ssebench1" title="x">
+                    <p>
+                    <h3>x</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+
+                <div class="expander-bottom" id="ssebench1expander">
+                    <div class="image-gallery width-80">
+                        <div class="gallery-container">
+                            <img class="gallery-current-image" src="./benchmarks/x.png" alt="x">
+                            <div class="gallery-nav gallery-prev">❮</div>
+                            <div class="gallery-nav gallery-next">❯</div>
+                            <div class="gallery-counter"></div>
+                        </div>
+                        <div class="gallery-caption"></div>
+
+                        <img class="gallery-image gallery-hidden" src="./benchmarks/x.png" alt="x">
+                    </div>
+
+                    <p>
+                        <b>Date of testing</b>: x
+                        <hr>
+                        <b>Conclusion and notes</b>:
+                    <p>x</p>
+                    <hr>
+                    <b>Mod links and versions</b>:
+                    <ul>
+                        x
+                        <li>Windows 11 Pro Build 26100</li>
+                        <li>Driver 24.10.1</li>
+                    </ul>
+                    <hr>
+                    <a href="https://github.com/ModdingLinked/ModdingLinked/blob/main/benchmarks/x" target="_blank">Captures</a>
+                    </p>
+                </div>
+            </span> -->
 
         </div>
 

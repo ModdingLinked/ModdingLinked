@@ -1,0 +1,90 @@
+.image-gallery {
+  position: relative;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.gallery-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-current-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  z-index: 5;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+.gallery-prev {
+  left: 0;
+  border-top-left-radius: 6pt;
+  border-bottom-left-radius: 6pt;
+}
+
+.gallery-next {
+  right: 0;
+  border-top-right-radius: 6pt;
+  border-bottom-right-radius: 6pt;
+}
+
+.gallery-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  z-index: 4;
+}
+
+.gallery-hidden {
+  display: none;
+}
+
+.gallery-caption {
+  text-align: center;
+  margin-top: 8px;
+  color: #ccc;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 700px) {
+  .image-gallery {
+    max-width: 95%;
+  }
+
+  .gallery-nav {
+    width: 40px;
+    opacity: 0.7;
+  }
+}
