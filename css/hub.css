@@ -123,6 +123,10 @@
   background-image: url("../img/Banners/TMR.webp");
 }
 
+#dbf {
+  background-image: url("../img/Banners/DBF.webp");
+}
+
 @media (min-height: 1000px) {
   .hubResources {
     margin-top: 2em;
@@ -136,13 +140,12 @@
     font-size: 1.2em;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1220px) {
   .hubPicker {
     flex-direction: column;
     height: 50%;
     width: 100%;
     min-height: auto;
-    margin-bottom: 1.5em;
   }
   .hubColumn {
     flex-basis: 30%;
