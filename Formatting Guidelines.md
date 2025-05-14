@@ -1,6 +1,8 @@
 # Images
 - All images are .webp and in the matching folder.
-- Conversion is done with [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html), using this script: `Get-ChildItem *.png | ForEach-Object { cwebp -q 80 -m 6 $_.Name -o ($_.BaseName + ".webp") }`
+- Conversion is done with [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html), using these scripts:  
+`Get-ChildItem *.png | ForEach-Object { cwebp -q 80 -m 6 $_.Name -o ($_.BaseName + ".webp") }`  
+`Get-ChildItem *.png | ForEach-Object { cwebp -lossless $_.Name -o ($_.BaseName + ".webp") }`
 - MO2 images are taken with the default theme.
 
 # Grammar
