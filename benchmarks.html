@@ -44,6 +44,10 @@
     <script src="js/imageViewer.js"></script>
     <script src="js/responsiveTitle.js"></script>
     <script src="js/imageGallery.js"></script>
+    <script src="js/imageSlider.js"></script>
+    <script src="js/benchmarkCharts.js"></script>
+    <script src="js/vramDiff.js"></script>
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/header.css">
@@ -54,6 +58,9 @@
     <link rel="stylesheet" href="css/images.css">
     <link rel="stylesheet" href="css/tables.css">
     <link rel="stylesheet" href="css/imageGallery.css">
+    <link rel="stylesheet" href="css/imageSlider.css">
+    <link rel="stylesheet" href="css/benchmarkCharts.css">
+    <link rel="stylesheet" href="css/vramDiff.css">
 </head>
 
 <body class="theme">
@@ -74,6 +81,7 @@
                 <a href="https://vivanewvegas.moddinglinked.com" target="_blank" rel="nofollow">Fallout: New Vegas</a>
                 <a href="https://themidnightride.moddinglinked.com" target="_blank" rel="nofollow">Fallout 4</a>
                 <a href="https://thebestoftimes.moddinglinked.com" target="_blank" rel="nofollow">Tale of Two Wastelands</a>
+                <a href="https://dragonbornsfate.moddinglinked.com" target="_blank" rel="nofollow">Skyrim SE</a>
             </div>
         </div>
         <div class="sidebar left-sidebar">
@@ -125,21 +133,10 @@
                     <p>
                     <h3>Hardware & Software Used</h3>
                     <ul>
-                        <li>All tests are conducted on the following system at 1440p (lower resolution for CPU bound tests):
-                            <ul>
-                                <li>5800X3D with -30 Curve Optimizer voltage offset to prevent any thermal throttling.</li>
-                                <li>6700XT QICK 319, stock settings, and driver-only install.</li>
-                                <li>P41 Plus SSD with Solidigm Synergy installed for improved I/O performance.</li>
-                                <li>2x16GB @ 3600Mbps.</li>
-                                <li>Windows 11 Pro.</li>
-                            </ul>
-                        </li>
-                        <li>Most benchmarks are done using <a href="https://www.capframex.com/" target="_blank">CapFrameX</a>, captures will be provided through download.</li>
-                        <li>The mods used as a base are listed below.</li>
-                        <li>Due to the frequent updates, the driver and Windows version used will be specified by each benchmark.</li>
+                        <li>HW and SW (including drivers) details can be viewed by hovering over the graph's title.</li>
+                        <li>Data is collected through <a href="https://www.capframex.com/" target="_blank">CapFrameX</a>, capture data is available for download in the <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">repository</a>.</li>
+                        <li>The mods used as a base are listed in each game's section. If a different list is used, it will be specified.</li>
                     </ul>
-                    <br>
-                    Any test that differs from this setup will have a section dedicated to a similar list.
                     </p>
                 </div>
 
@@ -147,8 +144,8 @@
                     <p>
                     <h3>Methodology & Info</h3>
                     <ul>
-                        <li>Don't give much consideration to 1% or 2% differences and a second or less of loading time, there is always margin of error.</li>
-                        <li>Any outlier result is corrected by aggregating more runs and leaving out weird ones.</li>
+                        <li>Don't give much consideration to 1% or 2% differences - there is always margin of error, especially when CPU bound.</li>
+                        <li>Any outlier result is corrected by aggregating more runs and excluding anomalous results.</li>
                         <li>Testing the effect of a mod on CPU-side performance requires being completely limited by the CPU while profiling, this can be done with a low enough resolution and/or a fast enough GPU.
                             <br>
                             In 99% of cases, you can tell you're CPU bound when the GPU core usage is not maxed out (99/100%).
@@ -156,88 +153,190 @@
                             Refer to <a href="https://youtu.be/O3FIXQwMOA4" target="_blank">this video</a> for more information.
                         </li>
                         <li>Even if some of the performance results seem so high in FPS, remember that performance gains/losses largely scale the same across different hardware, obviously assuming the testing enviroment is comparable and nothing weird is going on.
-                            <br>
-                            Always refer to performance differences in percentage and not absolute values.
-                        </li>
-                        <li>When testing performance you want to remove any factor unrelated to what the mod being tested affects. For this reason, AI is disabled during testing.
 
-                            <div class="card-green">
+                            <div class="card-yellow">
                                 <p>
-                                    In the case of Fallout 4, the Papyrus VM performance is not an issue thanks to Buffout 4 NG which allows more operations per frame and High FPS Physics Fix which makes the timing dynamic and prone to less breakage at high framerates.
+                                    Always interpret performance <strong>differences in percentages</strong>! Absolute values should only be considered for the sake of cross comparison, since the scenes used for testing might be shared.
+                                    <br>
+                                    <br>
+                                    For instance, telling people that a mod gives 30 more FPS while you're at 30 FPS equals to a 100% increase in performance. While it would mean only 15% at 200 FPS.
                                 </p>
                             </div>
 
                         </li>
-                        <li>AI and scripting are too variable and would require a different (also far more complex) testing methodology, so no tests of that kind are considered.</li>
+                        <li>In any (hopefully) scientific test, all variables should be controlled as much as possible. It would be unwise to test singular mods or changes in a very complex environment such as a long modlist. For the same reason, AI is disabled during all tests unless the subject of testing is AI-related.</li>
+                        <li>Most of the tests re-use the same save files for consistency, but some specific mods may require their own dedicated saves. The common saves will be provided for download in the <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">repository</a>.</li>
+                        <li>If a test does not include CPU or GPU bound results, assume that it doesn't affect those scenarios enough to be noticeable.</li>
                     </ul>
                     </p>
                 </div>
             </span>
 
-            <span id="Benchmarks" class="section">
-                <h2 onclick="location.href='#FO4Benchmarks'">FO4 Benchmarks</h2>
+            <!-- To-Do
+                FO4
+                    Bethini Pie
+                    PRP
+                    Pip-Boy Flashlight (Shadows)
+                    Various Flora Mods (Make Like a Tree, Boston Natural Surroundings, Another Pine Forest Mod, A Forest)
+                    Faraway Area Reform
+                    TMR LOD Guide
+                
+                SSE
+                    Bethini Pie
+                    Weather Mods
+                    ENB
+                    Grass Mods
+                    CS Suite
+                    HDT
 
-                <div class="card" id="ModlistUsed">
+                FNV
+                    VNV LOD Guide
+            -->
+
+            <span id="FNVBenchmarks" class="section">
+                <h2 onclick="location.href='#FNVBenchmarks'">FNV Benchmarks</h2>
+
+                <div class="card" id="Modlist">
                     <p>
-                    <h3>Modlist Used (OG EXE + NG Content)</h3>
+                    <h3>Modlist</h3>
                     <ul>
-                        <li>Bethini Pie Ultra</li>
-                        <li>F4SE</li>
-                        <li>Plugin Preloader</li>
-                        <li>Address Library</li>
-                        <li>Backported Archive2 Support System</li>
-                        <li>Better Console</li>
-                        <li>High FPS Physics Fix</li>
-                        <li>Unofficial Fallout 4 Patch</li>
-                        <li>Community Fixes Merged</li>
-                        <li>Buffout 4 NG</li>
+                        <li>VNV's Custom INI</li>
+                        <li>FNV 4GB Patcher</li>
+                        <li>xNVSE</li>
+                        <li>JIP LN NVSE Plugin</li>
+                        <li>JohnnyGuitar NVSE (All Tweaks Preset)</li>
+                        <li>NVTF - New Vegas Tick Fix</li>
+                        <li>kNVSE Animation Plugin</li>
+                        <li>UIO - User Interface Organizer</li>
+                        <li>FNV Mod Limit Fix</li>
+                        <li>Yukichigai Unofficial Patch - YUP</li>
+                        <li>lStewieAl's Tweaks and Engine Fixes</li>
+                        <li>lStewieAl's Engine Optimizations</li>
+                        <li>Faster Start Menu</li>
+                        <li>Testing commands (TAI, TCAI, FW NVWastelandClear)</li>
                     </ul>
+
+                    <div class="card-yellow">
+                        <p>
+                            <b>Notes</b>:
+                        <ul>
+                            <li>Some of the mods above will be tested individually, but the modlist will be used as baseline for the other tests.</li>
+                            <li>DXVK is not considered baseline due to its higher variance compared to D3D9 and the many cases of incompatibility.</li>
+                        </ul>
+                        </p>
+                    </div>
+
                     </p>
                 </div>
 
                 <div class="expander-top">
                     <p>
-                    <h3>PRP vs Roombounds</h3>
+                    <h3>Engine Optimizations</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
                 <div class="expander-bottom">
-                    <div class="image-gallery width-80">
-                        <div class="gallery-container">
-                            <img class="gallery-current-image" src="./benchmarks/PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
-                            <div class="gallery-nav gallery-prev">❮</div>
-                            <div class="gallery-nav gallery-next">❯</div>
-                            <div class="gallery-counter"></div>
-                        </div>
-                        <div class="gallery-caption"></div>
-
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/AndrewStation01.png" alt="AndrewStation01">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/BostonPublicLibrary02.png" alt="BostonPublicLibrary02">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/CollegeSquare01.png" alt="CollegeSquare01">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/DLC01FortHagenSatelliteArray01.png" alt="DLC01FortHagenSatelliteArray01">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/ParsonsState01.png" alt="ParsonsState01">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/PRP vs Roombounds/Vault114.png" alt="Vault114">
+                    <div data-chart-container="engineOptimizationsChart" data-chart-folder="./benchmarks/FNV/Engine Optimizations" data-chart-files="CPU Bound 1|CPU Bound 2|CPU Bound 3|CPU Bound 4">
                     </div>
 
+                    <div id="engineOptimizationsChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
                     <p>
-                        <b>Date of testing</b>: 16/11/24
-                        <hr>
                         <b>Conclusion and notes</b>:
+                        For some reason it may lower FPS lows considerably, but in most cases it still improves performance enough to be worth using.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
                     <ul>
-                        <li>All runs were CPU bound.</li>
-                        <li>The drop in performance from PRP is due to some objects being excluded from Precombination, which is necessary to fix visual bugs.</li>
-                        <li>The Previs system is far more granular than roombounds, so the Roombounds mod will never perform better unless it is hiding enough NPCs (which Previs can't do) to make up for the worse occlusion, as seen in College Square.</li>
+                        <li><a href="https://www.nexusmods.com/newvegas/mods/80993" target="_blank">lStewieAl's Engine Optimizations</a> (1.0)</li>
                     </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>New Vegas Tick Fix</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="nvtfChart" data-chart-folder="./benchmarks/FNV/NVTF" data-chart-files="CPU Bound 1|CPU Bound 2|CPU Bound 3|CPU Bound 4">
+                    </div>
+
+                    <div id="nvtfChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
                     <hr>
-                    <b>Mod links and versions</b>:
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        Essential.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
                     <ul>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack Stable Branch - PRP</a> (74.16)</li>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/88987" target="_blank">Optimized Room Bounds and Portals - No PreVis and PreCombines for Interior Cells</a> (002)</li>
-                        <li>Windows 11 Pro Build 26100</li>
-                        <li>Driver 24.10.1</li>
+                        <li><a href="https://www.nexusmods.com/newvegas/mods/66537" target="_blank">NVTF - New Vegas Tick Fix</a> (10.6)</li>
                     </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>DXVK</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="dxvkChart" data-chart-folder="./benchmarks/FNV/DXVK" data-chart-files="CPU Bound 1|CPU Bound 2|CPU Bound 3|CPU Bound 4">
+                    </div>
+
+                    <div id="dxvkChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
                     <hr>
-                    <a href="https://github.com/ModdingLinked/ModdingLinked/blob/main/benchmarks/PRP%20vs%20Roombounds/PRP%20vs%20Roombounds.7z" target="_blank">Captures</a>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        Increases CPU performance noticeably in most cases, but compatibility can vary a lot with different GPUs, drivers, and DXVK versions. Unless you're on the Linux AMD RADV drivers, it also causes dithering. All the information you'll need to use DXVK effectively is in the <a href="https://performance.moddinglinked.com/falloutnv.html" target="_blank">FNV Performance Guide</a>.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/newvegas/mods/79299" target="_blank">DXVK</a> (2.6.1)</li>
+                    </ul>
+                </div>
+            </span>
+
+            <span id="FO4Benchmarks" class="section">
+                <h2 onclick="location.href='#FO4Benchmarks'">FO4 Benchmarks</h2>
+
+                <div class="card" id="Modlist">
+                    <p>
+                    <h3>Modlist (OG EXE + NG Content)</h3>
+                    <ul>
+                        <li>Bethini Pie High</li>
+                        <li>F4SE</li>
+                        <li>Plugin Preloader</li>
+                        <li>Address Library</li>
+                        <li>Backported Archive2 Support System</li>
+                        <li>High FPS Physics Fix</li>
+                        <li>Unofficial Fallout 4 Patch</li>
+                        <li>Community Fixes Merged</li>
+                        <li>Buffout 4 NG</li>
+                    </ul>
                     </p>
                 </div>
 
@@ -294,88 +393,41 @@
                     </table>
                     <p>
                         <b>Date of testing</b>: 2/9/24
-                        <hr>
-                        <b>Conclusion and notes</b>: The speeds ups mentioned are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens.
-                        <hr>
-                        <b>Mod links and versions</b>:
+
+                        <br>
+                        <br>
+
+                        <b>Conclusion and notes</b>: The speed ups mentioned are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens. Tested using the High FPS Physics Fix loading timer.
+                        <br><br>
+                        The results show that:
+                    <ul>
+                        <li>Increasing the loading screen FPS cap from 60 to 350 significantly reduces load times across all scenarios.</li>
+                        <li>Removing the loading lock entirely breaks the loading time in most cases.</li>
+                        <li>Applying HFPF's speed ups further improves load times.</li>
+                        <li>Adding Long Loading Times Fix on top of HFPF speed ups does not always result in further improvements and, in some cases, slightly increases load times.</li>
+                    </ul>
+                    Overall, Long Loading Times Fix is made redundant by a proper HFPF configuration, as instructed <a href="https://themidnightride.moddinglinked.com/utilities.html#PhysicsFix" target="_blank">here</a> during The Midnight Ride guide.
+
+                    <br>
+                    <br>
+
+                    <b>Mod links and versions</b>:
+                    </p>
                     <ul>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/44798" target="_blank">High FPS Physics Fix</a> (0.8.6)</li>
                         <li><a href="https://www.nexusmods.com/fallout4/mods/73469" target="_blank">Long Loading Times Fix</a> (1.1.1)</li>
                         <li>Windows 11 Pro Build 26100</li>
                         <li>Driver 24.10.1</li>
                     </ul>
-                    <hr>
-                    Tested using the High FPS Physics Fix loading timer, no files available.</a>
-                    </p>
                 </div>
-
-                <div class="expander-top">
-                    <p>
-                    <h3>ENB Presets</h3>
-                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
-                    </p>
-                </div>
-                <div class="expander-bottom">
-
-                    <div class="image-gallery width-80">
-                        <div class="gallery-container">
-                            <img class="gallery-current-image" src="./benchmarks/ENB Presets/GPU Bound.png" alt="GPU Bound">
-                            <div class="gallery-nav gallery-prev">❮</div>
-                            <div class="gallery-nav gallery-next">❯</div>
-                            <div class="gallery-counter"></div>
-                        </div>
-                        <div class="gallery-caption">GPU Bound</div>
-
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/ENB Presets/GPU Bound.png" alt="GPU Bound">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/ENB Presets/CPU Bound.png" alt="CPU Bound">
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/ENB Presets/CPU Bound 2.png" alt="CPU Bound 2">
-                    </div>
-
-                    <p>
-                        <b>Date of testing</b>: 28/11/24
-                        <hr>
-                        <b>Conclusion and notes</b>:
-                    <ul>
-                        <li>0.501 is reported to have bugs so 0.496 is used instead.</li>
-                        <li>The weather mods recommended by each ENB preset aren't used in order to avoid extra factors, visual comparison isn't the point here as it is highly subjective.</li>
-                        <li>DECENT ENB needed the DoF fix pinned in the post section.</li>
-                        <li>DECENT ENB for some reason has awful lows in the CPU bound test (confirmed with more runs).</li>
-                    </ul>
-                    <hr>
-                    <b>Mod links and versions</b>:
-                    <ul>
-                        <li><a href="http://enbdev.com/download_mod_fallout4.html" target="_blank">ENB</a> (0.496)</li>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/58028" target="_blank">Spectrum - ENB for Lightweight Lighting</a> (1.2)</li>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/16706" target="_blank">DECENT ENB - Natural and Performance Friendly</a> (1.5.1)</li>
-                        <li><a href="https://www.nexusmods.com/fallout4/mods/57321" target="_blank">REACTOR - A FALLOUT4 ENB</a> (1.4.4)</li>
-                        <ul>
-                            <li><a href="https://www.nexusmods.com/fallout4/mods/56566" target="_blank">ENB Helper for Fallout 4</a> (1.0.2)</li>
-                        </ul>
-                        <li>Windows 11 Pro Build 26100</li>
-                        <li>Driver 24.10.1</li>
-                    </ul>
-                    <hr>
-                    <a href="https://github.com/ModdingLinked/ModdingLinked/blob/main/benchmarks/ENB%20Presets/ENB%20Presets.7z" target="_blank">Captures</a>
-                    </p>
-                </div>
-
-                <!-- To-Do
-                 Volumetrics & Godrays Performance Fix Redux
-                 Far Object LOD Improvement Project
-                NAC X vs Lightweight Lighting (Weathers)
-                ELFX vs Lightweight Lighting (Interiors)
-                Pip-Boy Flashlight (Shadows)
-                Various Flora Mods (Make Like a Tree, Boston Natural Surroundings, Another Pine Forest Mod, A Forest)
-                Faraway Area Reform -->
-
             </span>
 
-            <!-- <span id="Benchmarks" class="section">
+            <span id="SSEBenchmarks" class="section">
                 <h2 onclick="location.href='#SSEBenchmarks'">SSE Benchmarks</h2>
 
-                <div class="card" id="ModlistUsed">
+                <div class="card" id="Modlist">
                     <p>
-                    <h3>Modlist Used (Latest version without AE DLC)</h3>
+                    <h3>Modlist (1.6.1130 without the AE DLC)</h3>
                     <ul>
                         <li>Bethini Pie High</li>
                         <li>SKSE</li>
@@ -386,48 +438,437 @@
                         <li>Display Tweaks</li>
                         <li>Unofficial Skyrim Special Edition Patch</li>
                         <li>ConsoleUtilSSE NG</li>
-                        <li>Autorun (tai/tcai/tgm)</li>
+                        <li>Autorun (TAI, TCAI, TGM, FW 81A)</li>
                     </ul>
                     </p>
                 </div>
 
                 <div class="expander-top">
                     <p>
-                    <h3>x</h3>
+                    <h3>Skyrim Priority</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
-
                 <div class="expander-bottom">
-                    <div class="image-gallery width-80">
-                        <div class="gallery-container">
-                            <img class="gallery-current-image" src="./benchmarks/x.png" alt="x">
-                            <div class="gallery-nav gallery-prev">❮</div>
-                            <div class="gallery-nav gallery-next">❯</div>
-                            <div class="gallery-counter"></div>
-                        </div>
-                        <div class="gallery-caption"></div>
+                    <div data-chart-container="skyrimPriorityChart" data-chart-folder="./benchmarks/SSE/Skyrim Priority" data-chart-files="CPU Bound 1|CPU Bound 2">
+                    </div>
 
-                        <img class="gallery-image gallery-hidden" src="./benchmarks/x.png" alt="x">
+                    <div id="skyrimPriorityChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        Windows already gives CPU scheduling priority to the foreground application, making most of these CPU priority mods pointless and an easy DP farm for people.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/50129" target="_blank">Skyrim Priority SE AE - CPU Performance FPS Optimizer</a> (3.4.0)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Lightened Skyrim</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="lightnedSkyrimChart" data-chart-folder="./benchmarks/SSE/Lightened Skyrim" data-chart-files="GPU Bound 1|GPU Bound 2|CPU Bound 2">
+                    </div>
+
+                    <div id="lightnedSkyrimChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        As you may predict, removing a few objects in scenes with thousands of others is not going to do anything noticeable.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/50755" target="_blank">Lightened Skyrim</a> (1.06)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Insignificant Object Remover</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="insignificantObjectRemoverChart" data-chart-folder="./benchmarks/SSE/Insignificant Object Remover" data-chart-files="GPU Bound 1|GPU Bound 2">
+                    </div>
+
+                    <div id="insignificantObjectRemoverChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        Grass is <a href="https://www.braynzarsoft.net/viewtutorial/q16390-33-instancing-with-indexed-primitives" target="_blank">instanced</a> and the CPU performance from its draws is barely relevant. This means that the mod realistically only affects tri-count (affecting GPU performance), and clearly not enough to even be measured.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/3354" target="_blank">Insignificant Object Remover</a> (1.2.2)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Grass FPS Booster</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="grassFPSBoosterChart" data-chart-folder="./benchmarks/SSE/Grass FPS Booster" data-chart-files="GPU Bound 1|Forest (GPU Bound)">
+                    </div>
+
+                    <div id="grassFPSBoosterChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        CPU performance isn't measured for the same reason as Insignificant Object Remover (<a href="https://www.braynzarsoft.net/viewtutorial/q16390-33-instancing-with-indexed-primitives" target="_blank">instancing</a>). The mod reduces visual fidelity and doesn't bring any noticeable performance improvements. The plugin is also riddled with out of scope changes.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/20082" target="_blank">Grass FPS Booster</a> (7.9.2)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>JK Mods</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="jkModsChart" data-chart-folder="./benchmarks/SSE/JK Mods" data-chart-files="Whiterun Outskirts (CPU Bound)|The Bannered Mare (CPU Bound)|Palace of the Kings (CPU Bound)|Warmaiden's (CPU Bound)|Radiant Raiment (CPU Bound)|Dragonsreach (CPU Bound)|The Temple of Mara (CPU Bound)|Understone Keep (CPU Bound)|The Bee and Barb (CPU Bound)|Elgrims Elixirs (CPU Bound)">
+                    </div>
+
+                    <div id="jkModsChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
                     </div>
 
                     <p>
-                        <b>Date of testing</b>: x
-                        <hr>
                         <b>Conclusion and notes</b>:
-                    <p>x</p>
-                    <hr>
-                    <b>Mod links and versions</b>:
+                        Up until the release of JK's Riften Outskirts, jkrojmal kept stating that the mod could perform at 60FPS with an ENB and who knows what else loaded on an <a href="https://www.techpowerup.com/cpu-specs/core-i7-2600.c724" target="_blank">i7 2600</a> and <a href="https://www.techpowerup.com/gpu-specs/geforce-gtx-980-ti.c2724" target="_blank">980Ti</a>. Considering the age of those components and the huge hit from the mod + just ENB alone, I find that really hard to believe, especially because the statement remained identical for years.
+                        <br>
+                        <br>
+                        Personally, I find the interior decor of most of the suite to be quite poor taste and more aimed towards maximalist design, which really clashes against the rest of the game's lack of detail and just wants to look fancy for pictures. The performance hit is not justified at all.
+                        <hr>
+                        <b>Mod links and versions</b>:
+                    </p>
                     <ul>
-                        x
-                        <li>Windows 11 Pro Build 26100</li>
-                        <li>Driver 24.10.1</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/78351" target="_blank">JK's Whiterun Outskirts</a> (1.6.2)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/33845" target="_blank">JK's The Bannered Mare</a> (1.1.1)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/48902" target="_blank">JK's Palace of the Kings</a> (1.2)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/33685" target="_blank">JK's Warmaiden's</a> (1.3)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/44858" target="_blank">JK's Radiant Raiment</a> (1.0.4)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/34000" target="_blank">JK's Dragonsreach</a> (1.1.3)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/52724" target="_blank">JK's The Temple of Mara</a> (1.1)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/55571" target="_blank">JK's Understone Keep</a> (1.1.2)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/49516" target="_blank">JK's The Bee and Barb</a> (1.1.1)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/49934" target="_blank">JK's Elgrims Elixirs</a> (1.1)</li>
                     </ul>
-                    <hr>
-                    <a href="https://github.com/ModdingLinked/ModdingLinked/blob/main/benchmarks/x" target="_blank">Captures</a>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>DBF LOD Guide</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
                     </p>
                 </div>
-            </span> -->
+                <div class="expander-bottom">
+                    <div data-chart-container="dbfLODGuideChart" data-chart-folder="./benchmarks/SSE/DBF LOD Guide" data-chart-files="CPU Bound 2|CPU Bound 3|GPU Bound 1|GPU Bound 2|GPU Bound 3">
+                    </div>
+
+                    <div id="dbfLODGuideChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <p>
+                        <b>VRAM usage</b>:
+                    <table class="vram-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th data-vram="3.03">Vanilla</th>
+                                <th data-vram="4.38">Terrain LOD</th>
+                                <th data-vram="4.96">DynDOLOD</th>
+                                <th data-vram="5.02">Terrain LOD + DynDOLOD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GPU Bound 1</td>
+                                <td data-vram="3.03">3.03GB</td>
+                                <td data-vram="4.38">4.38GB</td>
+                                <td data-vram="4.96">4.96GB</td>
+                                <td data-vram="5.02">5.02GB</td>
+                            </tr>
+                            <tr>
+                                <td>GPU Bound 2</td>
+                                <td data-vram="3">3GB</td>
+                                <td data-vram="4.31">4.31GB</td>
+                                <td data-vram="4.86">4.86GB</td>
+                                <td data-vram="4.9">4.9GB</td>
+                            </tr>
+                            <tr>
+                                <td>GPU Bound 3</td>
+                                <td data-vram="3.86">3.86GB</td>
+                                <td data-vram="3.86">3.86GB</td>
+                                <td data-vram="4.49">4.49GB</td>
+                                <td data-vram="4.56">4.56GB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <b>Conclusion and notes</b>:
+                    Regenerating terrain LOD is a no-brainer, it looks significantly better and the performance impact is minimal. The DBF DynDOLOD settings are fairly maxed out, and even then the performance impact is nothing outrageous. For most systems, the bigger concern is probably the almost 2GB (and this is almost a minimum with how vanilla oriented DBF is) of added VRAM usage when using terrain LOD + DynDOLOD with these settings, so make sure that you have enough VRAM available.
+
+                    <br>
+                    <br>
+
+                    <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://stepmodifications.org/forum/topic/13451-xlodgen-terrain-lod-beta-132-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal-enderalse/" target="_blank">xLODGen</a> (Beta 132)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/68518" target="_blank">DynDOLOD 3 Alpha</a> (Alpha-194)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/79205" target="_blank">ACMOS Road Generator</a> (4.0)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/56367" target="_blank">A Clear Map of Skyrim and Other Worlds</a> (4.0)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/52897" target="_blank">DynDOLOD Resources SE 3</a> (Alpha-57)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/97720" target="_blank">DynDOLOD DLL NG</a> (Alpha-36)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/41857" target="_blank">Noise DDS</a> (2.0)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/79197" target="_blank">Far Object LOD Improvement Project SSE</a> (1.1)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/149212" target="_blank">DBF LOD Guide - Whiter Snow LOD Material</a></li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/54680" target="_blank">SSE Terrain Tamriel Extend</a> (2.0)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/149212" target="_blank">DBF LOD Guide - Temp Snow Replacement</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>DBF Grass LOD Guide</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="dbfGrassLODGuideChart" data-chart-folder="./benchmarks/SSE/DBF Grass LOD Guide" data-chart-files="Whiterun Plains (GPU Bound)">
+                    </div>
+
+                    <div id="dbfGrassLODGuideChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <div class="image-slider" data-image-path="./benchmarks/SSE/DBF Grass LOD Guide/Comparisons" data-images="Base|DBF LOD Guide|Grass Cache|DBF Grass LOD Guide">
+                        <div class="comparison-selects">
+                            <select class="comparison-select-left"></select>
+                            <select class="comparison-select-right"></select>
+                        </div>
+                        <div class="comparison-slider">
+                            <img class="comparison-before" />
+                            <img class="comparison-after" />
+                            <div class="comparison-handle"></div>
+                        </div>
+                        <div class="comparison-labels">
+                            <span class="label-before"></span>
+                            <span class="label-after"></span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        The tests were taken with Community Shaders (+LLF because CS by itself reduces performance due to bad vanilla lighting code) for consistency with the setup required by complex grass patches. Grass LOD is very heavy so I'd consider it only for very high-end systems and/or screenarchers.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li>All the links from the DBF LOD Guide benchmark.</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/42161" target="_blank">No Grass In Objects</a> (1.5.4)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/101095" target="_blank">Grass Cache Helper NG</a> (1.0.1)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/68640" target="_blank">Vanilla Complex Grasses for ENB</a> (1.0.0)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Tree Mods</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="treeModsChart" data-chart-folder="./benchmarks/SSE/Tree Mods" data-chart-files="GPU Bound 1|GPU Bound 2">
+                    </div>
+
+                    <div id="treeModsChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <div class="image-slider" data-image-path="./benchmarks/SSE/Tree Mods/Comparisons" data-sets="Pines|Snow Pines|Aspens" data-images="Vanilla|NotWL|Ulvenwald|Happy Little Trees|Skyland HLT|HD Reworked HLT|Lightwood Trees|Fabled Forests|Enhanced Vanilla Trees">
+                        <select class="comparison-set-select"></select>
+                        <div class="comparison-selects">
+                            <select class="comparison-select-left"></select>
+                            <select class="comparison-select-right"></select>
+                        </div>
+                        <div class="comparison-slider">
+                            <img class="comparison-before" />
+                            <img class="comparison-after" />
+                            <div class="comparison-handle"></div>
+                        </div>
+                        <div class="comparison-labels">
+                            <span class="label-before"></span>
+                            <span class="label-after"></span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                        EVT is a great option for people who want to keep the vanilla look at the same performance. Weirdly, the mod consistently lowers FPS lows in specific scenes, it's not enough to matter realistically but an interesting find nonetheless.
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/63604" target="_blank">Nature of the Wild Lands - forest and trees improvement mod</a> (3.12)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/57874" target="_blank">Traverse the Ulvenwald - 3.3 - Trees and Forests of Skyrim</a> (3.3.2)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/50961" target="_blank">Happy Little Trees</a> (2.03)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/82491" target="_blank">Skyland Happy Little Trees Bark</a> (1.2)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/81822" target="_blank">HD Remastered Tree Bark - Happy Little Trees - 16k 8k 4k 2k</a> (3.0.1)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/149007" target="_blank">Lightwood Trees</a> (1.22)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/94462" target="_blank">Fabled Forests</a> (2.1A)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/11008" target="_blank">Enhanced Vanilla Trees SE</a> (2.2.2)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Community Shaders Core</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="csCoreChart" data-chart-folder="./benchmarks/SSE/Community Shaders Core" data-chart-files="CPU Bound 1|CPU Bound 2|CPU Bound 3|GPU Bound 1|GPU Bound 2|GPU Bound 3">
+                    </div>
+
+                    <div id="csCoreChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+                    <ul>
+                        <li>Community Shaders without Light Limit Fix will perform noticeably worse than vanilla due to LLF's replacement of vanilla code that CS would otherwise fall back to. This means that CS with <strong>LLF has to be considered as the base setup for CS</strong> in order not to skew other results. This might be resolved in future versions of CS, but for now it is what it is.</li>
+                        <li>For some reason, LLF drastically increases CPU performance variance in interiors, making profiling very tedious and often unreliable. For this reason, don't give much consideration to the percentage lows of LLF.</li>
+                        <li>Both CS and LLF reduce percentage lows when GPU bound, although the average FPS is often improved.</li>
+                    </ul>
+
+                    <br>
+                    <br>
+
+                    <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/86492" target="_blank">Community Shaders</a> (1.3.4)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/99548" target="_blank">Light Limit Fix - Community Shaders</a> (2.3.0)</li>
+                    </ul>
+                </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Screen Space Shadows</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="screenSpaceShadowsChart" data-chart-folder="./benchmarks/SSE/Screen Space Shadows" data-chart-files="GPU Bound 1|GPU Bound 2">
+                    </div>
+
+                    <div id="screenSpaceShadowsChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <div class="image-slider" data-image-path="./benchmarks/SSE/Screen Space Shadows/Comparisons" data-sets="GPU Bound 1|GPU Bound 2" data-images="Vanilla|LLF|SSS 1x|SSS 2x|SSS 3x|SSS 4x">
+                        <select class="comparison-set-select"></select>
+                        <div class="comparison-selects">
+                            <select class="comparison-select-left"></select>
+                            <select class="comparison-select-right"></select>
+                        </div>
+                        <div class="comparison-slider">
+                            <img class="comparison-before" />
+                            <img class="comparison-after" />
+                            <div class="comparison-handle"></div>
+                        </div>
+                        <div class="comparison-labels">
+                            <span class="label-before"></span>
+                            <span class="label-after"></span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>: Screenspace Shadows is a GPU-bound effect, meaning that it will not affect CPU performance. It performs really well, and bumping up the samples multiplier improves quality without a significant performance hit<sup><a title="Exceptions" href="#annotation1">[1]</a></sup>.
+                        <br>
+                        <span class="annotations">
+                            <ol>
+                                <li id="annotation1">
+                                    <strong>This can depend on the GPU architecture</strong>. As shown the 2nd graph, a 6700XT might perform marginally better with 3x samples than with 2x. Attempting to delve into something so complex would be too long winded and most likely inaccurate, so it suffices to say that various GPUs will have different optimal settings. Considered how light the mod is, it most likely won't matter much in practice.
+                                </li>
+                            </ol>
+                        </span>
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/86492" target="_blank">Community Shaders</a> (1.3.4)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/99548" target="_blank">Light Limit Fix - Community Shaders</a> (2.3.0)</li>
+                        <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/93209" target="_blank">Screen Space Shadows - Community Shaders</a> (1.2.1)</li>
+                    </ul>
+                </div>
+            </span>
 
         </div>
 

@@ -104,6 +104,17 @@ function expandCard(thisObj, $open, $dontReset) {
                 autoResize(textareas[i]);
             }
         }
+
+        // Initialize benchmark charts when expander is opened
+        const benchmarkElements = $open.querySelectorAll('[data-chart-container]');
+        if (benchmarkElements.length > 0 && window.benchmarkCharts) {
+            benchmarkElements.forEach(element => {
+                const container = document.getElementById(element.getAttribute('data-chart-container'));
+                if (container && container.innerHTML.includes('Loading')) {
+                    window.benchmarkCharts.loadBenchmarkFromElement(element);
+                }
+            });
+        }
     }
 }
 

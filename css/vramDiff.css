@@ -1,0 +1,14 @@
+.vram-diff {
+  font-weight: bold;
+  font-size: 0.7em;
+  vertical-align: super;
+  margin-left: 4px;
+}
+
+.vram-green {
+  color: #2ecc40;
+}
+
+.vram-red {
+  color: #ff4136;
+}/*# sourceMappingURL=vramDiff.css.map */

@@ -1,0 +1,316 @@
+.benchmark-chart {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.benchmark-chart h3 {
+  margin: 0 0 1em 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.25em;
+  text-align: center;
+}
+
+.benchmark-legend {
+  display: flex;
+  gap: 1.5em;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.benchmark-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.benchmark-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.benchmark-test {
+  padding: 1em;
+  margin-bottom: 0.3em;
+}
+
+.benchmark-test-name {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.8em;
+  font-size: 1em;
+}
+
+.benchmark-bars {
+  display: flex;
+  flex-direction: column;
+}
+
+.benchmark-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  min-height: 28px;
+}
+
+.benchmark-bar-label {
+  width: 35px;
+  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-align: right;
+  flex-shrink: 0;
+  font-family: monospace;
+}
+
+.benchmark-bar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.benchmark-bar {
+  height: 30px;
+  border-radius: 3px;
+  position: relative;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+  font-size: 1em;
+  font-weight: 600;
+  text-shadow: 0.05em 0.075em 0.1em rgba(0, 0, 0, 0.7);
+  color: white;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+.benchmark-bar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.benchmark-test:hover .benchmark-bar:hover {
+  opacity: 1;
+  z-index: 10;
+}
+
+.benchmark-test:hover .benchmark-bar.benchmark-reference {
+  opacity: 1;
+}
+
+.benchmark-bar-avg {
+  background: #2297f3;
+}
+
+.benchmark-bar-1percent {
+  background: #f17d20;
+}
+
+.benchmark-bar-01percent {
+  background: #ffb400;
+}
+
+.benchmark-gallery {
+  position: relative;
+  margin: 1em 0;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.benchmark-gallery-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.benchmark-gallery-nav {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 187ms cubic-bezier(0, 0, 0, 1);
+  flex-shrink: 0;
+}
+
+.benchmark-gallery-nav:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.benchmark-chart-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benchmark-chart-wrapper .benchmark-current-chart {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: stretch;
+}
+
+.benchmark-chart-wrapper .benchmark-current-chart .benchmark-chart {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.benchmark-gallery-counter {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ffffff;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.benchmark-gallery.single-chart .benchmark-gallery-container {
+  justify-content: center;
+  gap: 0;
+}
+
+.benchmark-gallery.single-chart .benchmark-chart-wrapper {
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .benchmark-gallery-container {
+    gap: 10px;
+  }
+  .benchmark-gallery-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+  }
+  .benchmark-gallery-counter {
+    font-size: 0.8em;
+  }
+}
+.benchmark-error {
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgb(68, 39, 38);
+  padding: 1em;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.benchmark-error h4 {
+  margin: 0 0 0.5em 0;
+  color: #ff8a80;
+}
+
+.benchmark-error details {
+  margin-top: 0.8em;
+}
+
+.benchmark-error summary {
+  cursor: pointer;
+  color: #ffab91;
+  font-size: 0.9em;
+}
+
+.benchmark-error summary:hover {
+  color: #ff8a80;
+}
+
+.benchmark-error pre {
+  background-color: rgba(255, 255, 255, 0.0326);
+  padding: 0.8em;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid rgba(255, 255, 255, 0.093);
+  font-family: monospace;
+}
+
+.benchmark-loading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.0326);
+  padding: 1.5em;
+  border-radius: 6px;
+  margin: 0.5em 0;
+  font-style: italic;
+}
+
+.benchmark-test-name-container {
+  position: relative;
+}
+
+.benchmark-test-name {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.8em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.benchmark-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  min-width: 300px;
+  display: none;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: rgba(40, 40, 40, 0.95);
+  animation: fade-in 0.2s ease;
+}
+
+.benchmark-tooltip ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.benchmark-tooltip li {
+  margin: 0.3em 0;
+}
+
+.benchmark-test-name-container:hover .benchmark-tooltip {
+  display: block;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=benchmarkCharts.css.map */
