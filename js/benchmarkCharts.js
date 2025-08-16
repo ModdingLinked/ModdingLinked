@@ -428,10 +428,10 @@ class BenchmarkCharts {
             const links = Array.from(doc.querySelectorAll('a'));
             const jsonFiles = links
                 .map(link => link.getAttribute('href'))
-                .filter(href => href && href.toLowerCase().endsWith('.json'))
-                .map(href => href.split('/').pop()); // Get just the filename
+                .filter(href => href && href.split('.').pop().toLowerCase() === 'json')
+                .map(href => href.split('/').pop());
 
-            return jsonFiles;
+            return jsonFiles.map(f => f.toLowerCase());
         } catch (error) {
             console.error(`Error listing JSON files in folder: ${folderPath}`, error);
             throw error;
