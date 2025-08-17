@@ -414,24 +414,29 @@ class BenchmarkCharts {
 
     async loadJSONFilesFromFolder(folderPath) {
         try {
-            const response = await fetch(folderPath);
+            // Local folder path -> GitHub API path
+            const repoOwner = 'ModdingLinked';
+            const repoName = 'ModdingLinked';
+            const apiBase = 'https://api.github.com/repos';
+
+            // Remove leading './' and trailing '/'
+            let apiPath = folderPath.replace(/^\.\//, '').replace(/\/$/, '');
+
+            const apiUrl = `${apiBase}/${repoOwner}/${repoName}/contents/${apiPath}`;
+
+            const response = await fetch(apiUrl);
             if (!response.ok) {
-                throw new Error(`Could not access folder: ${folderPath}`);
+                throw new Error(`Could not access folder: ${folderPath} (GitHub API)`);
             }
 
-            // Extract JSON file links
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
+            const files = await response.json();
 
-            // Find all links to JSONs
-            const links = Array.from(doc.querySelectorAll('a'));
-            const jsonFiles = links
-                .map(link => link.getAttribute('href'))
-                .filter(href => href && href.split('.').pop().toLowerCase() === 'json')
-                .map(href => href.split('/').pop());
+            // Filter for .json files
+            const jsonFiles = files
+                .filter(item => item.type === 'file' && item.name.toLowerCase().endsWith('.json'))
+                .map(item => item.name);
 
-            return jsonFiles.map(f => f.toLowerCase());
+            return jsonFiles;
         } catch (error) {
             console.error(`Error listing JSON files in folder: ${folderPath}`, error);
             throw error;
