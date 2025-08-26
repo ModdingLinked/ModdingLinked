@@ -23,7 +23,7 @@
     Skyrim Special Edition, Skyrim SE, SSE,
     Benchmarks, Profiling, Testing">
 
-    <meta name="description" content="Collection of performance profiling results for various mods.">
+    <meta name="description" content="Collection of performance profiling results for various mods across different BGS titles.">
     <meta http-equiv='content-language' content='en-us'>
     <meta name="twitter:card" value="summary_large_image">
     <meta property="og:site_name" content="ModdingLinked">
@@ -31,7 +31,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://moddinglinked.com">
     <meta property="og:image" content="https:/moddinglinked.com/img/Others/Card.webp">
-    <meta property="og:description" content="Collection of performance profiling results for various mods.">
+    <meta property="og:description" content="Collection of performance profiling results for various mods across different BGS titles.">
 
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#282725">
     <meta name="darkreader-lock">
@@ -45,8 +45,7 @@
     <script src="js/responsiveTitle.js"></script>
     <script src="js/imageGallery.js"></script>
     <script src="js/imageSlider.js"></script>
-    <script src="js/benchmarkCharts.js"></script>
-    <script src="js/vramDiff.js"></script>
+    <script src="js/benchmarks.js"></script>
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/cards.css">
@@ -59,8 +58,7 @@
     <link rel="stylesheet" href="css/tables.css">
     <link rel="stylesheet" href="css/imageGallery.css">
     <link rel="stylesheet" href="css/imageSlider.css">
-    <link rel="stylesheet" href="css/benchmarkCharts.css">
-    <link rel="stylesheet" href="css/vramDiff.css">
+    <link rel="stylesheet" href="css/benchmarks.css">
 </head>
 
 <body class="theme">
@@ -165,7 +163,7 @@
 
                         </li>
                         <li>In any (hopefully) scientific test, all variables should be controlled as much as possible. It would be unwise to test singular mods or changes in a very complex environment such as a long modlist. For the same reason, AI is disabled during all tests unless the subject of testing is AI-related.</li>
-                        <li>Most of the tests re-use the same save files for consistency, but some specific mods may require their own dedicated saves. The common saves will be provided for download in the <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">repository</a>.</li>
+                        <li>Most of the tests re-use the same save files for consistency (locations specified below), but some specific mods may require their own dedicated saves. The common saves will be provided for download in the <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">repository</a>.</li>
                         <li>If a test does not include CPU or GPU bound results, assume that it doesn't affect those scenarios enough to be noticeable.</li>
                     </ul>
                     </p>
@@ -177,7 +175,7 @@
                     Bethini Pie
                     PRP
                     Pip-Boy Flashlight (Shadows)
-                    Various Flora Mods (Make Like a Tree, Boston Natural Surroundings, Another Pine Forest Mod, A Forest)
+                    Various Flora Mods (Make Like a Tree, Boston Natural Surroundings, A Forest)
                     Faraway Area Reform
                     TMR LOD Guide
                 
@@ -213,7 +211,7 @@
                         <li>lStewieAl's Tweaks and Engine Fixes</li>
                         <li>lStewieAl's Engine Optimizations</li>
                         <li>Faster Start Menu</li>
-                        <li>Testing commands (TAI, TCAI, FW NVWastelandClear)</li>
+                        <li>Testing commands (TAI, TCAI, TGM, FW NVWastelandClear)</li>
                     </ul>
 
                     <div class="card-yellow">
@@ -325,17 +323,17 @@
 
                 <div class="card" id="Modlist">
                     <p>
-                    <h3>Modlist (OG EXE + NG Content)</h3>
+                    <h3>Modlist (NG)</h3>
                     <ul>
                         <li>Bethini Pie High</li>
                         <li>F4SE</li>
                         <li>Plugin Preloader</li>
                         <li>Address Library</li>
-                        <li>Backported Archive2 Support System</li>
                         <li>High FPS Physics Fix</li>
                         <li>Unofficial Fallout 4 Patch</li>
                         <li>Community Fixes Merged</li>
                         <li>Buffout 4 NG</li>
+                        <li>Testing commands (TAI, TCAI, TGM, FW 2B52A)</li>
                     </ul>
                     </p>
                 </div>
@@ -420,6 +418,35 @@
                         <li>Driver 24.10.1</li>
                     </ul>
                 </div>
+
+                <div class="expander-top">
+                    <p>
+                    <h3>Previs Repair Pack</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                    </p>
+                </div>
+                <div class="expander-bottom">
+                    <div data-chart-container="prpChart" data-chart-folder="./benchmarks/FO4/PRP" data-chart-files="CPU Bound 1|CPU Bound 2|CPU Bound 3|GPU Bound 1|GPU Bound 2">
+                    </div>
+
+                    <div id="prpChart">
+                        <div class="benchmark-loading">Loading benchmark data...</div>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <b>Conclusion and notes</b>:
+
+                        <br>
+                        <br>
+
+                        <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/46403" target="_blank">Previsibines Repair Pack Stable Branch - PRP</a> (74.22)</li>
+                    </ul>
+                </div>
             </span>
 
             <span id="SSEBenchmarks" class="section">
@@ -440,6 +467,24 @@
                         <li>ConsoleUtilSSE NG</li>
                         <li>Autorun (TAI, TCAI, TGM, FW 81A)</li>
                     </ul>
+                    <br>
+                    <h3>Save File Locations</h3>
+                    <ul>
+                        <li><strong>CPU Bound</strong>
+                            <ul>
+                                <li>CPU Bound 1: Bee and Barb</li>
+                                <li>CPU Bound 2: Whiterun Overlook</li>
+                                <li>CPU Bound 3: Whiterun Outskirts</li>
+                            </ul>
+                        </li>
+                        <li><strong>GPU Bound</strong>
+                            <ul>
+                                <li>GPU Bound 1: Riverwood</li>
+                                <li>GPU Bound 2: Half-Moon Mill</li>
+                                <li>GPU Bound 3: Eastmarch Overlook</li>
+                            </ul>
+                        </li>
+                    </ul>
                     </p>
                 </div>
 
@@ -450,7 +495,7 @@
                     </p>
                 </div>
                 <div class="expander-bottom">
-                    <div data-chart-container="skyrimPriorityChart" data-chart-folder="./benchmarks/SSE/Skyrim Priority" data-chart-files="CPU Bound 1|CPU Bound 2">
+                    <div data-chart-container="skyrimPriorityChart" data-chart-folder="./benchmarks/SSE/Skyrim Priority" data-chart-files="CPU Bound 1|CPU Bound 2|CPU Bound 3">
                     </div>
 
                     <div id="skyrimPriorityChart">
