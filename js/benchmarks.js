@@ -412,21 +412,18 @@ class BenchmarkCharts {
     }
 
     async loadJSONFilesFromFolder(folderPath) {
-        // Try local listing if running on localhost
-        if (location.hostname === 'localhost') {
-            try {
-                const response = await fetch(folderPath);
-                if (response.ok) {
-                    const html = await response.text();
-                    const doc = new DOMParser().parseFromString(html, 'text/html');
-                    return Array.from(doc.querySelectorAll('a'))
-                        .map(link => link.getAttribute('href'))
-                        .filter(href => href && href.toLowerCase().endsWith('.json'))
-                        .map(href => href.split('/').pop().toLowerCase());
-                }
-            } catch {
-                // Fallback to REST API below
+        try {
+            const response = await fetch(folderPath);
+            if (response.ok) {
+                const html = await response.text();
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                return Array.from(doc.querySelectorAll('a'))
+                    .map(link => link.getAttribute('href'))
+                    .filter(href => href && href.toLowerCase().endsWith('.json'))
+                    .map(href => href.split('/').pop().toLowerCase());
             }
+        } catch {
+            // Fallback to REST API below
         }
         try {
             const [repoOwner, repoName] = ['ModdingLinked', 'ModdingLinked'];
