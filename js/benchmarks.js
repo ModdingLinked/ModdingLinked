@@ -54,21 +54,45 @@ class BenchmarkCharts {
         }
     }
 
-    // Calculate percentiles (1% and 0.2% low)
     calculatePercentile(array, percentile) {
-        const fpsArray = array.map(frametime => 1000 / frametime);
-        const sortedArray = fpsArray.sort((a, b) => a - b);
+        if (!array || array.length === 0) return NaN;
+        const sortedArray = array.slice().sort((a, b) => a - b);
         const n = sortedArray.length;
-        const index = (n - 1) * percentile / 100;
 
-        if (Number.isInteger(index)) {
-            return sortedArray[index];
+        const p = 1 - (percentile / 100);
+        const pos = p * (n - 1);
+
+        // Interpolation
+        const i0 = Math.floor(pos);
+        const i1 = i0 + 1;
+        const i_1 = Math.max(i0 - 1, 0);
+        const i2 = Math.min(i0 + 2, n - 1);
+        const y_1 = sortedArray[i_1];
+        const y0 = sortedArray[i0];
+        const y1 = sortedArray[Math.min(i1, n - 1)];
+        const y2 = sortedArray[i2];
+
+        const t = pos - i0;
+
+        // Catmull-Rom
+        const cubicInterp = (p0, p1, p2, p3, t) => {
+            return (
+                0.5 *
+                ((2 * p1) +
+                    (-p0 + p2) * t +
+                    (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t +
+                    (-p0 + 3 * p1 - 3 * p2 + p3) * t * t * t)
+            );
+        };
+
+        let quantile;
+        if (Number.isInteger(pos)) {
+            quantile = sortedArray[pos];
         } else {
-            const lower = Math.floor(index);
-            const upper = Math.ceil(index);
-            const weight = index - lower;
-            return sortedArray[lower] * (1 - weight) + sortedArray[upper] * weight;
+            quantile = cubicInterp(y_1, y0, y1, y2, t);
         }
+        // Quantile frame time to FPS
+        return 1000 / quantile;
     }
 
     // Create a single chart from benchmark data
