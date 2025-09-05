@@ -16,7 +16,10 @@ class BenchmarkCharts {
             }
             const json = await response.json();
 
-            const frameData = json.Runs[0].CaptureData.MsBetweenPresents;
+            let frameData = [];
+            for (const run of json.Runs) {
+                frameData = frameData.concat(run.CaptureData.MsBetweenPresents);
+            }
             const sum = frameData.reduce((acc, val) => acc + val, 0);
             const avgFPS = 1000 / (sum / frameData.length);
 
