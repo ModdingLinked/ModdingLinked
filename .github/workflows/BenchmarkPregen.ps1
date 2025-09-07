@@ -50,7 +50,9 @@ function Generate-BenchmarkData {
         $totalTime = ($frameTimes | Measure-Object -Sum).Sum
         $avgFPS = if ($totalTime -gt 0) { 1000 * $totalFrames / $totalTime } else { 0 }
         $onePercentLow = Get-Percentile -Array $frameTimes -Percentile 1
+        $onePercentLow = if ($onePercentLow -gt 0) { (1000 / $onePercentLow) } else { 0 }
         $pointOnePercentLow = Get-Percentile -Array $frameTimes -Percentile 0.1
+        $pointOnePercentLow = if ($pointOnePercentLow -gt 0) { (1000 / $pointOnePercentLow) } else { 0 }
 
         $benchmarkData = [PSCustomObject]@{
             # Metadata
@@ -60,7 +62,7 @@ function Generate-BenchmarkData {
             Processor          = $data.Info.Processor
             GameName           = $data.Info.GameName
             ProcessName        = $data.Info.ProcessName
-            CreationDate       = $data.Info.CreationDate
+            CreationDate       = $data.Info.CreationDate.ToString('o', [System.Globalization.CultureInfo]::InvariantCulture)
             Motherboard        = $data.Info.Motherboard
             OS                 = $data.Info.OS
             SystemRam          = $data.Info.SystemRam
@@ -79,12 +81,11 @@ function Generate-BenchmarkData {
             PresentationMode   = $data.Info.PresentationMode
 
             # Benchmark results
-
-            TotalFrames        = $totalFrames
-            TotalTime          = $totalTime
-            AvgFPS             = $avgFPS
-            OnePercentLow      = if ($onePercentLow -gt 0) { 1000 / $onePercentLow } else { 0 }
-            PointOnePercentLow = if ($pointOnePercentLow -gt 0) { 1000 / $pointOnePercentLow } else { 0 }
+            TotalFrames        = $totalFrames.ToString([System.Globalization.CultureInfo]::InvariantCulture)
+            TotalTime          = $totalTime.ToString([System.Globalization.CultureInfo]::InvariantCulture)
+            AvgFPS             = $avgFPS.ToString([System.Globalization.CultureInfo]::InvariantCulture)
+            OnePercentLow      = $onePercentLow.ToString([System.Globalization.CultureInfo]::InvariantCulture)
+            PointOnePercentLow = $pointOnePercentLow.ToString([System.Globalization.CultureInfo]::InvariantCulture)
         }
 
         # Save as csv file
