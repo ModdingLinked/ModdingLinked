@@ -12,7 +12,7 @@ class BenchmarkCharts {
     async readCSVFile(filePath) {
         try {
             let finalData;
-            const data = await d3.dsv(",", filePath, (d) => {
+            const data = await d3.dsv(";", filePath, (d) => {
                 //console.log('CSV data loaded from', filePath, d);
                 finalData = {
                     Hash: d.Hash,

@@ -88,7 +88,7 @@ function Generate-BenchmarkData {
         }
 
         # Save as csv file
-        $benchmarkData | Export-Csv -Path ($FilePath -replace '\.json$', '.csv') -NoTypeInformation
+        $benchmarkData | Export-Csv -Path ($FilePath -replace '\.json$', '.csv') -NoTypeInformation -Delimiter ';'
         Write-Host "Generated CSV for $FilePath"
     }
 
