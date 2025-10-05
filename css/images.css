@@ -27,6 +27,7 @@
   display: flex;
   border-radius: 6pt;
   transition: all 0.4s;
+  pointer-events: none;
 }
 
 .image-container:hover .resize-overlay,
@@ -82,37 +83,34 @@
 
 .logo-container {
   display: flex;
-  justify-content: space-around;
-  gap: 2em;
-  align-items: center;
-  max-width: 100%;
+  justify-content: space-between;
 }
 
 .logo-container img {
-  display: block;
+  display: flex;
   height: 256px !important;
   padding: 1em;
   -webkit-user-select: none !important;
-     -moz-user-select: none !important;
-          user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
   pointer-events: none !important;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 @media only screen and (max-width: 900px) {
   .image-container {
     max-width: 95% !important;
   }
+
   .overlay .image-container {
     max-width: 100% !important;
   }
+
   .enlarged-image {
     max-height: 100vw !important;
   }
+
   .logo-container {
     flex-direction: column;
     align-items: center;
-    gap: 1em;
   }
-}/*# sourceMappingURL=images.css.map */
+}
