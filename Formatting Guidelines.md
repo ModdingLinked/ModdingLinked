@@ -58,7 +58,7 @@
   - Formatting changes that do not invalidate previous instructions.
   - Information rewrites that do not invalidate previous instructions.
   - Wabbajack reuploads due to minor errors (e.g., versioning).
-  - Load Orders on the VNV Resources page (assume updated with each guide version).
+  - Load order changes unless critical.
   - Changes to avoid pages (use "Updated information." under Whole Guide if enough changes).
 - If an operation (added/updated/removed) is done multiple times, use a list.
 - If necessary, add a justification for an operation after the mod name, separated by a comma.
