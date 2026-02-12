@@ -255,16 +255,14 @@
                     <p>
                     <h3 id="TheFormID">The FormID</h3>
                     Each of these objects has it's own <strong>unique ID called FormID</strong>, written in HEX. A FormID is split in 2 parts, the <b>index</b> and the <b>ID</b> itself. The index (indicated by the first 2 digits for non-ESL plugins, the first 5 for ESL plugins) is an indicator of where the plugin that created that record is located in your load order.
-                    <br>
-                    <br>
+                    <br><br>
                     In this picture, the record I expanded has the FormID <span class="card-basic">0316A4B</span>, that means that <strong>OldWorldBlues.esm created this record</strong> and it is placed at <b>index 3</b>, the the record's ID is <b>16A4B</b>.
                     <br>
                     <div class="image-container width-80">
                         <img class="content-img" src="./img/xEdit/Index Example 1.webp" alt="Index example">
                         <div class="resize-overlay expand"></div>
                     </div>
-                    <br>
-                    <br>
+                    <br><br>
                     If I then randomly select another record in the same plugin, there's a different index. This is because <strong>this record was not created by Old World Blues</strong>, but the DLC is actually editing a record that was first created by <b>FalloutNV.esm</b>, which sits at index 00 since it is the game's base plugin.
                     <br>
                     <strong>This is an override</strong> and it is indicated by there being a color (a unique record with no other plugin involved would be blank, like in the first picture).
