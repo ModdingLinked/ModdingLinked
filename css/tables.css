@@ -33,8 +33,9 @@ tr:hover {
   table {
     font-size: 0.85em;
   }
+
   th,
   td {
     padding: 0.5em;
   }
-}/*# sourceMappingURL=tables.css.map */
+}
