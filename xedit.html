@@ -110,6 +110,70 @@
 
         <div class="content">
 
+            <!--
+            Plugins:
+                What are they
+                Types of plugins and meaning
+                Move ESL pages here?
+
+            xEdit:
+                What is it
+                Setup
+                Args
+                Settings
+                Plugin structure
+                First mod
+                Patching
+                The Method (workflow + ModGroups explanation)
+                Scripts
+                Relation to xLODGen
+                ONAM
+            -->
+            <span id="PluginStructure" class="section">
+                <h2 onclick="location.href='#PluginStructure'">Plugin Structure</h2>
+
+                <div class="card" id="WhatArePlugins" title="What are Plugins?">
+                    <p>
+                    <h3 id="WhatArePlugins">What are Plugins?</h3>
+                    You can think of plugins as a container. Plugins contain records that are divided based on what type of content is in them. For instance, weapons are of the <b>WEAP</b> type (every type of record has a signature, which is just an abbreviation). In that Weapon category, all game weapon records are stored.
+
+                    <br><br>
+
+                    <strong>Each of these objects is a record</strong>. A record contains a bunch of information inside it about its functionality and characteristics.
+                    </p>
+                </div>
+
+                <div class="card-green center">
+                    <p>
+                        The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.
+                    </p>
+                </div>
+
+                <div class="card" id="TheFormID" title="The FormID">
+                    <p>
+                    <h3 id="TheFormID">The FormID</h3>
+                    Each of these objects has it's own <strong>unique ID called FormID</strong>, written in HEX. A FormID is split in 2 parts, the <b>index</b> and the <b>ID</b> itself. The index (indicated by the first 2 digits for non-ESL plugins, the first 5 for ESL plugins) is an indicator of where the plugin that created that record is located in your load order.
+                    <br><br>
+                    In this picture, the record I expanded has the FormID <span class="card-basic">0316A4B</span>, that means that <strong>OldWorldBlues.esm created this record</strong> and it is placed at <b>index 3</b>, the the record's ID is <b>16A4B</b>.
+                    <br>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./img/xEdit/Index Example 1.webp" alt="Index example">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    <br><br>
+                    If I then randomly select another record in the same plugin, there's a different index. This is because <strong>this record was not created by Old World Blues</strong>, but the DLC is actually editing a record that was first created by <b>FalloutNV.esm</b>, which sits at index 00 since it is the game's base plugin.
+                    <br>
+                    <strong>This is an override</strong> and it is indicated by there being a color (a unique record with no other plugin involved would be blank, like in the first picture).
+                    <br>
+                    <div class="image-container width-80">
+                        <img class="content-img" src="./img/xEdit/Index Example 2.webp" alt="Index example 2">
+                        <div class="resize-overlay expand"></div>
+                    </div>
+                    </p>
+                </div>
+
+            </span>
+
             <span id="Basics" class="section">
                 <h2 onclick="location.href='#Basics'">Basics of xEdit</h2>
 
@@ -231,51 +295,6 @@
 
                     </p>
                 </div>
-            </span>
-
-            <span id="PluginStructure" class="section">
-                <h2 onclick="location.href='#PluginStructure'">Plugin Structure</h2>
-
-                <div class="card" id="WhatArePlugins" title="What are Plugins?">
-                    <p>
-                    <h3 id="WhatArePlugins">What are Plugins?</h3>
-                    You can think of plugins as <strong>a list of objects in unique containers</strong> divided based on what type of content is in them (for example one of the "containers" is called <b>WEAP</b>, inside which you fill find the game's weapons).
-                    <br>
-                    <strong>Each of these objects is a record</strong>. A record contains a bunch of information inside it about its functionality and characteristics.
-                    </p>
-                </div>
-
-                <div class="card-green center">
-                    <p>
-                        The following examples will use a Fallout New Vegas load order, but these concepts are not specific to New Vegas.
-                    </p>
-                </div>
-
-                <div class="card" id="TheFormID" title="The FormID">
-                    <p>
-                    <h3 id="TheFormID">The FormID</h3>
-                    Each of these objects has it's own <strong>unique ID called FormID</strong>, written in HEX. A FormID is split in 2 parts, the <b>index</b> and the <b>ID</b> itself. The index (indicated by the first 2 digits for non-ESL plugins, the first 5 for ESL plugins) is an indicator of where the plugin that created that record is located in your load order.
-                    <br><br>
-                    In this picture, the record I expanded has the FormID <span class="card-basic">0316A4B</span>, that means that <strong>OldWorldBlues.esm created this record</strong> and it is placed at <b>index 3</b>, the the record's ID is <b>16A4B</b>.
-                    <br>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./img/xEdit/Index Example 1.webp" alt="Index example">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    <br><br>
-                    If I then randomly select another record in the same plugin, there's a different index. This is because <strong>this record was not created by Old World Blues</strong>, but the DLC is actually editing a record that was first created by <b>FalloutNV.esm</b>, which sits at index 00 since it is the game's base plugin.
-                    <br>
-                    <strong>This is an override</strong> and it is indicated by there being a color (a unique record with no other plugin involved would be blank, like in the first picture).
-                    <br>
-                    <div class="image-container width-80">
-                        <img class="content-img" src="./img/xEdit/Index Example 2.webp" alt="Index example 2">
-                        <div class="resize-overlay expand"></div>
-                    </div>
-                    </p>
-                </div>
-
-                <!-- FINISH IT! ADD MORE INFO! MASTERS VS ESPS! WHAT IS ONAM! -->
-
             </span>
 
         </div>
