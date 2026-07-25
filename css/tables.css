@@ -1,5 +1,6 @@
 table {
-  width: 100%;
+  align-items: center;
+  width: fit-content;
   border-collapse: collapse;
   margin: 1em 0;
   overflow: hidden;
