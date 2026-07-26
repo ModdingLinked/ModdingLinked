@@ -119,19 +119,19 @@
 }
 
 #vnv {
-  background-image: url("../img/Banners/VNV.webp");
+  background-image: url("../../img/Banners/VNV.webp");
 }
 
 #tbot {
-  background-image: url("../img/Banners/TBoT.webp");
+  background-image: url("../../img/Banners/TBoT.webp");
 }
 
 #tmr {
-  background-image: url("../img/Banners/TMR.webp");
+  background-image: url("../../img/Banners/TMR.webp");
 }
 
 #dbf {
-  background-image: url("../img/Banners/DBF.webp");
+  background-image: url("../../img/Banners/DBF.webp");
 }
 
 @media (min-height: 1000px) {
