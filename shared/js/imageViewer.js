@@ -5,17 +5,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function createImageHandlers() {
-    const imageOverlay = document.getElementById('image-overlay');
+    const imageOverlay  = document.getElementById('image-overlay');
     const enlargedImage = document.getElementById('enlarged-image');
     if (!enlargedImage || !imageOverlay)
         return;
 
-    // Use event delegation to handle both static and dynamic images
-    document.addEventListener('click', function (event) {
-        if (event.target.classList.contains('content-img')) {
+    const images = document.querySelectorAll('.content-img');
+
+    if (!images)
+        return;
+
+    images.forEach(image => {
+        image.addEventListener('click', function () {
             imageOverlay.style.display = "flex";
-            enlargedImage.src = event.target.src;
-        }
+            enlargedImage.src = this.src;
+        });
     });
 
     imageOverlay.addEventListener('click', function () {

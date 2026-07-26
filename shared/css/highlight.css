@@ -1,0 +1,29 @@
+ol li[id^="annotation"] {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+ol li[id^="annotation"].highlight {
+    background-color: rgba(133, 135, 235, 0.2);
+}
+
+@keyframes blinkTwice {
+
+    0%,
+    100% {
+        background-color: transparent;
+    }
+
+    25%,
+    75% {
+        background-color: rgba(133, 135, 235, 0.2);
+    }
+
+    50% {
+        background-color: transparent;
+    }
+}
+
+ol li[id^="annotation"].blink-entry {
+    animation: blinkTwice 1s ease;
+}

@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     createRightSidebar();
     markActivePage();
     resizeAllTextAreas();
-    setupExpanders();
 });
 window.onscroll = updateProgressBarAndFadeIn;
 
@@ -45,64 +44,8 @@ function fadeOut(element) {
     element.style.opacity = "0%";
 }
 
-// function rotate(element, rotation = 180) {
-//     element.style.transform = 'rotatex(' + rotation + 'deg)';
-// }
-
-function setupExpanders() {
-    const expanders = document.querySelectorAll('.expander-top');
-
-    expanders.forEach((expander, index) => {
-        // Remove any existing ID
-        const oldId = expander.id;
-        const contentId = oldId ?
-            document.getElementById(oldId + 'expander') :
-            expander.nextElementSibling;
-
-        // Set new consistent IDs
-        const newId = 'expander-' + index;
-        expander.id = newId;
-
-        if (contentId && contentId.classList.contains('expander-bottom')) {
-            contentId.id = newId + '-content';
-
-            // Update onclick handler
-            expander.setAttribute('onclick', `expandCard(this, document.getElementById('${newId}-content'))`);
-
-            // Make sure it has the clickable class
-            if (!expander.classList.contains('clickable')) {
-                expander.classList.add('clickable');
-            }
-        }
-    });
-}
-
-function expandCard(thisObj, $open) {
-    if (thisObj.getAttribute('aria-expanded')) {
-        thisObj.removeAttribute('aria-expanded');
-        $open.style.maxHeight = 0;
-    }
-    else {
-        thisObj.setAttribute('aria-expanded', 'true');
-        $open.style.maxHeight = $open.scrollHeight + 'px';
-        // const textareas = $open.querySelectorAll('.auto-resize');
-        // if (textareas) {
-        //     for (var i = 0; i < textareas.length; i++) {
-        //         autoResize(textareas[i]);
-        //     }
-        // }
-    }
-
-    // Benchmarks
-    const benchmarkElements = $open.querySelectorAll('[data-chart-container]');
-    if (benchmarkElements.length > 0 && window.benchmarkCharts) {
-        benchmarkElements.forEach(element => {
-            const container = document.getElementById(element.getAttribute('data-chart-container'));
-            if (container && container.innerHTML.includes('Loading')) {
-                window.benchmarkCharts.loadBenchmarkFromElement(element);
-            }
-        });
-    }
+function rotate(element, rotation = 180) {
+    element.style.transform = 'rotatex(' + rotation + 'deg)';
 }
 
 function resizeAllTextAreas() {
