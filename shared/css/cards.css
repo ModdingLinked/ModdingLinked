@@ -27,8 +27,6 @@ textarea {
   font-family: monospace;
   font-size: 1.3em;
   background-color: rgba(255, 255, 255, 0.0326);
-  width: fit-content;
-  -moz-width: fit-content;
 }
 
 /* Color-themed cards */

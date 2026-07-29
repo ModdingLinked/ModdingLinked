@@ -73,6 +73,14 @@
   box-shadow: 0 2pt 4pt 0 rgba(0, 0, 0, 0.5);
 }
 
+.overlay .resize-overlay {
+  display: none !important;
+}
+
+.overlay {
+  backdrop-filter: blur(8px);
+}
+
 .mo2-icon {
   position: relative;
   width: 2em;
