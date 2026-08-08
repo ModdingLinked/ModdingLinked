@@ -2,9 +2,7 @@
 
 ## Images
 - All images must be `.webp` format and placed in the matching folder for the page or section.
-- Convert images using [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html) with these PowerShell scripts (compressed for most images, uncompressed for images where detail needs to be preserved, such as comparisons):  
-  `Get-ChildItem *.png | ForEach-Object { cwebp -q 90 -m 6 $_.Name -o ($_.BaseName + ".webp") }`  
-  `Get-ChildItem *.png | ForEach-Object { cwebp -lossless $_.Name -o ($_.BaseName + ".webp") }`
+- Convert images using [libwebp](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html) and the script [here](https://github.com/ModdingLinked/ModdingLinked/blob/main/files/PNG%20to%20WEBP.bat).
 - MO2 screenshots must use the default theme.
 
 ## Grammar & Style
