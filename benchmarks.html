@@ -130,7 +130,7 @@
                     <h3>Hardware & Software Used</h3>
                     <p>
                     <ul>
-                        <li>HW and SW (including drivers) details can be viewed by hovering over the graph's title.</li>
+                        <li>HW and SW (including drivers) details can be viewed by hovering over the <i class="fa fa-desktop" aria-hidden="true"></i> icon</li>
                         <li>Data is collected through <a href="https://www.capframex.com/" target="_blank">CapFrameX</a>, capture data is available for download in the <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">repository</a>.</li>
                         <li>The mods used as a base are listed in each game's section. If a different list is used, it will be specified.</li>
                     </ul>
@@ -141,26 +141,24 @@
                     <h3>Methodology & Info</h3>
                     <p>
                     <ul>
-                        <li>Don't give much consideration to 1% or 2% differences - there is always margin of error, especially when CPU bound.</li>
-                        <li>Any outlier result is corrected by aggregating more runs and excluding anomalous results.</li>
+                        <li>Don't give much consideration to 1% or 2% differences - even though results are aggregated to minimize margin of error, it is still present, especially when CPU-bound.</li>
                         <li>Testing the effect of a mod on CPU-side performance requires being completely limited by the CPU while profiling, this can be done with a low enough resolution and/or a fast enough GPU.
                             <br>
-                            In most cases, you can tell you're CPU bound when the GPU core usage is not maxed out (99/100%). Refer to <a href="https://youtu.be/O3FIXQwMOA4" target="_blank">this video</a> for more information.
+                            In most cases, you can tell you're CPU-bound when the GPU core usage is not maxed out (99/100%). Refer to <a href="https://youtu.be/O3FIXQwMOA4" target="_blank">this video</a> for more information.
                         </li>
                         <li>Even if some of the performance results seem so high in FPS, remember that performance gains/losses largely scale the same across different hardware, obviously assuming the testing enviroment is comparable and nothing weird is going on.
 
                             <div class="card-yellow">
                                 <p>
-                                    Always interpret performance <strong>differences in percentages</strong>! Absolute values should only be considered for the sake of cross comparison, since the scenes used for testing might be shared.
+                                    Always interpret performance <strong>differences in percentages</strong>! Absolute values should only be considered for the sake of cross comparison, since the scenes used for testing might be shared. In the benchmarks below, you can view percentages relative to the other entries in that group by hovering any bar.
                                     <br><br>
                                     For instance, telling people that a mod gives 30 more FPS while you're at 30 FPS equals to a 100% increase in performance. While it would mean only 15% at 200 FPS.
                                 </p>
                             </div>
 
                         </li>
-                        <li>In any (hopefully) scientific test, all variables should be controlled as much as possible. It would be unwise to test singular mods or changes in a very complex environment such as a long modlist. For the same reason, AI is disabled during all tests unless the subject of testing is AI-related.</li>
-                        <li>Most of the tests re-use the same save files for consistency, but some specific mods may require their own dedicated saves. The common saves will be provided for download in the <a href="https://github.com/ModdingLinked/ModdingLinked" target="_blank">repository</a>.</li>
-                        <li>If a test does not include CPU or GPU bound results, assume that it doesn't affect those scenarios enough to be noticeable.</li>
+                        <li>In any (hopefully) scientific test, all variables should be controlled as much as possible. It would be unwise to test singular mods or changes in a very complex environment such as a long modlist. For the same reason, game AI is disabled during all tests unless the subject of testing is AI-related, as it is very unpredictable.</li>
+                        <li>If a test does not include CPU or GPU-bound results, assume that it doesn't affect those scenarios enough to be noticeable.</li>
                     </ul>
                     </p>
                 </div>
@@ -268,75 +266,302 @@
                     </ul>
                     </p>
                 </div>
+
+                <!-- <div class="expander-top clickable" onclick="expandCard(this)">
+                    <h3>High FPS Physics Fix vs Long Loading Times Fix</h3>
+                    <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="UI element - Chevron">
+                </div>
+                <div class="expander-bottom">
+                    <div class="legend-popup-container">
+                        <i class="fa fa-desktop" aria-hidden="true" onclick="togglePopup(event)"></i>
+                        <div class="tiny-popup">
+                            <ul>
+                                <li><strong>OS:</strong> Microsoft Windows 11 Pro Build 26200</li>
+                                <li><strong>SystemRam:</strong> 64GB (2x32GB) 5600MT/s</li>
+                                <li><strong>GPUDriverVersion:</strong> 610.62</li>
+                                <li><strong>Processor:</strong> AMD Ryzen 7 8845HS w/ Radeon 780M Graphics</li>
+                                <li><strong>GPU:</strong> NVIDIA GeForce RTX 4070 Laptop GPU</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <table class="center">
+                        <tr>
+                            <th>Scenario</th>
+                            <th>60 FPS Loading</th>
+                            <th>350 FPS Loading</th>
+                            <th>Uncapped Loading</th>
+                            <th>
+                                350 FPS Loading
+                                <span style="display: block;">+</span>
+                                HFPF Speed Ups
+                            </th>
+                            <th>
+                                350 FPS Loading
+                                <span style="display: block;">+</span>
+                                HFPF Speed Ups
+                                <span style="display: block;">+</span>
+                                Long Loading Times Fix
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>COC DiamondCityExterior</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                        </tr>
+                        <tr>
+                            <td>Entering DC</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                        </tr>
+                        <tr>
+                            <td>Exiting DC</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                            <td>_s</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <b>Date of testing (D/M/Y)</b>: x
+
+                        <br><br>
+
+                        <b>Conclusion and notes</b>: The speed ups mentioned are DisableBlackLoadingScreens and DisableAnimationOnLoadingScreens. Tested using the High FPS Physics Fix loading timer.
+
+                        <br><br>
+
+                        The results show that:
+                    <ul>
+                        <li>Increasing the loading screen FPS cap from 60 to 350 significantly reduces load times across all scenarios.</li>
+                        <li>Removing the loading lock entirely breaks the loading time in most cases.</li>
+                        <li>Applying HFPF's speed ups further improves load times.</li>
+                        <li>Adding Long Loading Times Fix on top of HFPF speed ups does not always result in further improvements and, in some cases, slightly increases load times.</li>
+                    </ul>
+                    Overall, Long Loading Times Fix is made redundant by a proper HFPF configuration, as instructed <a href="https://themidnightride.moddinglinked.com/utilities.html#PhysicsFix" target="_blank">here</a> during The Midnight Ride guide.
+
+                    <br><br>
+
+                    <b>Mod links and versions</b>:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/44798" target="_blank">High FPS Physics Fix</a> (x)</li>
+                        <li><a href="https://www.nexusmods.com/fallout4/mods/73469" target="_blank">Long Loading Times Fix</a> (x)</li>
+                    </ul>
+                </div> -->
             </span>
 
             <span id="SSEBenchmarks" class="section">
                 <h2 onclick="location.href='#SSEBenchmarks'">SSE Benchmarks</h2>
 
                 <div class="card" id="Modlist">
-                    <h3>Modlist (1.6.1130 without the AE DLC)</h3>
+                    <h3>Modlist (1.6.1170 without the AE DLC)</h3>
                     <p>
                     <ul>
                         <li>Bethini Pie High</li>
                         <li>SKSE</li>
                         <li>Address Library</li>
                         <li>Engine Fixes</li>
-                        <li>Bug Fixes SSE</li>
-                        <li>Scrambled Bugs</li>
                         <li>Display Tweaks</li>
                         <li>Unofficial Skyrim Special Edition Patch</li>
                         <li>ConsoleUtilSSE NG</li>
-                        <li>Autorun (TAI, TCAI, TGM, FW 81A)</li>
+                        <li>Autorun (TAI, TCAI, TGM, FW 81A), more commands may be used if necessary</li>
                     </ul>
                     </p>
                 </div>
 
-                <!-- <div class="expander-top clickable" onclick="expandCard(this)">
-                    <h3>Test name</h3>
+                <div class="expander-top clickable" onclick="expandCard(this)">
+                    <h3>Smooth Terrain</h3>
                     <img class="chevron" style="transform: rotateX(0deg);" src="img/UI/Chevron Down.svg" alt="Chevron">
                 </div>
                 <div class="expander-bottom">
+                    <div class="legend-popup-container">
+                        <i class="fa fa-desktop" aria-hidden="true" onclick="togglePopup(event)"></i>
+                        <div class="tiny-popup">
+                            <ul>
+                                <li><strong>OS:</strong> Microsoft Windows 11 Pro Build 26200</li>
+                                <li><strong>SystemRam:</strong> 64GB (2x32GB) 5600MT/s</li>
+                                <li><strong>GPUDriverVersion:</strong> 610.62</li>
+                                <li><strong>Processor:</strong> AMD Ryzen 7 8845HS w/ Radeon 780M Graphics</li>
+                                <li><strong>GPU:</strong> NVIDIA GeForce RTX 4070 Laptop GPU</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="image-slider" data-image-path="./benchmarks/SSE/Smooth Terrain/Comparisons" data-sets="Whiterun|Riverwood|Bleak Falls Barrow" data-images="Vanilla|1 Subdivision|2 Subdivisions|3 Subdivisions">
+                        <select class="comparison-set-select"></select>
+                        <div class="comparison-selects">
+                            <select class="comparison-select-left"></select>
+                            <select class="comparison-select-right"></select>
+                        </div>
+                        <div class="comparison-slider">
+                            <img class="comparison-before" />
+                            <img class="comparison-after" />
+                            <div class="comparison-handle"></div>
+                        </div>
+                        <div class="comparison-labels">
+                            <span class="label-before"></span>
+                            <span class="label-after"></span>
+                        </div>
+                    </div>
+
+                    <hr>
+
                     <div class="bm-wrapper">
                         <div class="bm-legend">
                             <span class="legend-item"><i class="dot color-avg"></i>Average FPS</span>
                             <span class="legend-item"><i class="dot color-p1"></i>1% Low</span>
                             <span class="legend-item"><i class="dot color-p02"></i>0.2% Low</span>
+                        </div>
 
-                            <div class="legend-popup-container">
-                                <i class="fa fa-desktop" aria-hidden="true" onclick="togglePopup(event)"></i>
-                                <div class="tiny-popup" id="desktopPopup">
-                                    <ul>
-                                        <li><strong>OS:</strong> Microsoft Windows 11 Pro Build 26200</li>
-                                        <li><strong>SystemRam:</strong> 64GB (2x32GB) 5600MT/s</li>
-                                        <li><strong>GPUDriverVersion:</strong> 610.62</li>
-                                        <li><strong>Processor:</strong> AMD Ryzen 7 8845HS w/ Radeon 780M Graphics</li>
-                                        <li><strong>GPU:</strong> NVIDIA GeForce RTX 4070 Laptop GPU</li>
-                                    </ul>
+                        <div class="bm-group">
+                            <h3 class="bm-group-title">Whiterun</h3>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">Vanilla</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">166.9</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">126.8</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">117.4</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">1 Subdivision</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">166</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">125</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">115.6</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">2 Subdivisions</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">164.1</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">123.7</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">115.8</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">3 Subdivisions</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">158.5</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">121.5</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">114.3</span></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bm-group">
-                            <h4 class="bm-entry-comment">Entry name</h4>
-                            <div class="bm-rows">
-                                <div class="bm-row color-avg" data-type="Avg"><span class="bm-val">3</span></div>
-                                <div class="bm-row color-p1" data-type="1%"><span class="bm-val">2</span></div>
-                                <div class="bm-row color-p02" data-type="0.2%"><span class="bm-val">1</span></div>
+                            <h3 class="bm-group-title">Riverwood</h3>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">Vanilla</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">169.5</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">130.7</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">121.1</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">1 Subdivision</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">168.7</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">130.8</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">122.4</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">2 Subdivisions</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">166.7</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">128.1</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">120.8</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">3 Subdivisions</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">162.1</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">124.3</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">118.5</span></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <hr>
-                    <p>
-                        <b>Conclusion and notes</b>:
-                        <br><br>
-                        <b>Date of testing</b>: date <br>
-                        <b>Mod links and versions</b>:
-                    </p>
-                    <ul>
-                        <li><a href="x" target="_blank">Name</a> (Version)</li>
-                    </ul>
-                </div> -->
+                        <div class="bm-group">
+                            <h3 class="bm-group-title">Bleak Falls Barrow</h3>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">Vanilla</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">202.4</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">155.7</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">143.2</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">1 Subdivision</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">202.7</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">158.6</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">147.8</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">2 Subdivisions</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">200</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">149.1</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">139.6</span></div>
+                                </div>
+                            </div>
+
+                            <div class="bm-entry">
+                                <div class="bm-entry-comment">3 Subdivisions</div>
+                                <div class="bm-chart-area">
+                                    <div class="bm-row color-avg" style="width: 80%;"><span class="bm-val">192.3</span></div>
+                                    <div class="bm-row color-p1" style="width: 50%;"><span class="bm-val">150.1</span></div>
+                                    <div class="bm-row color-p02" style="width: 30%;"><span class="bm-val">137.8</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <p>
+                            <b>Date of testing (D/M/Y)</b>: 8/8/26
+
+                            <br><br>
+
+                            <b>Conclusion and notes</b>: Since the mod just subdivides the terrain, all tests are GPU-bound - the extra triangle count is where all the performance hit comes from.
+
+                            <br><br>
+
+                            1 subdivision is not enough to get rid of the most noticeable terrain edges. <strong>2 subdivisions are ideal</strong>: the performance hit is negligible (~1-2%) and it is vastly superior visually. 3 subdivisions are not recommended, they raise the performance cost to ~4-5% for no notable improvement.
+
+                            <br><br>
+
+                            <b>Mod links and versions</b>:
+                        </p>
+                        <ul>
+                            <li><a href="https://www.nexusmods.com/skyrimspecialedition/mods/186875" target="_blank">Smooth Terrain</a> (0.4.0)</li>
+                        </ul>
+                    </div>
+                </div>
             </span>
 
         </div>

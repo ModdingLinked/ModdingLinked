@@ -1,6 +1,8 @@
 .bm-wrapper {
   padding: 10px 0;
   color: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bm-legend {
@@ -11,6 +13,9 @@
   margin-bottom: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.expander-bottom {
   position: relative;
 }
 
@@ -25,8 +30,10 @@
   height: 12px;
   border-radius: 2px;
   display: inline-block;
+  flex-shrink: 0;
 }
 
+/* Colors, same as CFX */
 .color-avg {
   background-color: #2196f3;
 }
@@ -39,16 +46,19 @@
   background-color: #ffc107;
 }
 
+/* System info */
 .legend-popup-container {
   position: absolute;
-  right: 0;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
   cursor: pointer;
 }
 
 .legend-popup-container i {
   color: #aaa;
   font-size: 1rem;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .legend-popup-container i:hover {
@@ -77,47 +87,65 @@
 }
 
 .bm-group {
-  margin-bottom: 20px;
-}
-
-.bm-entry-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #e0e0e0;
-}
-
-.bm-rows {
+  flex: 0 0 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding-left: 50px;
-  padding-right: 110px;
+  align-items: center;
   box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.bm-group-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
   width: 100%;
 }
 
-.bm-row {
+.bm-entry {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 16px auto;
+}
+
+.bm-entry-comment {
+  flex-shrink: 0;
+  width: 120px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  text-align: right;
+  overflow-wrap: break-word;
+}
+
+.bm-chart-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  padding-right: 60px;
+  box-sizing: border-box;
+}
+
+.bm-row {
   height: 22px;
   border-radius: 3px;
   position: relative;
-  box-sizing: border-box;
   transition: width 0.25s ease-in-out;
   min-width: 2px;
 }
 
-.bm-row::before {
-  content: attr(data-type);
-  position: absolute;
-  right: 100%;
-  margin-right: 10px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #aaa;
-}
-
+/* Label at the end */
 .bm-val {
   font-size: 0.8rem;
   font-weight: 700;

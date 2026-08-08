@@ -66,9 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Funzione globale accessibile dal click HTML
 function togglePopup(event) {
     event.stopPropagation();
-    const popup = document.getElementById("desktopPopup");
-    popup.classList.toggle("show");
+
+    // Find nearest
+    const container = event.currentTarget.closest('.legend-popup-container');
+    if (!container) return;
+
+    const popup = container.querySelector('.tiny-popup');
+    if (popup) {
+        popup.classList.toggle('show');
+    }
 }
+
+// Close when clicking outside
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.legend-popup-container')) {
+        document.querySelectorAll('.tiny-popup.show').forEach(popup => {
+            popup.classList.remove('show');
+        });
+    }
+});
