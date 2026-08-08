@@ -123,26 +123,31 @@ function createRightSidebar() {
             a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
         );
 
-        // Process headers within section
-        section.querySelectorAll('h2').forEach(header => {
+        // Process headers within section (both h2 and expander h3)
+        section.querySelectorAll('h2, .expander-top h3').forEach(header => {
             if (!header.innerHTML) return;
 
             const div = document.createElement('div');
 
             // Create header link
             const b = document.createElement('b');
-            b.innerHTML = `<a href="#${section.id}">${header.innerHTML}</a>`;
+            const targetId = header.id || header.closest('[id]')?.id || section.id;
+            b.innerHTML = `<a href="#${targetId}">${header.innerHTML}</a>`;
             div.appendChild(b);
 
             // Add all elements for this section
             elements.forEach(element => {
+                const expanderH3 = element.querySelector('h3');
                 const text = element.getAttribute('title') ||
-                    element.id.replace(/([A-Z])/g, ' $1').trim();
+                    (element.id ? element.id.replace(/([A-Z])/g, ' $1').trim() : '') ||
+                    (expanderH3 ? expanderH3.textContent.trim() : '');
 
                 if (!text) return;
 
+                const targetElementId = element.id || (expanderH3 && expanderH3.id) || '';
+
                 const a = document.createElement('a');
-                a.href = `#${element.id}`;
+                a.href = targetElementId ? `#${targetElementId}` : '#';
                 a.textContent = text;
                 div.appendChild(a);
             });
