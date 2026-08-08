@@ -144,7 +144,12 @@ function createRightSidebar() {
 
                 if (!text) return;
 
-                const targetElementId = element.id || (expanderH3 && expanderH3.id) || '';
+                // Generate ID if missing
+                if (!element.id && (!expanderH3 || !expanderH3.id)) {
+                    element.id = text.replace(/\s+/g, '').replace(/[^\w-]/g, '');
+                }
+
+                const targetElementId = element.id || expanderH3?.id || '';
 
                 const a = document.createElement('a');
                 a.href = targetElementId ? `#${targetElementId}` : '#';
